@@ -24,7 +24,7 @@ public class Inicio {
 				vcc.setListener(l);
 				vr.setListener(l);
 				
-				vpi.hacerVisible();
+				vpi.setVisible(true);
 			}
 		});
 

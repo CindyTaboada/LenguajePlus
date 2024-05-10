@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 import model.FuenteDatos;
 import view.VentanaCrearCuenta;
@@ -23,14 +24,23 @@ public class VentanaPrincipalInicioListener implements ActionListener {
 		this.vr = vr;
 		datos = new FuenteDatos();
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() instanceof JButton) {
 			if (e.getSource().equals(vpi.getBtnIniciarSesion())) {
-				vpi.cargarPanel(null);
+				
 			} else if (e.getSource().equals(vpi.getBtnCrearCuenta())) {
-				vpi.cargarPanel(vcc);
+				vpi.setVisible(false);
+				vcc.setVisible(true);
+			} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
+				vpi.setVisible(true);
+				vcc.setVisible(false);
+			} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
+				
+			} else if (e.getSource().equals(vr.getBtnSalirRanking())) {
+				vr.setVisible(false);
+				
 			}
 		}
 
