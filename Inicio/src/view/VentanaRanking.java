@@ -3,6 +3,8 @@ package view;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import control.VentanaPrincipalInicioListener;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.SystemColor;
@@ -57,151 +59,151 @@ private void configurarComponentes() {
 	
 	lblRanking = new JLabel("Ranking");
 	lblRanking.setFont(new Font("Tahoma", Font.PLAIN, 20));
-	lblRanking.setBounds(229, 10, 78, 51);
+	lblRanking.setBounds(261, 10, 78, 51);
 	add(lblRanking);
 	
 	lblTop1 = new JLabel("1º");
-	lblTop1.setBounds(174, 53, 15, 13);
+	lblTop1.setBounds(209, 105, 15, 13);
 	add(lblTop1);
 	
 	lblTop2 = new JLabel("2º");
-	lblTop2.setBounds(174, 64, 15, 13);
+	lblTop2.setBounds(209, 116, 15, 13);
 	add(lblTop2);
 	
 	lblTop3 = new JLabel("3º");
-	lblTop3.setBounds(174, 76, 15, 13);
+	lblTop3.setBounds(209, 128, 15, 13);
 	add(lblTop3);
 	
 	lblTop4 = new JLabel("4º");
-	lblTop4.setBounds(174, 87, 15, 13);
+	lblTop4.setBounds(209, 139, 15, 13);
 	add(lblTop4);
 	
 	lblTop5 = new JLabel("5º");
-	lblTop5.setBounds(174, 99, 15, 13);
+	lblTop5.setBounds(209, 151, 15, 13);
 	add(lblTop5);
 	
 	lblTop6 = new JLabel("6º");
-	lblTop6.setBounds(174, 110, 15, 13);
+	lblTop6.setBounds(209, 162, 15, 13);
 	add(lblTop6);
 	
 	lblTop7 = new JLabel("7º");
-	lblTop7.setBounds(174, 122, 15, 13);
+	lblTop7.setBounds(209, 174, 15, 13);
 	add(lblTop7);
 	
 	lblTop8 = new JLabel("8º");
-	lblTop8.setBounds(174, 133, 15, 13);
+	lblTop8.setBounds(209, 185, 15, 13);
 	add(lblTop8);
 	
 	lblTop9 = new JLabel("9º");
-	lblTop9.setBounds(174, 146, 15, 13);
+	lblTop9.setBounds(209, 198, 15, 13);
 	add(lblTop9);
 	
 	lblTop10 = new JLabel("10º");
-	lblTop10.setBounds(174, 156, 16, 20);
+	lblTop10.setBounds(209, 208, 16, 20);
 	add(lblTop10);
 	
 	lblTop1_1 = new JLabel("");
 	lblTop1_1.setToolTipText("Nombre");
-	lblTop1_1.setBounds(199, 53, 86, 13);
+	lblTop1_1.setBounds(234, 105, 86, 13);
 	add(lblTop1_1);
 	
 	lblTop2_1 = new JLabel("");
 	lblTop2_1.setToolTipText("Nombre");
-	lblTop2_1.setBounds(199, 64, 86, 13);
+	lblTop2_1.setBounds(234, 116, 86, 13);
 	add(lblTop2_1);
 	
 	lblTop3_1 = new JLabel("");
 	lblTop3_1.setToolTipText("Nombre");
-	lblTop3_1.setBounds(199, 76, 86, 13);
+	lblTop3_1.setBounds(234, 128, 86, 13);
 	add(lblTop3_1);
 	
 	lblTop4_1 = new JLabel("");
 	lblTop4_1.setToolTipText("Nombre");
-	lblTop4_1.setBounds(199, 87, 86, 13);
+	lblTop4_1.setBounds(234, 139, 86, 13);
 	add(lblTop4_1);
 	
 	lblTop5_1 = new JLabel("");
 	lblTop5_1.setToolTipText("Nombre");
-	lblTop5_1.setBounds(199, 99, 86, 13);
+	lblTop5_1.setBounds(234, 151, 86, 13);
 	add(lblTop5_1);
 	
 	lblTop6_1 = new JLabel("");
 	lblTop6_1.setToolTipText("Nombre");
-	lblTop6_1.setBounds(199, 110, 86, 13);
+	lblTop6_1.setBounds(234, 162, 86, 13);
 	add(lblTop6_1);
 	
 	lblTop7_1 = new JLabel("");
 	lblTop7_1.setToolTipText("Nombre");
-	lblTop7_1.setBounds(199, 122, 86, 13);
+	lblTop7_1.setBounds(234, 174, 86, 13);
 	add(lblTop7_1);
 	
 	lblTop8_1 = new JLabel("");
 	lblTop8_1.setToolTipText("Nombre");
-	lblTop8_1.setBounds(199, 133, 86, 13);
+	lblTop8_1.setBounds(234, 185, 86, 13);
 	add(lblTop8_1);
 	
 	lblTop9_1 = new JLabel("");
 	lblTop9_1.setToolTipText("Nombre");
-	lblTop9_1.setBounds(199, 146, 86, 13);
+	lblTop9_1.setBounds(234, 198, 86, 13);
 	add(lblTop9_1);
 	
 	lblTop10_1 = new JLabel("");
 	lblTop10_1.setToolTipText("Nombre");
-	lblTop10_1.setBounds(199, 156, 86, 20);
+	lblTop10_1.setBounds(234, 212, 86, 13);
 	add(lblTop10_1);
 	
 	lblTop1_1_1 = new JLabel("");
 	lblTop1_1_1.setToolTipText("Estrellas");
-	lblTop1_1_1.setBounds(298, 53, 53, 13);
+	lblTop1_1_1.setBounds(333, 105, 53, 13);
 	add(lblTop1_1_1);
 	
 	lblTop2_1_1 = new JLabel("");
 	lblTop2_1_1.setToolTipText("Estrellas");
-	lblTop2_1_1.setBounds(298, 64, 53, 13);
+	lblTop2_1_1.setBounds(333, 116, 53, 13);
 	add(lblTop2_1_1);
 	
 	lblTop3_1_1 = new JLabel("");
 	lblTop3_1_1.setToolTipText("Estrellas");
-	lblTop3_1_1.setBounds(298, 76, 53, 13);
+	lblTop3_1_1.setBounds(333, 128, 53, 13);
 	add(lblTop3_1_1);
 	
 	lblTop4_1_1 = new JLabel("");
 	lblTop4_1_1.setToolTipText("Estrellas");
-	lblTop4_1_1.setBounds(298, 87, 53, 13);
+	lblTop4_1_1.setBounds(333, 139, 53, 13);
 	add(lblTop4_1_1);
 	
 	lblTop5_1_1 = new JLabel("");
 	lblTop5_1_1.setToolTipText("Estrellas");
-	lblTop5_1_1.setBounds(298, 99, 53, 13);
+	lblTop5_1_1.setBounds(333, 151, 53, 13);
 	add(lblTop5_1_1);
 	
 	lblTop6_1_1 = new JLabel("");
 	lblTop6_1_1.setToolTipText("Estrellas");
-	lblTop6_1_1.setBounds(298, 110, 53, 13);
+	lblTop6_1_1.setBounds(333, 162, 53, 13);
 	add(lblTop6_1_1);
 	
 	lblTop7_1_1 = new JLabel("");
 	lblTop7_1_1.setToolTipText("Estrellas");
-	lblTop7_1_1.setBounds(298, 122, 53, 13);
+	lblTop7_1_1.setBounds(333, 174, 53, 13);
 	add(lblTop7_1_1);
 	
 	lblTop8_1_1 = new JLabel("");
 	lblTop8_1_1.setToolTipText("Estrellas");
-	lblTop8_1_1.setBounds(298, 133, 53, 13);
+	lblTop8_1_1.setBounds(333, 185, 53, 13);
 	add(lblTop8_1_1);
 	
 	lblTop9_1_1 = new JLabel("");
 	lblTop9_1_1.setToolTipText("Estrellas");
-	lblTop9_1_1.setBounds(298, 146, 53, 13);
+	lblTop9_1_1.setBounds(333, 198, 53, 13);
 	add(lblTop9_1_1);
 	
 	lblTop10_1_1 = new JLabel("");
 	lblTop10_1_1.setToolTipText("Estrellas");
-	lblTop10_1_1.setBounds(298, 156, 53, 20);
+	lblTop10_1_1.setBounds(333, 212, 53, 13);
 	add(lblTop10_1_1);
 	
 	btnSalirRanking = new JButton("Salir del Ranking");
-	btnSalirRanking.setBounds(204, 218, 129, 21);
+	btnSalirRanking.setBounds(235, 279, 129, 21);
 	add(btnSalirRanking);
 }
 private void configurarFrame() {
@@ -213,6 +215,11 @@ private void configurarFrame() {
 
 public void hacerVisible() {
 	setVisible(true);
+}
+
+public void setListener(VentanaPrincipalInicioListener l) {
+	btnSalirRanking.addActionListener(l);
+	
 }
 }
 	

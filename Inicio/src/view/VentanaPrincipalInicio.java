@@ -3,8 +3,17 @@ package view;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import control.VentanaPrincipalInicioListener;
+
 import javax.swing.JButton;
+
+import java.awt.BorderLayout;
 import java.awt.SystemColor;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import java.awt.event.ContainerAdapter;
+import java.awt.event.ContainerEvent;
 
 public class VentanaPrincipalInicio extends JPanel {
 	
@@ -18,44 +27,67 @@ public class VentanaPrincipalInicio extends JPanel {
 	private JLabel lblLogin;
 	private JLabel lblImagen;
 	private JButton btnCrearCuenta;
+	private JButton btnIniciarSesion;
+	private JScrollPane scrpContenedor;
+	private JPanel panel;
 	
 	public VentanaPrincipalInicio() {
+		
+		crearComponentes();
+		
 		configurarFrame();
 		
 		configurarComponentes();
 	}
-
+	
+	private void crearComponentes() {
+	}
+	
 	private void configurarComponentes() {
+		
 		setBackground(SystemColor.controlHighlight);
 		setLayout(null);
 		
+		scrpContenedor = new JScrollPane();
+		scrpContenedor.setBounds(0, 0, 600, 350);
+		add(scrpContenedor);
+		scrpContenedor.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		
+		panel = new JPanel();
+		scrpContenedor.setViewportView(panel);
+		panel.setLayout(null);
+		
 		lblImagen = new JLabel("Imagen");
-		lblImagen.setBounds(252, 10, 50, 50);
-		add(lblImagen);
+		lblImagen.setBounds(274, 24, 50, 50);
+		panel.add(lblImagen);
 		
 		lblLogin = new JLabel("LOGIN");
-		lblLogin.setBounds(212, 91, 130, 13);
-		add(lblLogin);
+		lblLogin.setBounds(234, 98, 130, 13);
+		panel.add(lblLogin);
 		
 		txtEmail = new JTextField();
+		txtEmail.setBounds(234, 135, 130, 19);
+		panel.add(txtEmail);
 		txtEmail.setText("Email");
-		txtEmail.setBounds(212, 114, 130, 19);
-		add(txtEmail);
 		txtEmail.setColumns(10);
 		
 		txtContrasenia = new JTextField();
+		txtContrasenia.setBounds(234, 178, 130, 19);
+		panel.add(txtContrasenia);
 		txtContrasenia.setText("Contraseña");
-		txtContrasenia.setBounds(212, 140, 130, 19);
-		add(txtContrasenia);
 		txtContrasenia.setColumns(10);
 		
 		lblO = new JLabel("O");
-		lblO.setBounds(270, 169, 14, 13);
-		add(lblO);
+		lblO.setBounds(292, 266, 14, 13);
+		panel.add(lblO);
 		
 		btnCrearCuenta = new JButton("Crear Cuenta");
-		btnCrearCuenta.setBounds(220, 192, 115, 21);
-		add(btnCrearCuenta);
+		btnCrearCuenta.setBounds(241, 303, 115, 21);
+		panel.add(btnCrearCuenta);
+		
+		btnIniciarSesion = new JButton("Iniciar sesión");
+		btnIniciarSesion.setBounds(241, 221, 115, 21);
+		panel.add(btnIniciarSesion);
 	}
 	
 	private void configurarFrame() {
@@ -64,8 +96,24 @@ public class VentanaPrincipalInicio extends JPanel {
 		setSize(ANCHO, ALTO);
 		
 	}
+	public void setListener(VentanaPrincipalInicioListener l) {
+		btnCrearCuenta.addActionListener(l);
+		btnIniciarSesion.addActionListener(l);
+	}
 	
 	public void hacerVisible() {
 		setVisible(true);
+	}
+	
+	public JButton getBtnCrearCuenta() {
+		return btnCrearCuenta;
+	}
+	
+	public JButton getBtnIniciarSesion() {
+		return btnIniciarSesion;
+	}
+	
+	public void cargarPanel(JPanel panel) {
+		scrpContenedor.setViewportView(panel);
 	}
 }

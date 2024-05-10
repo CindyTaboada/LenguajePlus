@@ -6,6 +6,9 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import control.VentanaPrincipalInicioListener;
+
 import java.awt.Font;
 import java.awt.SystemColor;
 public class VentanaCrearCuenta extends JPanel {
@@ -72,6 +75,11 @@ public class VentanaCrearCuenta extends JPanel {
 	
 	public void hacerVisible() {
 		setVisible(true);
+	}
+	public void setListener(VentanaPrincipalInicioListener l) {
+		btnCancelarCrearCuenta.addActionListener(l);
+		btnConfirmarCrearCuenta.addActionListener(l);
+		
 	}
 }
 
