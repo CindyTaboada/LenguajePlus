@@ -36,13 +36,13 @@ public class VentanaCrearCuenta extends JPanel {
 		lblTituloCrearCuenta = new JLabel("Crear Cuenta");
 		lblTituloCrearCuenta.setBackground(new Color(192, 192, 192));
 		lblTituloCrearCuenta.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTituloCrearCuenta.setBounds(215, 10, 126, 59);
+		lblTituloCrearCuenta.setBounds(237, 24, 126, 59);
 		add(lblTituloCrearCuenta);
 		
 		txtNombreYApellido = new JTextField();
 		txtNombreYApellido.setToolTipText("Nombre y Apellido");
 		txtNombreYApellido.setText("Nombre y Apellido");
-		txtNombreYApellido.setBounds(215, 61, 126, 24);
+		txtNombreYApellido.setBounds(237, 107, 126, 24);
 		add(txtNombreYApellido);
 		txtNombreYApellido.setColumns(10);
 		
@@ -50,14 +50,14 @@ public class VentanaCrearCuenta extends JPanel {
 		txtEdad.setToolTipText("Edad");
 		txtEdad.setText("Edad");
 		txtEdad.setColumns(10);
-		txtEdad.setBounds(215, 95, 126, 24);
+		txtEdad.setBounds(237, 155, 126, 24);
 		add(txtEdad);
 		
 		txtEmail = new JTextField();
 		txtEmail.setToolTipText("Email");
 		txtEmail.setText("Email");
 		txtEmail.setColumns(10);
-		txtEmail.setBounds(215, 129, 126, 24);
+		txtEmail.setBounds(237, 203, 126, 24);
 		add(txtEmail);
 		// TODO: verificar email
 		
@@ -65,15 +65,15 @@ public class VentanaCrearCuenta extends JPanel {
 		txtContrasenia.setToolTipText("Contraseña");
 		txtContrasenia.setText("Contraseña");
 		txtContrasenia.setColumns(10);
-		txtContrasenia.setBounds(215, 163, 126, 24);
+		txtContrasenia.setBounds(237, 251, 126, 24);
 		add(txtContrasenia);
 		
 		btnCancelarCrearCuenta = new JButton("Cancelar");
-		btnCancelarCrearCuenta.setBounds(157, 223, 97, 21);
+		btnCancelarCrearCuenta.setBounds(367, 299, 97, 21);
 		add(btnCancelarCrearCuenta);
 		
 		btnConfirmarCrearCuenta = new JButton("Confirmar");
-		btnConfirmarCrearCuenta.setBounds(307, 223, 97, 21);
+		btnConfirmarCrearCuenta.setBounds(135, 299, 97, 21);
 		add(btnConfirmarCrearCuenta);
 	}
 	

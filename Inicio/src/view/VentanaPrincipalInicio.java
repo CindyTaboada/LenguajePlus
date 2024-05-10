@@ -14,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import java.awt.event.ContainerAdapter;
 import java.awt.event.ContainerEvent;
+import java.awt.Color;
 
 public class VentanaPrincipalInicio extends JPanel {
 	
@@ -54,6 +55,7 @@ public class VentanaPrincipalInicio extends JPanel {
 		scrpContenedor.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
 		panel = new JPanel();
+		panel.setBackground(SystemColor.controlHighlight);
 		scrpContenedor.setViewportView(panel);
 		panel.setLayout(null);
 		
