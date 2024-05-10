@@ -8,13 +8,9 @@ import control.VentanaPrincipalInicioListener;
 
 import javax.swing.JButton;
 
-import java.awt.BorderLayout;
 import java.awt.SystemColor;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
-import java.awt.event.ContainerAdapter;
-import java.awt.event.ContainerEvent;
-import java.awt.Color;
 
 public class VentanaPrincipalInicio extends JPanel {
 	
@@ -34,14 +30,9 @@ public class VentanaPrincipalInicio extends JPanel {
 	
 	public VentanaPrincipalInicio() {
 		
-		crearComponentes();
-		
-		configurarFrame();
+		setSize(ANCHO, ALTO);
 		
 		configurarComponentes();
-	}
-	
-	private void crearComponentes() {
 	}
 	
 	private void configurarComponentes() {
@@ -94,12 +85,6 @@ public class VentanaPrincipalInicio extends JPanel {
 		panel.add(btnIniciarSesion);
 	}
 	
-	private void configurarFrame() {
-//		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//		setLocationRelativeTo(null);
-		setSize(ANCHO, ALTO);
-		
-	}
 	public void setListener(VentanaPrincipalInicioListener l) {
 		btnCrearCuenta.addActionListener(l);
 		btnIniciarSesion.addActionListener(l);

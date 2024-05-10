@@ -14,17 +14,17 @@ public class Inicio {
 			
 			@Override
 			public void run() {
-				VentanaPrincipalInicio vppal = new VentanaPrincipalInicio();
+				VentanaPrincipalInicio vpi = new VentanaPrincipalInicio();
 				VentanaCrearCuenta vcc = new VentanaCrearCuenta();
 				VentanaRanking vr = new VentanaRanking();
 				
-				VentanaPrincipalInicioListener l = new VentanaPrincipalInicioListener(vppal, vcc, vr);
+				VentanaPrincipalInicioListener l = new VentanaPrincipalInicioListener(vpi, vcc, vr);
 				
-				vppal.setListener(l);
+				vpi.setListener(l);
 				vcc.setListener(l);
 				vr.setListener(l);
 				
-				vppal.hacerVisible();
+				vpi.hacerVisible();
 			}
 		});
 
