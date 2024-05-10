@@ -40,18 +40,21 @@ public class VentanaCrearCuenta extends JPanel {
 		add(lblTituloCrearCuenta);
 		
 		txtNombreYApellido = new JTextField();
+		txtNombreYApellido.setToolTipText("Nombre y Apellido");
 		txtNombreYApellido.setText("Nombre y Apellido");
 		txtNombreYApellido.setBounds(215, 61, 126, 24);
 		add(txtNombreYApellido);
 		txtNombreYApellido.setColumns(10);
 		
 		txtEdad = new JTextField();
+		txtEdad.setToolTipText("Edad");
 		txtEdad.setText("Edad");
 		txtEdad.setColumns(10);
 		txtEdad.setBounds(215, 95, 126, 24);
 		add(txtEdad);
 		
 		txtEmail = new JTextField();
+		txtEmail.setToolTipText("Email");
 		txtEmail.setText("Email");
 		txtEmail.setColumns(10);
 		txtEmail.setBounds(215, 129, 126, 24);
@@ -59,6 +62,7 @@ public class VentanaCrearCuenta extends JPanel {
 		// TODO: verificar email
 		
 		txtContrasenia = new JTextField();
+		txtContrasenia.setToolTipText("Contraseña");
 		txtContrasenia.setText("Contraseña");
 		txtContrasenia.setColumns(10);
 		txtContrasenia.setBounds(215, 163, 126, 24);

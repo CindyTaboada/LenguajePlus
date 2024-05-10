@@ -66,12 +66,14 @@ public class VentanaPrincipalInicio extends JPanel {
 		panel.add(lblLogin);
 		
 		txtEmail = new JTextField();
+		txtEmail.setToolTipText("Email");
 		txtEmail.setBounds(234, 135, 130, 19);
 		panel.add(txtEmail);
 		txtEmail.setText("Email");
 		txtEmail.setColumns(10);
 		
 		txtContrasenia = new JTextField();
+		txtContrasenia.setToolTipText("Contraseña");
 		txtContrasenia.setBounds(234, 178, 130, 19);
 		panel.add(txtContrasenia);
 		txtContrasenia.setText("Contraseña");
