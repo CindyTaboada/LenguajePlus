@@ -1,15 +1,15 @@
-/**
- * 
- */
 package view;
 
 import javax.swing.JFrame;
 
-import dam.control.VListenerNiveles;
+import control.VentanaPrincipalInicioListener;
 
-import javax.swing.Icon;
 import javax.swing.JButton;
+
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Toolkit;
+
 import javax.swing.JLabel;
 
 
@@ -17,17 +17,14 @@ public class VPrincipalLenguaje extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private static final int ANCHO = 500;
-	private static final int ALTO = 400;
+	private static final int ANCHO = 600;
+	private static final int ALTO = 350;
 
 	public static final String ACT_CMN_BTN_JAVA = "JAVA";
 	public static final String ACT_CMN_BTN_GITHUB = "GITHUB";
 	public static final String ACT_CMN_BTN_SQL = "SQL";
 	public static final String ACT_CMN_BTN_LINUX = "LINUX";
 	public static final String ACT_CMN_BTN_HMTL = "HTML";
-	
-	
-	
 	
 	private JButton btnJava;
 	private JButton btnGithub;
@@ -49,10 +46,12 @@ public class VPrincipalLenguaje extends JFrame {
 	
 
 	private void configurarFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// ventana de cierre para window o mac
-		setLocationRelativeTo(null); // localización de la ventan
-		setSize(ANCHO, ALTO);// tamaño a la ventana
-		setResizable(true);
+		
+		setSize(ANCHO, ALTO);
+		
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
+		
 	}
 
 
@@ -61,50 +60,70 @@ public class VPrincipalLenguaje extends JFrame {
 		
 		btnJava = new JButton(ACT_CMN_BTN_JAVA);
 		btnJava.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnJava.setBounds(42, 119, 144, 47);
+		btnJava.setBounds(38, 112, 144, 47);
 		getContentPane().add(btnJava);
 		
 		btnHtml = new JButton(ACT_CMN_BTN_LINUX);
 		btnHtml.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnHtml.setBounds(302, 119, 144, 47);
+		btnHtml.setBounds(402, 112, 144, 47);
 		getContentPane().add(btnHtml);
 		
 		btnGithub = new JButton(ACT_CMN_BTN_GITHUB);
 		btnGithub.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnGithub.setBounds(42, 270, 144, 47);
+		btnGithub.setBounds(38, 244, 144, 47);
 		getContentPane().add(btnGithub);
 		
 		btnJavaScript = new JButton( ACT_CMN_BTN_HMTL);
-		btnJavaScript.setFont(new Font("Sylfaen", Font.BOLD, 13));
-		btnJavaScript.setBounds(302, 271, 144, 47);
+		btnJavaScript.setFont(new Font("Sylfaen", Font.BOLD, 18));
+		btnJavaScript.setBounds(402, 244, 144, 47);
 		getContentPane().add(btnJavaScript);
 		
 		btnSql = new JButton(ACT_CMN_BTN_SQL);
 		btnSql.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnSql.setBounds(170, 197, 144, 47);
+		btnSql.setBounds(220, 178, 144, 47);
 		getContentPane().add(btnSql);
 		
 		lblEligeLen = new JLabel("Elige un lenguaje de programación para empezar a aprender");
 		lblEligeLen.setFont(new Font("Sylfaen", Font.BOLD, 16));
-		lblEligeLen.setBounds(22, 23, 454, 74);
+		lblEligeLen.setBounds(65, 19, 454, 74);
 		getContentPane().add(lblEligeLen);
 		
 		
 	}
 	
-	public void setListener(VListenerNiveles listener) {
-		btnJava.addActionListener(null);
-		btnHtml.addActionListener(null);
-		btnJavaScript.addActionListener(null);
-		btnGithub.addActionListener(null);
-		btnSql.addActionListener(null);
+	public void setListener(VentanaPrincipalInicioListener listener) {
+		btnJava.addActionListener(listener);
+		btnHtml.addActionListener(listener);
+		btnJavaScript.addActionListener(listener);
+		btnGithub.addActionListener(listener);
+		btnSql.addActionListener(listener);
 
-	
-	
 	}
 	
-	public void hacerVisible() {
-		setVisible(true);
+
+	public JButton getBtnJava() {
+		return btnJava;
 	}
+
+
+	public JButton getBtnGithub() {
+		return btnGithub;
+	}
+
+
+	public JButton getBtnSql() {
+		return btnSql;
+	}
+
+
+	public JButton getBtnHtml() {
+		return btnHtml;
+	}
+
+
+	public JButton getBtnJavaScript() {
+		return btnJavaScript;
+	}
+	
 }
 

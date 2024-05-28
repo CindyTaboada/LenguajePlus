@@ -3,8 +3,8 @@ package main;
 import java.awt.EventQueue;
 
 import control.VentanaPrincipalInicioListener;
-import dam.main.VPrincipalDificultad;
-import dam.main.VPrincipalLenguaje;
+import view.VPrincipalDificultad;
+import view.VPrincipalLenguaje;
 import view.VentanaCrearCuenta;
 import view.VentanaPrincipalInicio;
 import view.VentanaRanking;
@@ -19,19 +19,18 @@ public class Inicio {
 				VentanaPrincipalInicio vpi = new VentanaPrincipalInicio();
 				VentanaCrearCuenta vcc = new VentanaCrearCuenta();
 				VentanaRanking vr = new VentanaRanking();
-				VPrincipalLenguaje vn = new VPrincipalLenguaje();
-				VPrincipalDificultad vd = new VPrincipalDificultad();
+				VPrincipalLenguaje vpl = new VPrincipalLenguaje();
+				VPrincipalDificultad vpd = new VPrincipalDificultad();
 				
-				VentanaPrincipalInicioListener l = new VentanaPrincipalInicioListener(vpi, vcc, vr,vn,vd);
+				VentanaPrincipalInicioListener l = new VentanaPrincipalInicioListener(vpi, vcc, vr, vpl, vpd);
 				
 				vpi.setListener(l);
 				vcc.setListener(l);
 				vr.setListener(l);
-				vn.setListener(l);
-				vd.setListener(l);
+				vpl.setListener(l);
+				vpd.setListener(l);
 				
 				vpi.setVisible(true);
-				vn.hacerVisible();
 			}
 		});
 
