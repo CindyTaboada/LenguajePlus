@@ -1,22 +1,29 @@
 package view;
 
+import java.awt.Dimension;
 import java.awt.Font;
 
-import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import dam.control.VListenerNiveles;
+import control.VentanaPrincipalInicioListener;
+
 import java.awt.SystemColor;
+import java.awt.Toolkit;
+import javax.swing.SwingConstants;
 
 public class VPrincipalDificultad extends JFrame {
 	
-	private static final int ANCHO = 500;
-	private static final int ALTO = 400;
+	private static final long serialVersionUID = 1L;
+	
+	private static final int ANCHO = 600;
+	private static final int ALTO = 350;
+	
 	public static final String ACT_CMN_BTN_BEGINNER = "Nivel Principante";
 	public static final String ACT_CMN_BTN_INTERMEDIATE = "Nivel Intermedio";
-	public static final String ACT_CMN_BTN_ADVANCE = "Nivel Avansado";
+	public static final String ACT_CMN_BTN_ADVANCE = "Nivel Avanzado";
+	
 	private JButton btnAdvance;
 	private JLabel lblEligeDif;
 	private JButton btnIntermediate;
@@ -36,11 +43,13 @@ public class VPrincipalDificultad extends JFrame {
 	}
 	
 
-	private void configurarFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// ventana de cierre para window o mac
-		setLocationRelativeTo(null); // localización de la ventan
-		setSize(ANCHO, ALTO);// tamaño a la ventana
-		setResizable(true);
+    private void configurarFrame() {
+		
+		setSize(ANCHO, ALTO);
+		
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
+		
 	}
 
 
@@ -49,38 +58,45 @@ public class VPrincipalDificultad extends JFrame {
 		
 		btnBeginner = new JButton(ACT_CMN_BTN_BEGINNER);
 		btnBeginner.setFont(new Font("Sylfaen", Font.PLAIN, 16));
-		btnBeginner.setBounds(135, 96, 170, 57);
+		btnBeginner.setBounds(207, 91, 170, 57);
 		getContentPane().add(btnBeginner);
 		
 		btnIntermediate = new JButton(ACT_CMN_BTN_INTERMEDIATE);
 		btnIntermediate.setFont(new Font("Sylfaen", Font.PLAIN, 16));
-		btnIntermediate.setBounds(135, 182, 170, 57);
+		btnIntermediate.setBounds(207, 164, 170, 57);
 		getContentPane().add(btnIntermediate);
 		
 		btnAdvance = new JButton(ACT_CMN_BTN_ADVANCE);
 		btnAdvance.setFont(new Font("Sylfaen", Font.PLAIN, 16));
-		btnAdvance.setBounds(135, 262, 170, 57);
+		btnAdvance.setBounds(207, 237, 170, 57);
 		getContentPane().add(btnAdvance);
 		
 		lblEligeDif = new JLabel("Elige una dificultad para empezar");
+		lblEligeDif.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEligeDif.setFont(new Font("Sylfaen", Font.PLAIN, 16));
-		lblEligeDif.setBounds(101, 27, 235, 59);
+		lblEligeDif.setBounds(174, 16, 235, 59);
 		getContentPane().add(lblEligeDif);
-		
 		
 	}
 	
-	public void setListener(VListenerNiveles listener) {
+	public void setListener(VentanaPrincipalInicioListener listener) {
 		btnBeginner.addActionListener(listener);
 		btnIntermediate.addActionListener(listener);
 		btnAdvance.addActionListener(listener);
-		
-	
 	
 	}
 	
-	public void hacerVisible() {
-		setVisible(true);
+	public JButton getBtnBeginner() {
+		return btnBeginner;
 	}
+	
+	public JButton getBtnIntermediate() {
+		return btnIntermediate;
+	}
+	
+	public JButton getBtnAvance() {
+		return btnAdvance;
+	}
+	
 }
 
