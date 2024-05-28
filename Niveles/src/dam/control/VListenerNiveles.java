@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import dam.view.VPrincipalDificultad;
-import dam.view.VPrincipalLenguaje;
+import view.VPrincipalDificultad;
+import view.VPrincipalLenguaje;
 
 public class VListenerNiveles implements ActionListener {
     

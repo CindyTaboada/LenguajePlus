@@ -1,7 +1,7 @@
 /**
  * 
  */
-package dam.view;
+package view;
 
 import javax.swing.JFrame;
 

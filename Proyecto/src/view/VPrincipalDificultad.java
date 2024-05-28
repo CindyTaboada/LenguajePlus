@@ -1,4 +1,4 @@
-package dam.view;
+package view;
 
 import java.awt.Font;
 
