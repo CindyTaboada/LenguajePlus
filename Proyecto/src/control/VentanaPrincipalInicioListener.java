@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import model.FuenteDatos;
-import view.VPrincipalDificultad;
-import view.VPrincipalLenguaje;
+import view.VentanaDificultad;
+import view.VentanaLenguajeOpciones;
 import view.VentanaCrearCuenta;
 import view.VentanaPrincipalInicio;
 import view.VentanaRanking;
@@ -17,11 +17,11 @@ public class VentanaPrincipalInicioListener implements ActionListener {
 	VentanaPrincipalInicio vpi;
 	VentanaCrearCuenta vcc;
 	VentanaRanking vr;
-	VPrincipalLenguaje vpl;
-	VPrincipalDificultad vpd;
+	VentanaLenguajeOpciones vpl;
+	VentanaDificultad vpd;
 	private FuenteDatos datos;
 
-	public VentanaPrincipalInicioListener(VentanaPrincipalInicio vpi, VentanaCrearCuenta vcc, VentanaRanking vr, VPrincipalLenguaje vpl, VPrincipalDificultad vpd) {
+	public VentanaPrincipalInicioListener(VentanaPrincipalInicio vpi, VentanaCrearCuenta vcc, VentanaRanking vr, VentanaLenguajeOpciones vpl, VentanaDificultad vpd) {
 		this.vpi = vpi;
 		this.vcc = vcc;
 		this.vr = vr;

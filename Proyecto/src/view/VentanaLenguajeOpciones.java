@@ -13,7 +13,7 @@ import java.awt.Toolkit;
 import javax.swing.JLabel;
 
 
-public class VPrincipalLenguaje extends JFrame {
+public class VentanaLenguajeOpciones extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -33,7 +33,7 @@ public class VPrincipalLenguaje extends JFrame {
 	private JButton btnJavaScript;
 	private JLabel lblEligeLen;
 
-	public VPrincipalLenguaje() {
+	public VentanaLenguajeOpciones() {
 		
 		setTitle("LengaujePlus");
 		
