@@ -17,7 +17,6 @@ import java.awt.Toolkit;
 import javax.swing.JScrollPane;
 import javax.swing.JPasswordField;
 import java.awt.Color;
-import javax.swing.ImageIcon;
 
 public class VentanaPrincipalInicio extends JFrame {
 	
@@ -25,16 +24,20 @@ public class VentanaPrincipalInicio extends JFrame {
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
 	
+	public static final String ACT_CMN_BTN_CREAR_CUENTA = "Crear Cuenta";
+	public static final String ACT_CMN_BTN_INICIAR_SESION = "Iniciar sesión";
 	
 	private JTextField txtEmail;
+	private JLabel lblO;
 	private JLabel lblLogin;
+	private JLabel lblImagen;
 	private JButton btnCrearCuenta;
 	private JButton btnIniciarSesion;
 	private JScrollPane scrpContenedor;
 	private JPasswordField pwdContrasenia;
 	
 	public VentanaPrincipalInicio() {
-		setTitle("LenjuagePlus");
+		getContentPane().setBackground(new Color(51, 255, 102));
 		
 		crearComponentes();
 		
@@ -61,6 +64,10 @@ public class VentanaPrincipalInicio extends JFrame {
 		setBackground(SystemColor.controlHighlight);
 		getContentPane().setLayout(null);
 		
+		lblImagen = new JLabel("Imagen");
+		lblImagen.setBounds(268, 13, 50, 50);
+		getContentPane().add(lblImagen);
+		
 		lblLogin = new JLabel("LOGIN");
 		lblLogin.setBounds(228, 76, 130, 13);
 		getContentPane().add(lblLogin);
@@ -71,18 +78,16 @@ public class VentanaPrincipalInicio extends JFrame {
 		getContentPane().add(txtEmail);
 		txtEmail.setColumns(10);
 		
-
-		btnCrearCuenta = new JButton("Crear Cuenta");
-		btnCrearCuenta.setBounds(243, 251, 115, 21);
-
-		btnCrearCuenta = new JButton();
-		btnCrearCuenta.setText("Crear Cuenta");
+		lblO = new JLabel("O");
+		lblO.setBounds(286, 252, 14, 13);
+		getContentPane().add(lblO);
+		
+		btnCrearCuenta = new JButton(ACT_CMN_BTN_CREAR_CUENTA);
 		btnCrearCuenta.setBounds(235, 278, 115, 21);
-
 		getContentPane().add(btnCrearCuenta);
 		
-		btnIniciarSesion = new JButton("Iniciar sesión");
-		btnIniciarSesion.setBounds(243, 218, 115, 21);
+		btnIniciarSesion = new JButton(ACT_CMN_BTN_INICIAR_SESION);
+		btnIniciarSesion.setBounds(235, 218, 115, 21);
 		getContentPane().add(btnIniciarSesion);
 		
 		pwdContrasenia = new JPasswordField();
@@ -98,15 +103,6 @@ public class VentanaPrincipalInicio extends JFrame {
 		JLabel lblContrasenia = new JLabel("Contraseña");
 		lblContrasenia.setBounds(228, 160, 72, 13);
 		getContentPane().add(lblContrasenia);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setIcon(new ImageIcon(VentanaPrincipalInicio.class.getResource("/view/Images/Webp.net-resizeimage.png")));
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setBounds(228, 5, 78, 63);
-		getContentPane().add(btnNewButton);
-		
-		getContentPane().setBackground(new Color(51, 255, 102));
-		
 	}
 	
 	public void setListener(VentanaPrincipalInicioListener l) {

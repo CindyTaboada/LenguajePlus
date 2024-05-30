@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -15,7 +16,7 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
 import javax.swing.JPasswordField;
-public class VentanaCrearCuenta extends JPanel {
+public class VentanaCrearCuenta extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -34,6 +35,7 @@ public class VentanaCrearCuenta extends JPanel {
 	private JPasswordField pwdConstrasenia;
 	
 	public VentanaCrearCuenta() {
+		getContentPane().setBackground(new Color(51, 255, 102));
 		
 		configurarFrame();
 		
@@ -51,60 +53,60 @@ public class VentanaCrearCuenta extends JPanel {
 	
 	private void configurarComponentes() {
 		setBackground(new Color(51, 255, 102));
-		setLayout(null);
+		getContentPane().setLayout(null);
 		setSize(ANCHO, ALTO);
 		
 		lblTituloCrearCuenta = new JLabel("Crear Cuenta");
 		lblTituloCrearCuenta.setBackground(new Color(192, 192, 192));
 		lblTituloCrearCuenta.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblTituloCrearCuenta.setBounds(230, 7, 126, 59);
-		add(lblTituloCrearCuenta);
+		getContentPane().add(lblTituloCrearCuenta);
 		
 		txtNombreYApellido = new JTextField();
 		txtNombreYApellido.setToolTipText("Nombre y Apellido");
 		txtNombreYApellido.setBounds(230, 93, 126, 24);
-		add(txtNombreYApellido);
+		getContentPane().add(txtNombreYApellido);
 		txtNombreYApellido.setColumns(10);
 		
 		txtEdad = new JTextField();
 		txtEdad.setToolTipText("Edad");
 		txtEdad.setColumns(10);
 		txtEdad.setBounds(230, 144, 126, 24);
-		add(txtEdad);
+		getContentPane().add(txtEdad);
 		
 		txtEmail = new JTextField();
 		txtEmail.setToolTipText("Email");
 		txtEmail.setColumns(10);
 		txtEmail.setBounds(230, 195, 126, 24);
-		add(txtEmail);
+		getContentPane().add(txtEmail);
 		
 		btnCancelarCrearCuenta = new JButton("Cancelar");
 		btnCancelarCrearCuenta.setBounds(357, 275, 97, 21);
-		add(btnCancelarCrearCuenta);
+		getContentPane().add(btnCancelarCrearCuenta);
 		
 		btnConfirmarCrearCuenta = new JButton("Confirmar");
 		btnConfirmarCrearCuenta.setBounds(130, 275, 97, 21);
-		add(btnConfirmarCrearCuenta);
+		getContentPane().add(btnConfirmarCrearCuenta);
 		
 		lblNombreYApellido = new JLabel("Nombre Y Apellido");
 		lblNombreYApellido.setBounds(230, 73, 126, 13);
-		add(lblNombreYApellido);
+		getContentPane().add(lblNombreYApellido);
 		
 		lblEdad = new JLabel("Edad");
 		lblEdad.setBounds(230, 124, 45, 13);
-		add(lblEdad);
+		getContentPane().add(lblEdad);
 		
 		lblEmail = new JLabel("Email");
 		lblEmail.setBounds(230, 175, 45, 13);
-		add(lblEmail);
+		getContentPane().add(lblEmail);
 		
 		lblContrasenia = new JLabel("Contraseña");
 		lblContrasenia.setBounds(230, 226, 94, 13);
-		add(lblContrasenia);
+		getContentPane().add(lblContrasenia);
 		
 		pwdConstrasenia = new JPasswordField();
 		pwdConstrasenia.setBounds(230, 246, 126, 22);
-		add(pwdConstrasenia);
+		getContentPane().add(pwdConstrasenia);
 	}
 	
 	public void setListener(VentanaPrincipalInicioListener l) {
