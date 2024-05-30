@@ -24,7 +24,8 @@ public class VentanaPrincipalInicio extends JFrame {
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
 	
-	public static final String ACT_CMN_BTN_CREARCUENTA = "Crear Cuenta";
+	public static final String ACT_CMN_BTN_CREAR_CUENTA = "Crear Cuenta";
+	public static final String ACT_CMN_BTN_INICIAR_SESION = "Iniciar sesión";
 	
 	private JTextField txtEmail;
 	private JLabel lblO;
@@ -81,11 +82,11 @@ public class VentanaPrincipalInicio extends JFrame {
 		lblO.setBounds(286, 252, 14, 13);
 		getContentPane().add(lblO);
 		
-		btnCrearCuenta = new JButton(ACT_CMN_BTN_CREARCUENTA);
+		btnCrearCuenta = new JButton(ACT_CMN_BTN_CREAR_CUENTA);
 		btnCrearCuenta.setBounds(235, 278, 115, 21);
 		getContentPane().add(btnCrearCuenta);
 		
-		btnIniciarSesion = new JButton("Iniciar sesión");
+		btnIniciarSesion = new JButton(ACT_CMN_BTN_INICIAR_SESION);
 		btnIniciarSesion.setBounds(235, 218, 115, 21);
 		getContentPane().add(btnIniciarSesion);
 		
