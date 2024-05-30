@@ -16,10 +16,11 @@ public class Inicio {
 			
 			@Override
 			public void run() {
+				
 				VentanaPrincipalInicio vpi = new VentanaPrincipalInicio();
 				VentanaCrearCuenta vcc = new VentanaCrearCuenta();
 				VentanaRanking vr = new VentanaRanking();
-				VPrincipalLenguaje vpl = new VPrincipalLenguaje();
+			    VPrincipalLenguaje vpl = new VPrincipalLenguaje();
 				VPrincipalDificultad vpd = new VPrincipalDificultad();
 				
 				VentanaPrincipalInicioListener l = new VentanaPrincipalInicioListener(vpi, vcc, vr, vpl, vpd);
@@ -31,6 +32,7 @@ public class Inicio {
 				vpd.setListener(l);
 				
 				vpi.setVisible(true);
+				
 			}
 		});
 

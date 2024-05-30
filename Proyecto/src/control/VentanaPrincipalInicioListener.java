@@ -19,6 +19,7 @@ public class VentanaPrincipalInicioListener implements ActionListener {
 	VentanaRanking vr;
 	VPrincipalLenguaje vpl;
 	VPrincipalDificultad vpd;
+	//Deberíamos cambiar esto por la persistencia.
 	private FuenteDatos datos;
 	
 	private String lenguaje = "";
