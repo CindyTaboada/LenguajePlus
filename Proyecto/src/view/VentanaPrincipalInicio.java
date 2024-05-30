@@ -27,7 +27,6 @@ public class VentanaPrincipalInicio extends JFrame {
 	
 	
 	private JTextField txtEmail;
-	private JLabel lblO;
 	private JLabel lblLogin;
 	private JButton btnCrearCuenta;
 	private JButton btnIniciarSesion;
@@ -72,17 +71,18 @@ public class VentanaPrincipalInicio extends JFrame {
 		getContentPane().add(txtEmail);
 		txtEmail.setColumns(10);
 		
-		lblO = new JLabel("O");
-		lblO.setBounds(286, 252, 14, 13);
-		getContentPane().add(lblO);
-		
+
+		btnCrearCuenta = new JButton("Crear Cuenta");
+		btnCrearCuenta.setBounds(243, 251, 115, 21);
+
 		btnCrearCuenta = new JButton();
 		btnCrearCuenta.setText("Crear Cuenta");
 		btnCrearCuenta.setBounds(235, 278, 115, 21);
+
 		getContentPane().add(btnCrearCuenta);
 		
 		btnIniciarSesion = new JButton("Iniciar sesión");
-		btnIniciarSesion.setBounds(235, 218, 115, 21);
+		btnIniciarSesion.setBounds(243, 218, 115, 21);
 		getContentPane().add(btnIniciarSesion);
 		
 		pwdContrasenia = new JPasswordField();

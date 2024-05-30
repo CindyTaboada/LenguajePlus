@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class LenguajePersistencia {
+	static final String NOM_TABLA = "LENGUAJE";
 	static final String ID_CLASE= "ID_CLASE";
 	static final String LECCION= "LECCION";
 	static final String PREGUNTAS= "PREGUNTAS";

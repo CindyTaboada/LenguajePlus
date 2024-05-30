@@ -1,7 +1,7 @@
 package model;
 
 public class Usuario {
-	
+	private int idUsuario;
 	private String nombreUsuario;
 	private String apellido1;
 	private String apellido2;
@@ -9,8 +9,9 @@ public class Usuario {
 	private String email;
 	private String contrasenia;
 
-	public Usuario(String nombreUsuario, String apellido1, String apellido2, int edad, String email, String contrasenia) {
+	public Usuario(int idUsuario,String nombreUsuario, String apellido1, String apellido2, int edad, String email, String contrasenia) {
 		super();
+		this.idUsuario=idUsuario;
 		this.nombreUsuario = nombreUsuario;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -19,6 +20,9 @@ public class Usuario {
 		this.contrasenia = contrasenia;
 	}
 
+	public int getIdUsuario() {
+		return idUsuario;
+	}
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
@@ -56,5 +60,7 @@ public class Usuario {
 		}
 		return contraseniaCensurada;
 	}
+
+
 	
 }

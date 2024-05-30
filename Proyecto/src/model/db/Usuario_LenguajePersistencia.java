@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Usuario_LenguajePersistencia {
-	
+	static final String NOM_TABLA = "USUARIO_LENGUAJE";
 	static final String ID_LENGUAJE= "ID_LENGUAJE";
 	static final String ID_USUARIO= "ID_USUARIO";
 	
