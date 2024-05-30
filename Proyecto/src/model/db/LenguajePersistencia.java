@@ -7,11 +7,8 @@ import java.util.ArrayList;
 
 public class LenguajePersistencia {
 	static final String NOM_TABLA = "LENGUAJE";
-	static final String ID_CLASE= "ID_CLASE";
-	static final String LECCION= "LECCION";
-	static final String PREGUNTAS= "PREGUNTAS";
-	static final String RESPUESTAS= "RESPUESTAS";
 	static final String ID_LENGUAJE= "ID_LENGUAJE";
+	static final String TIPO_LENGUAJE= "TIPO_LENGUAJE";
 	
 
 private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
@@ -20,6 +17,37 @@ private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
 		acceso= new AccesoBBDD();
 	}
 	
-	
-	
+	public int insertarLenguaje(int idLenguaje, String tipoLenguaje) {
+		String query = "INSERT INTO " + NOM_TABLA 
+				+ " (" + ID_LENGUAJE + ", " + TIPO_LENGUAJE + ") VALUES (?, ?)";
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int res = 0;
+
+		try {
+			con = acceso.getConexion();
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, idLenguaje);
+			pstmt.setString(2, tipoLenguaje);
+
+			res = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return res;
+	}
+
 }
