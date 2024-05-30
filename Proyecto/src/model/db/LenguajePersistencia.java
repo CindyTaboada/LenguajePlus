@@ -52,7 +52,8 @@ public class LenguajePersistencia {
 	public int actualizarLenguaje(int idLenguaje, String tipoLenguaje) {
 		int res = 0;
 
-		String query = "UPDATE " + NOM_TABLA + " SET " + TIPO_LENGUAJE + " = ? WHERE " + ID_LENGUAJE + " = ?";
+		String query = "UPDATE " + NOM_TABLA + " SET " + TIPO_LENGUAJE 
+				+ " WHERE " + ID_LENGUAJE + " = ?";
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -82,5 +83,38 @@ public class LenguajePersistencia {
 
 		return res;
 	}
+	
+	public int eliminarLenguaje(int idLenguaje) {
 
+		String query = "DELETE FROM " + NOM_TABLA 
+				+ " WHERE " + ID_LENGUAJE + " = ?";
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int res = 0;
+
+		try {
+			con = acceso.getConexion();
+
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, idLenguaje);
+
+			res = pstmt.executeUpdate();
+
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return res;
+	}
 }
