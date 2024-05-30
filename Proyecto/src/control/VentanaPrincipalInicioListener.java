@@ -20,6 +20,8 @@ public class VentanaPrincipalInicioListener implements ActionListener {
 	VPrincipalLenguaje vpl;
 	VPrincipalDificultad vpd;
 	private FuenteDatos datos;
+	
+	private String lenguaje = "";
 
 	public VentanaPrincipalInicioListener(VentanaPrincipalInicio vpi, VentanaCrearCuenta vcc, VentanaRanking vr, VPrincipalLenguaje vpl, VPrincipalDificultad vpd) {
 		this.vpi = vpi;
@@ -38,8 +40,8 @@ public class VentanaPrincipalInicioListener implements ActionListener {
 				vpi.setVisible(false);
 				vpl.setVisible(true);
 			} else if (e.getSource().equals(vpi.getBtnCrearCuenta())) {
-				vpi.setVisible(false);
-				vcc.setVisible(true);
+				//VentanaPrincipalInicio.ACT_CMN_BTN_CREARCUENTA
+				vpi.cargarPanel(vcc);
 			} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
 				vpi.setVisible(true);
 				vcc.setVisible(false);
@@ -47,21 +49,26 @@ public class VentanaPrincipalInicioListener implements ActionListener {
 				//esto tambien es temporal
 				vpi.setVisible(true);
 				vcc.setVisible(false);
-			} else if (e.getSource().equals(vpl.getBtnGithub())) {
+			} else if (e.getSource().equals(vpl.getBtnGit())) {
 				vpl.setVisible(false);
 				vpd.setVisible(true);
-			} else if (e.getSource().equals(vpl.getBtnHtml())) {
+				lenguaje = "Git";
+			} else if (e.getSource().equals(vpl.getBtnLinux())) {
 				vpl.setVisible(false);
 				vpd.setVisible(true);
+				lenguaje = "Linux";
 			} else if (e.getSource().equals(vpl.getBtnJava())) {
 				vpl.setVisible(false);
 				vpd.setVisible(true);
+				lenguaje = "Java";
 			} else if (e.getSource().equals(vpl.getBtnJavaScript())) {
 				vpl.setVisible(false);
 				vpd.setVisible(true);
+				lenguaje = "JavaScript";
 			} else if (e.getSource().equals(vpl.getBtnSql())) {
 				vpl.setVisible(false);
 				vpd.setVisible(true);
+				lenguaje = "Sql";
 			} else if (e.getSource().equals(vpd.getBtnBeginner())) {
 				
 			} else if (e.getSource().equals(vpd.getBtnIntermediate())) {

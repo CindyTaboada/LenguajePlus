@@ -15,15 +15,16 @@ import java.awt.SystemColor;
 import java.awt.Toolkit;
 
 import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.WindowConstants;
 import javax.swing.JPasswordField;
+import java.awt.Color;
 
 public class VentanaPrincipalInicio extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
+	
+	public static final String ACT_CMN_BTN_CREARCUENTA = "Crear Cuenta";
 	
 	private JTextField txtEmail;
 	private JLabel lblO;
@@ -35,6 +36,7 @@ public class VentanaPrincipalInicio extends JFrame {
 	private JPasswordField pwdContrasenia;
 	
 	public VentanaPrincipalInicio() {
+		getContentPane().setBackground(new Color(51, 255, 102));
 		
 		crearComponentes();
 		
@@ -49,7 +51,6 @@ public class VentanaPrincipalInicio extends JFrame {
 	}
 	
 	private void configurarFrame() {
-		
 		setSize(ANCHO, ALTO);
 		
 		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -80,7 +81,7 @@ public class VentanaPrincipalInicio extends JFrame {
 		lblO.setBounds(286, 252, 14, 13);
 		getContentPane().add(lblO);
 		
-		btnCrearCuenta = new JButton("Crear Cuenta");
+		btnCrearCuenta = new JButton(ACT_CMN_BTN_CREARCUENTA);
 		btnCrearCuenta.setBounds(235, 278, 115, 21);
 		getContentPane().add(btnCrearCuenta);
 		
@@ -103,8 +104,6 @@ public class VentanaPrincipalInicio extends JFrame {
 		getContentPane().add(lblContrasenia);
 	}
 	
-	
-	
 	public void setListener(VentanaPrincipalInicioListener l) {
 		btnCrearCuenta.addActionListener(l);
 		btnIniciarSesion.addActionListener(l);
@@ -120,10 +119,5 @@ public class VentanaPrincipalInicio extends JFrame {
 
 	public void cargarPanel(JPanel panel) {
 		scrpContenedor.setViewportView(panel);
-	}
-
-	public void cargarPanel(VentanaCrearCuenta vcc) {
-		scrpContenedor.setViewportView(vcc);
-		
 	}
 }

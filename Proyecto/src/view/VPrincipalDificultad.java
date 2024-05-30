@@ -12,6 +12,7 @@ import control.VentanaPrincipalInicioListener;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
 import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class VPrincipalDificultad extends JFrame {
 	
@@ -31,7 +32,7 @@ public class VPrincipalDificultad extends JFrame {
 	
     public VPrincipalDificultad() {
     	getContentPane().setForeground(SystemColor.controlHighlight);
-    	getContentPane().setBackground(SystemColor.activeCaption);
+    	getContentPane().setBackground(new Color(51, 255, 102));
 		
 		setTitle("LengaujePlus");
 		
