@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class NivelPersistencia {
+	static final String NOM_TABLA = "NIVEL";
 	static final String ID_NIVEL= "ID_NIVEL";
 	static final String TIPO_NIVEL= "TIPO_NIVEL";
 	static final String PREMIO= "PREMIO";

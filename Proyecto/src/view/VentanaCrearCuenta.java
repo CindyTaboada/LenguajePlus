@@ -1,6 +1,5 @@
 package view;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -122,6 +121,9 @@ public class VentanaCrearCuenta extends JFrame {
 	public JButton getBtnConfirmarCrearCuenta() {
 		return btnConfirmarCrearCuenta;
 	}
+	
+	
+	
 }
 
 
