@@ -66,4 +66,46 @@ private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
 			return res;
 		}
 	
+	public int modificarUsuario(Usuario usuario) {
+		int res = 0;
+		
+		String update = "UPDATE " + NOM_TABLA + " SET " + NOMBRE_USUARIO  + " = ?, " 
+														+ APELLIDO1 + " = ?, "
+														+ APELLIDO2 + " = ? "
+														+ EDAD + " = ? "
+														+ CONTRASENIA + " = ? "
+														
+						+ " WHERE " + EMAIL + " = ?";
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = acceso.getConexion();
+			
+			pstmt = con.prepareStatement(update);
+			pstmt.setString(2, usuario.getNombreUsuario());
+			pstmt.setString(3, usuario.getApellido1());
+			pstmt.setString(4, usuario.getApellido2());
+			pstmt.setInt(5, usuario.getEdad());
+			pstmt.setString(7, usuario.getContrasenia());
+			
+			res = pstmt.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (con != null) con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return res;
+	}
+	
+
 }
