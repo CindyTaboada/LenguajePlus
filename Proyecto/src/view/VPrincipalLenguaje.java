@@ -12,6 +12,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JLabel;
 import java.awt.Color;
+import javax.swing.SwingConstants;
 
 
 public class VPrincipalLenguaje extends JFrame {
@@ -33,6 +34,7 @@ public class VPrincipalLenguaje extends JFrame {
 	private JButton btnLinux;
 	private JButton btnJavaScript;
 	private JLabel lblEligeLen;
+	private JButton btnAtras;
 
 	public VPrincipalLenguaje() {
 		getContentPane().setBackground(new Color(51, 255, 102));
@@ -62,33 +64,39 @@ public class VPrincipalLenguaje extends JFrame {
 		
 		btnJava = new JButton(ACT_CMN_BTN_JAVA);
 		btnJava.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnJava.setBounds(38, 112, 144, 47);
+		btnJava.setBounds(27, 136, 159, 47);
 		getContentPane().add(btnJava);
 		
 		btnLinux = new JButton(ACT_CMN_BTN_LINUX);
 		btnLinux.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnLinux.setBounds(402, 112, 144, 47);
+		btnLinux.setBounds(399, 136, 159, 47);
 		getContentPane().add(btnLinux);
 		
 		btnGit = new JButton(ACT_CMN_BTN_GIT);
 		btnGit.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnGit.setBounds(38, 244, 144, 47);
+		btnGit.setBounds(27, 254, 159, 47);
 		getContentPane().add(btnGit);
 		
 		btnJavaScript = new JButton( ACT_CMN_BTN_JAVASCRIPT);
 		btnJavaScript.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnJavaScript.setBounds(402, 244, 144, 47);
+		btnJavaScript.setBounds(399, 254, 159, 47);
 		getContentPane().add(btnJavaScript);
 		
 		btnSql = new JButton(ACT_CMN_BTN_SQL);
 		btnSql.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnSql.setBounds(220, 178, 144, 47);
+		btnSql.setBounds(213, 195, 159, 47);
 		getContentPane().add(btnSql);
 		
 		lblEligeLen = new JLabel("Elige un lenguaje de programación para empezar a aprender");
 		lblEligeLen.setFont(new Font("Sylfaen", Font.BOLD, 16));
-		lblEligeLen.setBounds(65, 19, 454, 74);
+		lblEligeLen.setBounds(65, 50, 454, 74);
 		getContentPane().add(lblEligeLen);
+		
+		btnAtras = new JButton("Atrás");
+		btnAtras.setVerticalAlignment(SwingConstants.TOP);
+		btnAtras.setFont(new Font("Sylfaen", Font.BOLD, 18));
+		btnAtras.setBounds(10, 12, 83, 26);
+		getContentPane().add(btnAtras);
 		
 		
 	}
@@ -99,6 +107,7 @@ public class VPrincipalLenguaje extends JFrame {
 		btnJavaScript.addActionListener(listener);
 		btnGit.addActionListener(listener);
 		btnSql.addActionListener(listener);
+		btnAtras.addActionListener(listener);
 
 	}
 	
@@ -127,5 +136,8 @@ public class VPrincipalLenguaje extends JFrame {
 		return btnJavaScript;
 	}
 	
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
 }
 

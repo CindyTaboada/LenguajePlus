@@ -29,6 +29,7 @@ public class VPrincipalDificultad extends JFrame {
 	private JLabel lblEligeDif;
 	private JButton btnIntermediate;
 	private JButton btnBeginner;
+	private JButton btnAtras;
 	
     public VPrincipalDificultad() {
     	getContentPane().setForeground(SystemColor.controlHighlight);
@@ -59,24 +60,30 @@ public class VPrincipalDificultad extends JFrame {
 		
 		btnBeginner = new JButton(ACT_CMN_BTN_BEGINNER);
 		btnBeginner.setFont(new Font("Sylfaen", Font.PLAIN, 16));
-		btnBeginner.setBounds(207, 91, 170, 57);
+		btnBeginner.setBounds(208, 89, 170, 59);
 		getContentPane().add(btnBeginner);
 		
 		btnIntermediate = new JButton(ACT_CMN_BTN_INTERMEDIATE);
 		btnIntermediate.setFont(new Font("Sylfaen", Font.PLAIN, 16));
-		btnIntermediate.setBounds(207, 164, 170, 57);
+		btnIntermediate.setBounds(208, 162, 170, 59);
 		getContentPane().add(btnIntermediate);
 		
 		btnAdvance = new JButton(ACT_CMN_BTN_ADVANCE);
 		btnAdvance.setFont(new Font("Sylfaen", Font.PLAIN, 16));
-		btnAdvance.setBounds(207, 237, 170, 57);
+		btnAdvance.setBounds(208, 235, 170, 59);
 		getContentPane().add(btnAdvance);
 		
-		lblEligeDif = new JLabel("Elige una dificultad para empezar");
+		lblEligeDif = new JLabel("Elige una dificultad para empezar ");
 		lblEligeDif.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEligeDif.setFont(new Font("Sylfaen", Font.PLAIN, 16));
-		lblEligeDif.setBounds(174, 16, 235, 59);
+		lblEligeDif.setBounds(120, 16, 346, 59);
 		getContentPane().add(lblEligeDif);
+		
+		btnAtras = new JButton("Atrás");
+		btnAtras.setVerticalAlignment(SwingConstants.TOP);
+		btnAtras.setFont(new Font("Sylfaen", Font.BOLD, 18));
+		btnAtras.setBounds(10, 12, 83, 26);
+		getContentPane().add(btnAtras);
 		
 	}
 	
@@ -84,6 +91,7 @@ public class VPrincipalDificultad extends JFrame {
 		btnBeginner.addActionListener(listener);
 		btnIntermediate.addActionListener(listener);
 		btnAdvance.addActionListener(listener);
+		btnAtras.addActionListener(listener);
 	
 	}
 	
@@ -99,5 +107,8 @@ public class VPrincipalDificultad extends JFrame {
 		return btnAdvance;
 	}
 	
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
 }
 
