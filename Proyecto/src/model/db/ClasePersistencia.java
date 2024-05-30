@@ -60,7 +60,38 @@ public class ClasePersistencia {
 		return res;
 	}
 	
-
+    public int eliminarClase(int idClase) {
+    	int res = 0;
+    	
+        String query = "DELETE FROM " + NOM_TABLA 
+        				+ " WHERE " + ID_CLASE + " = ?";
+        
+         
+        Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = acceso.getConexion();
+			
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, idClase);
+			
+			res = pstmt.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (con != null) con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return res;
+	}
 
     
 
