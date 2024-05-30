@@ -1,4 +1,4 @@
-package db;
+package model.db;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+
+import org.sqlite.SQLiteConfig;
 
 
 
@@ -47,8 +49,16 @@ public class AccesoBBDD {
 
 	public Connection getConexion() throws ClassNotFoundException, SQLException {
 		Class.forName(driver);
-		Connection con = DriverManager.getConnection(url);
+		
+		//Claves foráneas conexión
+		SQLiteConfig config = new SQLiteConfig();
+		config.enforceForeignKeys(true);
+		
+		Connection con = DriverManager.getConnection(url,config.toProperties());
+		
 		return con;
 	}
+	
+	
 
 }
