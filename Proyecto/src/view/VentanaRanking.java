@@ -23,6 +23,7 @@ public class VentanaRanking extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
+	public static final String CMB_SIN_FILTRO = null;
 
 	private JLabel lblRanking;
 	private JButton btnSalirRanking;

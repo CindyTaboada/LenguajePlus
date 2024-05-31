@@ -36,6 +36,8 @@ private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
 		
 		try {
 			con = acceso.getConexion();
+			pstmt=con.prepareStatement(query);
+			
 	        pstmt.setInt(1, idNivel);
 	        pstmt.setString(2, tipoNivel);
 	        pstmt.setString(3, premio);
