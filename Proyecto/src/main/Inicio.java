@@ -23,6 +23,8 @@ public class Inicio {
 			    VPrincipalLenguaje vpl = new VPrincipalLenguaje();
 				VPrincipalDificultad vpd = new VPrincipalDificultad();
 				
+				
+				
 				VentanaPrincipalInicioListener l = new VentanaPrincipalInicioListener(vpi, vcc, vr, vpl, vpd);
 				
 				vpi.setListener(l);

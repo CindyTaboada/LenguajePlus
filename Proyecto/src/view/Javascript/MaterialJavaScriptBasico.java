@@ -1,4 +1,4 @@
-package view.javascript;
+package view.Javascript;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
