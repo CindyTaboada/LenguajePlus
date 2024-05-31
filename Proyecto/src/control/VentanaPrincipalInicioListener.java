@@ -19,6 +19,36 @@ import view.VPrincipalLenguaje;
 import view.VentanaCrearCuenta;
 import view.VentanaPrincipalInicio;
 import view.VentanaRanking;
+import view.Java.MaterialJavaAvanzado;
+import view.Java.MaterialJavaBasico;
+import view.Java.MaterialJavaIntermedio;
+import view.Java.PreguntasJavaAvanzado;
+import view.Java.PreguntasJavaBasico;
+import view.Java.PreguntasJavaIntermedio;
+import view.git.MaterialGitAvanzado;
+import view.git.MaterialGitBasico;
+import view.git.MaterialGitIntermedio;
+import view.git.PreguntasGitAvanzado;
+import view.git.PreguntasGitBasico;
+import view.git.PreguntasGitIntermedio;
+import view.javascript.MaterialJavaScriptAvanzado;
+import view.javascript.MaterialJavaScriptBasico;
+import view.javascript.MaterialJavaScriptIntermedio;
+import view.javascript.PreguntasJavaScriptAvanzado;
+import view.javascript.PreguntasJavaScriptBasico;
+import view.javascript.PreguntasJavaScriptIntermedio;
+import view.linux.MaterialLinuxAvanzado;
+import view.linux.MaterialLinuxBasico;
+import view.linux.MaterialLinuxIntermedio;
+import view.linux.PreguntasLinuxAvanzado;
+import view.linux.PreguntasLinuxBasico;
+import view.linux.PreguntasLinuxIntermedio;
+import view.sql.MaterialSqlAvanzado;
+import view.sql.MaterialSqlBasico;
+import view.sql.MaterialSqlIntermedio;
+import view.sql.PreguntasSqlAvanzado;
+import view.sql.PreguntasSqlBasico;
+import view.sql.PreguntasSqlIntermedio;
 
 public class VentanaPrincipalInicioListener implements ActionListener {
 	
@@ -35,6 +65,41 @@ public class VentanaPrincipalInicioListener implements ActionListener {
 	private RankingPersistencia rp;
 	private Usuario_LenguajePersistencia ulp;
 	private UsuarioPersistencia up;
+	//Clases Git
+	private MaterialGitAvanzado mga;
+	private MaterialGitBasico mgb;
+	private MaterialGitIntermedio mgi;
+	private PreguntasGitAvanzado pga;
+	private PreguntasGitBasico pgb;
+	private PreguntasGitIntermedio pgi;
+	//Clases Java
+	private MaterialJavaAvanzado mja;
+	private MaterialJavaBasico mjb;
+	private MaterialJavaIntermedio mji;
+	private PreguntasJavaAvanzado pja;
+	private PreguntasJavaBasico pjb;
+	private PreguntasJavaIntermedio pji;
+	//Clases JavaScript
+	private MaterialJavaScriptAvanzado mjsa;
+	private MaterialJavaScriptBasico mjsb;
+	private MaterialJavaScriptIntermedio mjsi;
+	private PreguntasJavaScriptAvanzado pjsa;
+	private PreguntasJavaScriptBasico pjsb;
+	private PreguntasJavaScriptIntermedio pjsi;
+	//Clases Linux
+	private MaterialLinuxAvanzado mla;
+	private MaterialLinuxBasico mlb;
+	private MaterialLinuxIntermedio mli;
+	private PreguntasLinuxAvanzado pla;
+	private PreguntasLinuxBasico plb;
+	private PreguntasLinuxIntermedio pli;
+	//Clases Sql
+	private MaterialSqlAvanzado msa;
+	private MaterialSqlBasico msb;
+	private MaterialSqlIntermedio msi;
+	private PreguntasSqlAvanzado psa;
+	private PreguntasSqlBasico psb;
+	private PreguntasSqlIntermedio psi;
 	
 	String lenguaje = "";
 
@@ -62,6 +127,7 @@ public class VentanaPrincipalInicioListener implements ActionListener {
 				vpi.setVisible(false);
 				vpl.setVisible(true);
 			} else if (e.getSource().equals(vpi.getBtnCrearCuenta())) {
+				//No conseguimos que funcione con JPanels a si que hicimos todo JFrames
 				//VentanaPrincipalInicio.ACT_CMN_BTN_CREARCUENTA
 				//vpi.cargarPanel(vcc);
 				vpi.setVisible(false);

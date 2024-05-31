@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PruguntasLinuxntermedio extends JPanel {
+public class PreguntasLinuxIntermedio extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -22,7 +22,7 @@ public class PruguntasLinuxntermedio extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PruguntasLinuxntermedio() {
+	public PreguntasLinuxIntermedio() {
 		setSize(ANCHO, ALTO);
 
 		initComponentes();

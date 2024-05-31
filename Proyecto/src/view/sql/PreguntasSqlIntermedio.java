@@ -1,4 +1,4 @@
-package view.git;
+package view.sql;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PruguntasGitIntermedio extends JPanel {
+public class PreguntasSqlIntermedio extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -22,7 +22,7 @@ public class PruguntasGitIntermedio extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PruguntasGitIntermedio() {
+	public PreguntasSqlIntermedio() {
 		setSize(ANCHO, ALTO);
 
 		initComponentes();

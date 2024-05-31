@@ -1,4 +1,4 @@
-package view.javascript;
+package view.Java;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PruguntasJavaScriptIntermedio extends JPanel {
+public class PreguntasJavaIntermedio extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -22,7 +22,7 @@ public class PruguntasJavaScriptIntermedio extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PruguntasJavaScriptIntermedio() {
+	public PreguntasJavaIntermedio() {
 		setSize(ANCHO, ALTO);
 
 		initComponentes();
