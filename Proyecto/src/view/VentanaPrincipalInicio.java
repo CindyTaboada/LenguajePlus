@@ -18,6 +18,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JPasswordField;
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class VentanaPrincipalInicio extends JFrame {
 	
@@ -97,11 +99,12 @@ public class VentanaPrincipalInicio extends JFrame {
 		lblContrasenia.setBounds(228, 178, 72, 13);
 		getContentPane().add(lblContrasenia);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setIcon(new ImageIcon(VentanaPrincipalInicio.class.getResource("/view/Images/Webp.net-resizeimage.png")));
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setBounds(254, 14, 78, 63);
-		getContentPane().add(btnNewButton);
+		JButton btnIcon = new JButton("New button");
+		btnIcon.setIcon(new ImageIcon(VentanaPrincipalInicio.class.getResource("/view/Images/LogoPic2.png")));
+		btnIcon.setBackground(new Color(0, 255, 0));
+		btnIcon.setForeground(new Color(255, 255, 255));
+		btnIcon.setBounds(228, 0, 86, 76);
+		getContentPane().add(btnIcon);
 		
 		getContentPane().setBackground(new Color(51, 255, 102));
 		
