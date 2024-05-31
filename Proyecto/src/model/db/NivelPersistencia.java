@@ -130,7 +130,37 @@ private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
 		
 		return res;
     }
-
+    public int eliminarNivel(int idNivel) {
+        String query = "DELETE FROM " + NOM_TABLA 
+        		+ " WHERE " + ID_NIVEL + " = ?";
+        
+        
+        Connection con = null;
+		PreparedStatement pstmt = null;
+		int res = 0;
+		
+		try {
+			con = acceso.getConexion();
+			
+			pstmt = con.prepareStatement(query);
+		    pstmt.setInt(1, idNivel);
+			
+			res = pstmt.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (con != null) con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return res;
+    }
     
     
 }
