@@ -94,4 +94,43 @@ private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
 		}
         return listaNiveles;
     }
+    
+    public int actualizarNivel(int idNivel, String tipoNivel, String premio, int idClase) {
+        String query = "UPDATE " + NOM_TABLA + " SET " + TIPO_NIVEL 
+								        		 		+ PREMIO+ " = ?, " 
+								        		 		+ ID_CLASE + " = ?, "
+					+ " WHERE "+ ID_NIVEL + " = ?";
+        
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int res = 0;
+        
+        try {
+			con = acceso.getConexion();
+			pstmt = con.prepareStatement(query);
+			
+	        pstmt.setString(1, tipoNivel);
+	        pstmt.setString(2, premio);
+	        pstmt.setInt(3, idClase);
+	        pstmt.setInt(4, idNivel);
+	
+			res = pstmt.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (con != null) con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return res;
+    }
+
+    
+    
 }
