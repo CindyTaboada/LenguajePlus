@@ -14,7 +14,7 @@ public class Clase_NivelPersistencia {
     static final String ID_NIVEL = "ID_NIVEL";
 	
 
-private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
+private AccesoBBDD acceso; //Encargado de establecer la conexion con la BBDD
 	
 	public Clase_NivelPersistencia() {
 		acceso= new AccesoBBDD();

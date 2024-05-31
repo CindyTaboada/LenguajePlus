@@ -9,6 +9,14 @@ public class ClaseNivel {
 		this.idClase = idClase;
 		this.idNivel = idNivel;
 	}
+
+	public int getIdClase() {
+		return idClase;
+	}
+
+	public int getIdNivel() {
+		return idNivel;
+	}
     
     
 

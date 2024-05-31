@@ -25,9 +25,7 @@ private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
 	
     public int insertarNivel(int idNivel, String tipoNivel, String premio, int idClase) {
         String query = "INSERT INTO " + NOM_TABLA 
-        		+ " (" + ID_NIVEL + ", " + TIPO_NIVEL
-        		+ ", " + PREMIO + ", " + ID_CLASE 
-        		+ ") VALUES (?, ?, ?, ?)";
+        		+ " (" + ID_NIVEL + ", " + TIPO_NIVEL+ ", " + PREMIO + ", " + ID_CLASE + ") VALUES (?, ?, ?, ?)";
 
         
         Connection con = null;
