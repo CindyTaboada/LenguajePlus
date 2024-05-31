@@ -23,7 +23,7 @@ public class Inicio {
 			    VPrincipalLenguaje vpl = new VPrincipalLenguaje();
 				VPrincipalDificultad vpd = new VPrincipalDificultad();
 				
-				//El view de git, java, javascript, sql
+				
 				
 				VentanaPrincipalInicioListener l = new VentanaPrincipalInicioListener(vpi, vcc, vr, vpl, vpd);
 				
