@@ -1,6 +1,7 @@
 package model;
 
 public class Nivel {
+	
 	private int idNivel;
     private String tipoNivel;
     private String premio;
