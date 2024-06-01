@@ -4,21 +4,27 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
 
 import control.VentanaListener;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import java.awt.Font;
 
 public class VDefinicionesGitBasico extends JFrame {
 	
+	public static final String ACT_CMN_BTN_PULSAR = "Pulsa Aqui";
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
+	private static final Icon ACT_CMN_BTN_VOLVER = null;
 	private JButton btnPrueba;
+	private JButton btnAtras;
 	
 	public VDefinicionesGitBasico() {
 		getContentPane().setBackground(new Color(51, 255, 102));
@@ -52,10 +58,23 @@ public class VDefinicionesGitBasico extends JFrame {
 				+ "</p>\r\n        <p style=\"color: #333333; line-height: 1.6;\">\r\n            <strong>El propósito de un mensaje de commit</strong> es describir los cambios realizados en un commit. Esto ayuda a otros desarrolladores (y a ti mismo) a entender qué cambios se han hecho y por qué.\r\n        </p>\r\n        <p style=\"text-align: center;\">\r\n            <a href=\"https://git-scm.com/doc\" style=\"color: #007acc; text-decoration: none; font-weight: bold;\">Más información sobre Git</a>\r\n        </p>\r\n    </div>\r\n</body>\r\n</html>\r\n");
 		scrollPane.setColumnHeaderView(txtpnGitBasico);
 		
-		btnPrueba = new JButton("<html>Listo para una Prueba?<br>Plusar Aqui</html>");
+		btnPrueba = new JButton(ACT_CMN_BTN_PULSAR);
 		btnPrueba.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnPrueba.setBounds(247, 381, 229, 39);
+		btnPrueba.setBounds(289, 404, 162, 39);
 		getContentPane().add(btnPrueba);
+		
+		JLabel lblNewLabel = new JLabel("¿Listo para una prueba?");
+		lblNewLabel.setBackground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		lblNewLabel.setBounds(289, 365, 187, 29);
+		getContentPane().add(lblNewLabel);
+		
+		btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
+		btnAtras.setText("Volver");
+		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
+		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnAtras.setBounds(621, 404, 90, 39);
+		getContentPane().add(btnAtras);
 	}
 	
 	private void configurarFrame() {

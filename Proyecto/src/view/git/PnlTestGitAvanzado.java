@@ -26,6 +26,7 @@ public class PnlTestGitAvanzado extends JPanel {
 	private JButton btnComprobar;
 
 	public PnlTestGitAvanzado() {
+		
 		setBackground(new Color(51, 255, 102));
 		setSize(ANCHO, ALTO);
 		setLayout(null);

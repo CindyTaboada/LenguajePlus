@@ -62,5 +62,6 @@ public class PnlTestSqlBasico extends JPanel {
 		btnComprobar.setBounds(208, 281, 164, 42);
 		add(btnComprobar);
 	}
+	
 
 }
