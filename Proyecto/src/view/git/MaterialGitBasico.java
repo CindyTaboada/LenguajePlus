@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JTextPane;
+
+import control.VentanaPrincipalListener;
+
 import javax.swing.JButton;
 import java.awt.Font;
 
@@ -61,5 +64,13 @@ public class MaterialGitBasico extends JFrame {
 		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
 		
+	}
+	
+	public JButton getBtnPrueba() {
+		return btnPrueba;
+	}
+
+	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+		btnPrueba.addActionListener(Listener);
 	}
 }

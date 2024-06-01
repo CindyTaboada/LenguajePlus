@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
+import control.VentanaPrincipalListener;
+
 public class MaterialGitIntermedio extends JFrame {
 
 	private static final int ANCHO = 800;
@@ -56,4 +58,13 @@ public class MaterialGitIntermedio extends JFrame {
 		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
 
 	}
+	
+	public JButton getBtnPrueba() {
+		return btnPrueba;
+	}
+
+	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+		btnPrueba.addActionListener(Listener);
+	}
+	
 }

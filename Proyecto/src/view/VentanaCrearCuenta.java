@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-import control.VentanaPrincipalInicioListener;
+import control.VentanaPrincipalListener;
 
 import java.awt.Font;
 import java.awt.SystemColor;
@@ -109,7 +109,7 @@ public class VentanaCrearCuenta extends JFrame {
 		getContentPane().add(pwdConstrasenia);
 	}
 	
-	public void setListener(VentanaPrincipalInicioListener l) {
+	public void setListener(VentanaPrincipalListener l) {
 		btnCancelarCrearCuenta.addActionListener(l);
 		btnConfirmarCrearCuenta.addActionListener(l);	
 	}

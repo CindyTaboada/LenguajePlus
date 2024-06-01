@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
+import control.VentanaPrincipalListener;
+
 public class MaterialGitAvanzado extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -55,5 +57,13 @@ public class MaterialGitAvanzado extends JFrame {
 		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
 
+	}
+	
+	public JButton getBtnPrueba() {
+		return btnPrueba;
+	}
+
+	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+		btnPrueba.addActionListener(Listener);
 	}
 }

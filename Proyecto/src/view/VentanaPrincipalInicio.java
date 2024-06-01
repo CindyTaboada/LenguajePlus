@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import control.VentanaPrincipalInicioListener;
+import control.VentanaPrincipalListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -117,7 +117,7 @@ public class VentanaPrincipalInicio extends JFrame {
 		
 	}
 	
-	public void setListener(VentanaPrincipalInicioListener l) {
+	public void setListener(VentanaPrincipalListener l) {
 		btnCrearCuenta.addActionListener(l);
 		btnIniciarSesion.addActionListener(l);
 	}

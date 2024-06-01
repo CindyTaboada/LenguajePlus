@@ -4,12 +4,15 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
+
+import control.VentanaPrincipalListener;
+
+import java.awt.event.ActionListener;
 
 public class MaterialJavaAvanzado extends JFrame {
 
@@ -17,6 +20,7 @@ public class MaterialJavaAvanzado extends JFrame {
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
+	private PreguntasJavaAvanzado preguntasFrame;
 
 	public MaterialJavaAvanzado() {
 		getContentPane().setEnabled(false);
@@ -50,6 +54,16 @@ public class MaterialJavaAvanzado extends JFrame {
 		btnPrueba.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnPrueba.setBounds(247, 381, 229, 39);
 		getContentPane().add(btnPrueba);
+		
+		preguntasFrame = new PreguntasJavaAvanzado();
+	}
+
+	public JButton getBtnPrueba() {
+		return btnPrueba;
+	}
+
+	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+		btnPrueba.addActionListener(Listener);
 	}
 
 	private void configurarFrame() {
@@ -60,3 +74,4 @@ public class MaterialJavaAvanzado extends JFrame {
 
 	}
 }
+

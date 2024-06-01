@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import control.VentanaPrincipalInicioListener;
+import control.VentanaPrincipalListener;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -89,7 +89,7 @@ public class VentanaRanking extends JFrame {
 		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
 	}
 
-	public void setListener(VentanaPrincipalInicioListener l) {
+	public void setListener(VentanaPrincipalListener l) {
 		btnSalirRanking.addActionListener(l);
 	}
 	

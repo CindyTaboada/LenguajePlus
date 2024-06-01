@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import control.VentanaPrincipalInicioListener;
+import control.VentanaPrincipalListener;
 
 import java.awt.SystemColor;
 import java.awt.Toolkit;
@@ -87,7 +87,7 @@ public class VPrincipalDificultad extends JFrame {
 		
 	}
 	
-	public void setListener(VentanaPrincipalInicioListener listener) {
+	public void setListener(VentanaPrincipalListener listener) {
 		btnBeginner.addActionListener(listener);
 		btnIntermediate.addActionListener(listener);
 		btnAdvance.addActionListener(listener);

@@ -11,6 +11,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
 
+import control.VentanaPrincipalListener;
+
 public class MaterialSqlAvanzado extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -58,5 +60,13 @@ public class MaterialSqlAvanzado extends JFrame {
 		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
 
+	}
+	
+	public JButton getBtnPrueba() {
+		return btnPrueba;
+	}
+
+	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+		btnPrueba.addActionListener(Listener);
 	}
 }
