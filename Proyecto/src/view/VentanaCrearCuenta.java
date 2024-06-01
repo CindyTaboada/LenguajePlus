@@ -14,7 +14,6 @@ import javax.swing.SwingConstants;
 import control.VentanaPrincipalListener;
 
 import java.awt.Font;
-import java.awt.SystemColor;
 import java.awt.Toolkit;
 import javax.swing.JPasswordField;
 import javax.swing.JSpinner;
