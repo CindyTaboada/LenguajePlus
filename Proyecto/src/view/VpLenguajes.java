@@ -15,7 +15,7 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 
 
-public class VPrincipalLenguaje extends JFrame {
+public class VpLenguajes extends JFrame {
 	
 	public static final String ACT_CMN_BTN_VOLVER = "Volver";
 
@@ -38,7 +38,7 @@ public class VPrincipalLenguaje extends JFrame {
 	private JLabel lblEligeLen;
 	private JButton btnAtras;
 
-	public VPrincipalLenguaje() {
+	public VpLenguajes() {
 		
 		
 		setTitle("LenguajePlus");

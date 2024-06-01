@@ -14,7 +14,7 @@ import java.awt.Toolkit;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 
-public class VPrincipalNivel extends JFrame {
+public class VpNiveles extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -32,7 +32,7 @@ public class VPrincipalNivel extends JFrame {
 	private JButton btnBeginner;
 	private JButton btnAtras;
 	
-    public VPrincipalNivel() {
+    public VpNiveles() {
 
 		
 		setTitle("LenguajePlus");

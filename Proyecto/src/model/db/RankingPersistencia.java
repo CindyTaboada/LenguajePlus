@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import model.Ranking;
 import model.Usuario;
-import view.VentanaRanking;
+import view.VpRanking;
 
 public class RankingPersistencia {
 	static final String NOM_TABLA = "RANKING";

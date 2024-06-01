@@ -3,11 +3,11 @@ package main;
 import java.awt.EventQueue;
 
 import control.VentanaPrincipalListener;
-import view.VPrincipalNivel;
-import view.VPrincipalLenguaje;
-import view.VentanaCrearCuenta;
-import view.VentanaPrincipalInicio;
-import view.VentanaRanking;
+import view.VpNiveles;
+import view.VpLenguajes;
+import view.VpCrearCuenta;
+import view.VpInicio;
+import view.VpRanking;
 
 public class Inicio {
 
@@ -17,11 +17,11 @@ public class Inicio {
 			@Override
 			public void run() {
 				
-				VentanaPrincipalInicio vpi = new VentanaPrincipalInicio();
-				VentanaCrearCuenta vcc = new VentanaCrearCuenta();
-				VentanaRanking vr = new VentanaRanking();
-			    VPrincipalLenguaje vpl = new VPrincipalLenguaje();
-				VPrincipalNivel vpd = new VPrincipalNivel();
+				VpInicio vpi = new VpInicio();
+				VpCrearCuenta vcc = new VpCrearCuenta();
+				VpRanking vr = new VpRanking();
+			    VpLenguajes vpl = new VpLenguajes();
+				VpNiveles vpd = new VpNiveles();
 				
 				
 				

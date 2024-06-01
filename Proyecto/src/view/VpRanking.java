@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
-public class VentanaRanking extends JFrame {
+public class VpRanking extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -38,7 +38,7 @@ public class VentanaRanking extends JFrame {
 	private JComboBox <String>comboBRanking;
 	private DefaultTableModel tModel;
 
-	public VentanaRanking() {
+	public VpRanking() {
 		getContentPane().setBackground(new Color(51, 255, 102));
 		
 		crearComponentes();

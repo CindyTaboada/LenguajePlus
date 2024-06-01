@@ -24,7 +24,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
-public class VentanaPrincipalInicio extends JFrame {
+public class VpInicio extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -40,7 +40,7 @@ public class VentanaPrincipalInicio extends JFrame {
 	private JPasswordField pwdContrasenia;
 	private JButton btnIcon;
 	
-	public VentanaPrincipalInicio() {
+	public VpInicio() {
 		setTitle("LenjuagePlus");
 		
 		crearComponentes();
@@ -111,7 +111,7 @@ public class VentanaPrincipalInicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnIcon.setIcon(new ImageIcon(VentanaPrincipalInicio.class.getResource("/view/Images/LogoPic2.png")));
+		btnIcon.setIcon(new ImageIcon(VpInicio.class.getResource("/view/Images/LogoPic2.png")));
 		btnIcon.setBackground(new Color(51, 255, 102));
 		btnIcon.setForeground(new Color(51, 255, 102));
 		btnIcon.setBounds(36, 36, 165, 154);
