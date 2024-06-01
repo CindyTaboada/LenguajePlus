@@ -131,11 +131,22 @@ public class VentanaRanking extends JFrame {
 
 	public void setListener(VentanaPrincipalListener l) {
 		btnSalirRanking.addActionListener(l);
+		btnConsultar.addActionListener(l);
 	}
 	
 	public JButton getBtnSalirRanking() {
 		return btnSalirRanking;
 	}
+
+	public JButton getBtnConsultar() {
+		return btnConsultar;
+	}
+
+	public JComboBox<String> getComboBRanking() {
+		return comboBRanking;
+	}
+	
+	
 	
 	
 }
