@@ -136,12 +136,15 @@ public class VpRanking extends JFrame {
         return btnConsultar;
     }
 
-    public JComboBox<String> getComboBoxOpciones() {
-        return comboBRanking;
-    }
 
     public DefaultTableModel getTableModel() {
         return tModel;
     }
+
+	public JComboBox<String> getComboBRanking() {
+		return comboBRanking;
+	}
+    
+    
 }
 
