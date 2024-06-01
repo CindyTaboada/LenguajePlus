@@ -133,4 +133,8 @@ public class VentanaPrincipalInicio extends JFrame {
 	public void cargarPanel(JPanel panel) {
 		scrpContenedor.setViewportView(panel);
 	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
 }

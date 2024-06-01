@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import control.VentanaPrincipalListener;
 
@@ -40,6 +41,7 @@ public class VentanaCrearCuenta extends JFrame {
 	private JLabel lblConfirmarContrasenia;
 	private JPasswordField pwdConfirmarContrasenia;
 	private JSpinner spnEdad;
+	private JButton btnAtras;
 	
 	public VentanaCrearCuenta() {
 		getContentPane().setBackground(new Color(51, 255, 102));
@@ -140,6 +142,12 @@ public class VentanaCrearCuenta extends JFrame {
 		btnCancelarCrearCuenta = new JButton("Cancelar");
 		btnCancelarCrearCuenta.setBounds(277, 271, 97, 33);
 		getContentPane().add(btnCancelarCrearCuenta);
+		
+		btnAtras = new JButton("Volver");
+		btnAtras.setVerticalAlignment(SwingConstants.TOP);
+		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnAtras.setBounds(511, 290, 83, 26);
+		getContentPane().add(btnAtras);
 	}
 	
 
@@ -152,10 +160,16 @@ public class VentanaCrearCuenta extends JFrame {
 		return btnConfirmarCrearCuenta;
 	}
 	
+	
+	
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
+
 	public void setListener(VentanaPrincipalListener l) {
 		btnCancelarCrearCuenta.addActionListener(l);
 		btnConfirmarCrearCuenta.addActionListener(l);	
-		//Todo: btnVolver 
+		btnAtras.addActionListener(l);
 	}
 	
 	

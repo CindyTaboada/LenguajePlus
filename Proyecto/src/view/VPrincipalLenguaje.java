@@ -37,9 +37,9 @@ public class VPrincipalLenguaje extends JFrame {
 	private JButton btnAtras;
 
 	public VPrincipalLenguaje() {
-		getContentPane().setBackground(new Color(51, 255, 102));
 		
-		setTitle("LengaujePlus");
+		
+		setTitle("LenguajePlus");
 		
 		configurarComponetes();
 		
@@ -50,6 +50,7 @@ public class VPrincipalLenguaje extends JFrame {
 	
 
 	private void configurarFrame() {
+		getContentPane().setBackground(new Color(51, 255, 102));
 		
 		setSize(ANCHO, ALTO);
 		
@@ -62,40 +63,41 @@ public class VPrincipalLenguaje extends JFrame {
 	private void configurarComponetes() {
 		getContentPane().setLayout(null);
 		
+		lblEligeLen = new JLabel("¿Con qué lenguaje de programación comienza tu aventura? ");
+		lblEligeLen.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEligeLen.setFont(new Font("Arial", Font.BOLD, 16));
+		lblEligeLen.setBounds(53, 6, 493, 53);
+		getContentPane().add(lblEligeLen);
+		
 		btnJava = new JButton(ACT_CMN_BTN_JAVA);
 		btnJava.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnJava.setBounds(27, 136, 159, 47);
+		btnJava.setBounds(38, 76, 159, 47);
 		getContentPane().add(btnJava);
 		
 		btnLinux = new JButton(ACT_CMN_BTN_LINUX);
 		btnLinux.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnLinux.setBounds(399, 136, 159, 47);
+		btnLinux.setBounds(399, 199, 159, 47);
 		getContentPane().add(btnLinux);
 		
 		btnGit = new JButton(ACT_CMN_BTN_GIT);
 		btnGit.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnGit.setBounds(27, 254, 159, 47);
+		btnGit.setBounds(38, 199, 159, 47);
 		getContentPane().add(btnGit);
 		
 		btnJavaScript = new JButton( ACT_CMN_BTN_JAVASCRIPT);
 		btnJavaScript.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnJavaScript.setBounds(399, 254, 159, 47);
+		btnJavaScript.setBounds(399, 76, 159, 47);
 		getContentPane().add(btnJavaScript);
 		
 		btnSql = new JButton(ACT_CMN_BTN_SQL);
 		btnSql.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnSql.setBounds(213, 195, 159, 47);
+		btnSql.setBounds(214, 137, 159, 47);
 		getContentPane().add(btnSql);
 		
-		lblEligeLen = new JLabel("Elige un lenguaje de programación para empezar a aprender");
-		lblEligeLen.setFont(new Font("Sylfaen", Font.BOLD, 16));
-		lblEligeLen.setBounds(65, 50, 454, 74);
-		getContentPane().add(lblEligeLen);
-		
-		btnAtras = new JButton("Atrás");
+		btnAtras = new JButton("Volver");
 		btnAtras.setVerticalAlignment(SwingConstants.TOP);
-		btnAtras.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnAtras.setBounds(10, 12, 83, 26);
+		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnAtras.setBounds(511, 290, 83, 26);
 		getContentPane().add(btnAtras);
 		
 		
@@ -139,5 +141,10 @@ public class VPrincipalLenguaje extends JFrame {
 	public JButton getBtnAtras() {
 		return btnAtras;
 	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
 }
 

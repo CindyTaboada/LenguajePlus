@@ -79,10 +79,10 @@ public class VPrincipalDificultad extends JFrame {
 		lblEligeDif.setBounds(120, 16, 346, 59);
 		getContentPane().add(lblEligeDif);
 		
-		btnAtras = new JButton("Atrás");
+		btnAtras = new JButton("Volver");
 		btnAtras.setVerticalAlignment(SwingConstants.TOP);
-		btnAtras.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnAtras.setBounds(10, 12, 83, 26);
+		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnAtras.setBounds(511, 290, 83, 26);
 		getContentPane().add(btnAtras);
 		
 	}
@@ -109,6 +109,10 @@ public class VPrincipalDificultad extends JFrame {
 	
 	public JButton getBtnAtras() {
 		return btnAtras;
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
 	}
 }
 
