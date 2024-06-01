@@ -24,6 +24,7 @@ public class VPrincipalNivel extends JFrame {
 	public static final String ACT_CMN_BTN_BEGINNER = "Nivel Principante";
 	public static final String ACT_CMN_BTN_INTERMEDIATE = "Nivel Intermedio";
 	public static final String ACT_CMN_BTN_ADVANCE = "Nivel Avanzado";
+	public static final String ACT_CMN_BTN_VOLVER = "Volver";
 	
 	private JButton btnAdvance;
 	private JLabel lblEligeDif;
@@ -32,10 +33,9 @@ public class VPrincipalNivel extends JFrame {
 	private JButton btnAtras;
 	
     public VPrincipalNivel() {
-    	getContentPane().setForeground(SystemColor.controlHighlight);
-    	getContentPane().setBackground(new Color(51, 255, 102));
+
 		
-		setTitle("LengaujePlus");
+		setTitle("LenguajePlus");
 		
 		configurarComponetes();
 		
@@ -46,6 +46,8 @@ public class VPrincipalNivel extends JFrame {
 	
 
     private void configurarFrame() {
+    	getContentPane().setForeground(SystemColor.controlHighlight);
+    	getContentPane().setBackground(new Color(51, 255, 102));
 		
 		setSize(ANCHO, ALTO);
 		
@@ -58,31 +60,34 @@ public class VPrincipalNivel extends JFrame {
 	private void configurarComponetes() {
 		getContentPane().setLayout(null);
 		
-		btnBeginner = new JButton(ACT_CMN_BTN_BEGINNER);
+		btnBeginner = new JButton("Principante");
 		btnBeginner.setFont(new Font("Sylfaen", Font.PLAIN, 16));
 		btnBeginner.setBounds(208, 89, 170, 59);
 		getContentPane().add(btnBeginner);
 		
-		btnIntermediate = new JButton(ACT_CMN_BTN_INTERMEDIATE);
+		btnIntermediate = new JButton("Intermedio");
+		btnIntermediate.setBackground(new Color(255, 255, 240));
 		btnIntermediate.setFont(new Font("Sylfaen", Font.PLAIN, 16));
 		btnIntermediate.setBounds(208, 162, 170, 59);
 		getContentPane().add(btnIntermediate);
 		
-		btnAdvance = new JButton(ACT_CMN_BTN_ADVANCE);
+		btnAdvance = new JButton("Avanzado");
 		btnAdvance.setFont(new Font("Sylfaen", Font.PLAIN, 16));
 		btnAdvance.setBounds(208, 235, 170, 59);
 		getContentPane().add(btnAdvance);
 		
-		lblEligeDif = new JLabel("Elige una dificultad para empezar ");
+		lblEligeDif = new JLabel("¡No marques tus límites, elígelos!");
+		lblEligeDif.setBackground(new Color(255, 255, 240));
 		lblEligeDif.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEligeDif.setFont(new Font("Sylfaen", Font.PLAIN, 16));
-		lblEligeDif.setBounds(120, 16, 346, 59);
+		lblEligeDif.setBounds(57, 18, 427, 59);
 		getContentPane().add(lblEligeDif);
 		
-		btnAtras = new JButton("Volver");
+		btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
+		btnAtras.setBackground(new Color(237, 243, 217));
 		btnAtras.setVerticalAlignment(SwingConstants.TOP);
 		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
-		btnAtras.setBounds(511, 290, 83, 26);
+		btnAtras.setBounds(495, 290, 99, 26);
 		getContentPane().add(btnAtras);
 		
 	}
