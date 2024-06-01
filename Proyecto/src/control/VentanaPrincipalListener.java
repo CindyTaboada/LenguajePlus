@@ -157,13 +157,14 @@ public class VentanaPrincipalListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() instanceof JButton) {
 			if (e.getSource().equals(vpi.getBtnIniciarSesion())) {
-				// esto es temporal
+				iniciarSesion();
 				vpi.setVisible(false);
 				vpl.setVisible(true);
 			} else if (e.getSource().equals(vpi.getBtnCrearCuenta())) {
 				// No conseguimos que funcione con JPanels a si que hicimos todo JFrames
 				// VentanaPrincipalInicio.ACT_CMN_BTN_CREARCUENTA
 				// vpi.cargarPanel(vcc);
+				crearCuenta();
 				vpi.setVisible(false);
 				vcc.setVisible(true);
 			} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
@@ -173,6 +174,7 @@ public class VentanaPrincipalListener implements ActionListener {
 				// esto tambien es temporal
 				vpi.setVisible(true);
 				vcc.setVisible(false);
+				
 			} else if (e.getSource().equals(vpl.getBtnAtras())) {
 				vpl.setVisible(false);
 				vpi.setVisible(true);
@@ -350,6 +352,16 @@ public class VentanaPrincipalListener implements ActionListener {
 	            }
 	        }
 		}
+	}
+
+	private void crearCuenta() {
+		
+		
+	}
+
+	private void iniciarSesion() {
+			
+		
 	}
 
 	private void openMaterialWindow(String level) {
