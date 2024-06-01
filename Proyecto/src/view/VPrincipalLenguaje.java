@@ -17,6 +17,8 @@ import javax.swing.SwingConstants;
 
 public class VPrincipalLenguaje extends JFrame {
 	
+	public static final String ACT_CMN_BTN_VOLVER = "Volver";
+
 	private static final long serialVersionUID = 1L;
 	
 	private static final int ANCHO = 600;
@@ -94,7 +96,7 @@ public class VPrincipalLenguaje extends JFrame {
 		btnSql.setBounds(214, 137, 159, 47);
 		getContentPane().add(btnSql);
 		
-		btnAtras = new JButton("Volver");
+		btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
 		btnAtras.setVerticalAlignment(SwingConstants.TOP);
 		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
 		btnAtras.setBounds(511, 290, 83, 26);

@@ -3,7 +3,7 @@ package main;
 import java.awt.EventQueue;
 
 import control.VentanaPrincipalListener;
-import view.VPrincipalDificultad;
+import view.VPrincipalNivel;
 import view.VPrincipalLenguaje;
 import view.VentanaCrearCuenta;
 import view.VentanaPrincipalInicio;
@@ -21,7 +21,7 @@ public class Inicio {
 				VentanaCrearCuenta vcc = new VentanaCrearCuenta();
 				VentanaRanking vr = new VentanaRanking();
 			    VPrincipalLenguaje vpl = new VPrincipalLenguaje();
-				VPrincipalDificultad vpd = new VPrincipalDificultad();
+				VPrincipalNivel vpd = new VPrincipalNivel();
 				
 				
 				

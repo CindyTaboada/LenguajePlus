@@ -14,7 +14,7 @@ import java.awt.Toolkit;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 
-public class VPrincipalDificultad extends JFrame {
+public class VPrincipalNivel extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -31,7 +31,7 @@ public class VPrincipalDificultad extends JFrame {
 	private JButton btnBeginner;
 	private JButton btnAtras;
 	
-    public VPrincipalDificultad() {
+    public VPrincipalNivel() {
     	getContentPane().setForeground(SystemColor.controlHighlight);
     	getContentPane().setBackground(new Color(51, 255, 102));
 		

@@ -28,7 +28,7 @@ import model.db.NivelPersistencia;
 import model.db.RankingPersistencia;
 import model.db.UsuarioPersistencia;
 import model.db.Usuario_LenguajePersistencia;
-import view.VPrincipalDificultad;
+import view.VPrincipalNivel;
 import view.VPrincipalLenguaje;
 import view.VentanaCrearCuenta;
 import view.VentanaPrincipalInicio;
@@ -70,7 +70,7 @@ public class VentanaPrincipalListener implements ActionListener {
 	private VentanaCrearCuenta vcc;
 	private VentanaRanking vr;
 	private VPrincipalLenguaje vpl;
-	private VPrincipalDificultad vpd;
+	private VPrincipalNivel vpd;
 	// private FuenteDatos datos;
 	private Clase_NivelPersistencia cnp;
 	private ClasePersistencia cp;
@@ -119,7 +119,7 @@ public class VentanaPrincipalListener implements ActionListener {
 	String lenguaje = "";
 
 	public VentanaPrincipalListener(VentanaPrincipalInicio vpi, VentanaCrearCuenta vcc, VentanaRanking vr,
-			VPrincipalLenguaje vpl, VPrincipalDificultad vpd) {
+			VPrincipalLenguaje vpl, VPrincipalNivel vpd) {
 		this.vpi = vpi;
 		this.vcc = vcc;
 		this.vr = vr;
