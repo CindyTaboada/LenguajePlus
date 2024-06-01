@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import control.VentanaPrincipalListener;
+import model.Ranking;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -14,9 +15,11 @@ import javax.swing.JFrame;
 
 import java.awt.SystemColor;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import java.awt.Color;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
@@ -33,6 +36,7 @@ public class VentanaRanking extends JFrame {
 	private JTable tblRanking;
 	private JButton btnConsultar;
 	private JComboBox <String>comboBRanking;
+	private DefaultTableModel tModel;
 
 	public VentanaRanking() {
 		getContentPane().setBackground(new Color(51, 255, 102));
@@ -75,8 +79,44 @@ public class VentanaRanking extends JFrame {
 		comboBRanking.setModel(new DefaultComboBoxModel<String>(new String[] {"TODAS", "TOP 10 N1", ""}));
 		comboBRanking.setBounds(75, 54, 59, 21);
 		getContentPane().add(comboBRanking);
+		
+		configurarTabla();
 	}
 	
+	private void configurarTabla() {
+		tModel = new DefaultTableModel() {
+			@Override
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		};
+		
+		tModel.addColumn("USUARIO");
+		tModel.addColumn("LENGUAJE");
+		
+		
+		tblRanking.setModel(tModel);
+		
+		tblRanking.getColumn("USUARIO").setPreferredWidth(80);
+		tblRanking.getColumn("LENGUAJE").setPreferredWidth(50);
+	
+		
+	}
+	
+	public void cargarTabla(ArrayList<Ranking> listaRanking) {
+		tModel.getDataVector().clear();
+		Object[] fila = new Object[5]; 
+		
+		for (Ranking ranking : listaRanking) {
+			fila[0] = ranking.getUsuario();
+			fila[1] = ranking.getLenjuages();
+			}
+			
+			tModel.addRow(fila);
+		}
+	
+	
+
 	private void crearComponentes() {
 		scrpContenedor = new JScrollPane();
 		getContentPane().add(scrpContenedor, BorderLayout.CENTER);
@@ -91,10 +131,23 @@ public class VentanaRanking extends JFrame {
 
 	public void setListener(VentanaPrincipalListener l) {
 		btnSalirRanking.addActionListener(l);
+		btnConsultar.addActionListener(l);
 	}
 	
 	public JButton getBtnSalirRanking() {
 		return btnSalirRanking;
 	}
+
+	public JButton getBtnConsultar() {
+		return btnConsultar;
+	}
+
+	public JComboBox<String> getComboBRanking() {
+		return comboBRanking;
+	}
+	
+	
+	
+	
 }
 

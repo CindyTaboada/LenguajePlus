@@ -2,6 +2,8 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -21,6 +23,7 @@ import view.linux.MaterialLinuxBasico;
 import view.linux.MaterialLinuxIntermedio;
 import view.linux.MaterialLinuxAvanzado;
 import model.FuenteDatos;
+import model.Ranking;
 import model.db.ClasePersistencia;
 import model.db.Clase_NivelPersistencia;
 import model.db.LenguajePersistencia;
@@ -349,10 +352,23 @@ public class VentanaPrincipalListener implements ActionListener {
 	                pLinuxI.setVisible(true);
 	            } else if (e.getSource().equals(mLinuxA.getBtnPrueba())) {
 	                pLinuxA.setVisible(true);
+	            }else if (e.getSource().equals(vr.getBtnConsultar())) {
+	                String selectedOption = (String) vr.getComboBRanking().getSelectedItem();
+	                if (selectedOption.equals("TOP 10 N1")) {
+	                    cargarRanking("10"); 
+	                } else if (selectedOption.equals("TODAS")) {
+	                    cargarRanking("TODAS");
+	                }
 	            }
 	        }
 		}
 	}
+
+
+	private void cargarRanking(String filtro) {
+        ArrayList<Ranking> listaRanking = rp.consultarPilotos(filtro);
+        vr.cargarTabla(listaRanking);
+    }
 
 	private void crearCuenta() {
 		
