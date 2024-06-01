@@ -11,16 +11,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
-public class MaterialLinuxAvanzado extends JFrame {
+public class VDefinicionesLinuxAvanzado extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
 
-	public MaterialLinuxAvanzado() {
+	public VDefinicionesLinuxAvanzado() {
 		getContentPane().setEnabled(false);
 
 		setTitle("Linux Avanzado");
@@ -66,7 +66,7 @@ public class MaterialLinuxAvanzado extends JFrame {
 		return btnPrueba;
 	}
 
-	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+	public void PruebaActionListener(VentanaListener Listener) {
 		btnPrueba.addActionListener(Listener);
 	}
 }

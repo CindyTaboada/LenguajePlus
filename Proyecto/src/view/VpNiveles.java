@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 import java.awt.SystemColor;
 import java.awt.Toolkit;
@@ -92,7 +92,7 @@ public class VpNiveles extends JFrame {
 		
 	}
 	
-	public void setListener(VentanaPrincipalListener listener) {
+	public void setListener(VentanaListener listener) {
 		btnBeginner.addActionListener(listener);
 		btnIntermediate.addActionListener(listener);
 		btnAdvance.addActionListener(listener);

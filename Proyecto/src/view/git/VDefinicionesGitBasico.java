@@ -8,19 +8,19 @@ import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JTextPane;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 import javax.swing.JButton;
 import java.awt.Font;
 
-public class MaterialGitBasico extends JFrame {
+public class VDefinicionesGitBasico extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
 	
-	public MaterialGitBasico() {
+	public VDefinicionesGitBasico() {
 		getContentPane().setBackground(new Color(51, 255, 102));
 		setTitle("Git Basico");
 		
@@ -70,7 +70,7 @@ public class MaterialGitBasico extends JFrame {
 		return btnPrueba;
 	}
 
-	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+	public void PruebaActionListener(VentanaListener Listener) {
 		btnPrueba.addActionListener(Listener);
 	}
 }

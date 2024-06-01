@@ -10,19 +10,19 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 import java.awt.event.ActionListener;
 
-public class MaterialJavaAvanzado extends JFrame {
+public class VDeficionesJavaAvanzado extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
-	private PreguntasJavaAvanzado preguntasFrame;
+	private PnlTestJavaAvanzado preguntasFrame;
 
-	public MaterialJavaAvanzado() {
+	public VDeficionesJavaAvanzado() {
 		getContentPane().setEnabled(false);
 
 		setTitle("Java Avanzado");
@@ -55,14 +55,14 @@ public class MaterialJavaAvanzado extends JFrame {
 		btnPrueba.setBounds(247, 381, 229, 39);
 		getContentPane().add(btnPrueba);
 		
-		preguntasFrame = new PreguntasJavaAvanzado();
+		preguntasFrame = new PnlTestJavaAvanzado();
 	}
 
 	public JButton getBtnPrueba() {
 		return btnPrueba;
 	}
 
-	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+	public void PruebaActionListener(VentanaListener Listener) {
 		btnPrueba.addActionListener(Listener);
 	}
 

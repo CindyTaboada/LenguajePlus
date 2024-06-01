@@ -10,15 +10,15 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
-public class MaterialJavaScriptIntermedio extends JFrame {
+public class VDefinicionesJavaScriptIntermedio extends JFrame {
 
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
 
-	public MaterialJavaScriptIntermedio() {
+	public VDefinicionesJavaScriptIntermedio() {
 
 		setTitle("JavaScript Intermedio");
 
@@ -65,7 +65,7 @@ public class MaterialJavaScriptIntermedio extends JFrame {
 		return btnPrueba;
 	}
 
-	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+	public void PruebaActionListener(VentanaListener Listener) {
 		btnPrueba.addActionListener(Listener);
 	}
 }

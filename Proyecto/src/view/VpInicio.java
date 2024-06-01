@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -121,7 +121,7 @@ public class VpInicio extends JFrame {
 		
 	}
 	
-	public void setListener(VentanaPrincipalListener l) {
+	public void setListener(VentanaListener l) {
 		btnCrearCuenta.addActionListener(l);
 		btnIniciarSesion.addActionListener(l);
 	}

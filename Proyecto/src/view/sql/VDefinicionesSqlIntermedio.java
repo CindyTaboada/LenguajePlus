@@ -11,15 +11,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
-public class MaterialSqlIntermedio extends JFrame {
+public class VDefinicionesSqlIntermedio extends JFrame {
 
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
 
-	public MaterialSqlIntermedio() {
+	public VDefinicionesSqlIntermedio() {
 		getContentPane().setEnabled(false);
 
 		setTitle("SQL Intermedio");
@@ -65,7 +65,7 @@ public class MaterialSqlIntermedio extends JFrame {
 		return btnPrueba;
 	}
 
-	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+	public void PruebaActionListener(VentanaListener Listener) {
 		btnPrueba.addActionListener(Listener);
 	}
 }

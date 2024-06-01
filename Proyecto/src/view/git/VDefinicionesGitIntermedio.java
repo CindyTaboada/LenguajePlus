@@ -10,15 +10,15 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
-public class MaterialGitIntermedio extends JFrame {
+public class VDefinicionesGitIntermedio extends JFrame {
 
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
 
-	public MaterialGitIntermedio() {
+	public VDefinicionesGitIntermedio() {
 
 		setTitle("Git Intermedio");
 
@@ -63,7 +63,7 @@ public class MaterialGitIntermedio extends JFrame {
 		return btnPrueba;
 	}
 
-	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+	public void PruebaActionListener(VentanaListener Listener) {
 		btnPrueba.addActionListener(Listener);
 	}
 	

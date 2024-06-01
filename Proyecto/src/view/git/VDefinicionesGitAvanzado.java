@@ -10,16 +10,16 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
-public class MaterialGitAvanzado extends JFrame {
+public class VDefinicionesGitAvanzado extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
 
-	public MaterialGitAvanzado() {
+	public VDefinicionesGitAvanzado() {
 
 		setTitle("Git Avanzado");
 
@@ -63,7 +63,7 @@ public class MaterialGitAvanzado extends JFrame {
 		return btnPrueba;
 	}
 
-	public void PruebaActionListener(VentanaPrincipalListener Listener) {
+	public void PruebaActionListener(VentanaListener Listener) {
 		btnPrueba.addActionListener(Listener);
 	}
 }
