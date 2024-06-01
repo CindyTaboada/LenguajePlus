@@ -24,13 +24,13 @@ private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
 		acceso= new AccesoBBDD();
 	}
 	
-	public ArrayList<Ranking> consultarPilotos(String posicion) {
+	public ArrayList<Ranking> consultarPilotos(String filtro) {
         ArrayList<Ranking> listaRanking = new ArrayList<>();
 
-        String query = "SELECT * FROM " + NOM_TABLA;
+        String query = "SELECT usuario, COUNT(lenguaje) AS lenguajesCompletados FROM " + NOM_TABLA + " GROUP BY usuario ORDER BY lenguajesCompletados DESC";
 
-        if (!posicion.equals("TODAS")) {
-            query += " WHERE " + POSICIONES + " = ?";
+        if (filtro.equals("TOP 10 N1")) {
+        	query = "SELECT usuario, COUNT(lenguaje) AS lenguajesCompletados FROM " + NOM_TABLA + " GROUP BY usuario ORDER BY lenguajesCompletados DESC LIMIT 10";
         }
 
         Connection con = null;
@@ -39,18 +39,12 @@ private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
 
         try {
             con = acceso.getConexion();
-
             stmt = con.prepareStatement(query);
-
-            if (!posicion.equals("TODAS")) {
-                stmt.setString(1, posicion);
-            }
 
             rslt = stmt.executeQuery();
 
             while (rslt.next()) {
-                listaRanking.add(new Ranking(rslt.getString("usuario"),
-                                             rslt.getInt("lenguaje")));
+                listaRanking.add(new Ranking(rslt.getString("usuario"), rslt.getInt("lenguajesCompletados")));
             }
 
         } catch (ClassNotFoundException | SQLException e) {

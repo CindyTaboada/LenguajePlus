@@ -85,69 +85,63 @@ public class VentanaRanking extends JFrame {
 	
 	private void configurarTabla() {
 		tModel = new DefaultTableModel() {
-			@Override
-			public boolean isCellEditable(int row, int column) {
-				return false;
-			}
-		};
-		
-		tModel.addColumn("USUARIO");
-		tModel.addColumn("LENGUAJE");
-		
-		
-		tblRanking.setModel(tModel);
-		
-		tblRanking.getColumn("USUARIO").setPreferredWidth(80);
-		tblRanking.getColumn("LENGUAJE").setPreferredWidth(50);
-	
-		
-	}
-	
-	public void cargarTabla(ArrayList<Ranking> listaRanking) {
-		tModel.getDataVector().clear();
-		Object[] fila = new Object[5]; 
-		
-		for (Ranking ranking : listaRanking) {
-			fila[0] = ranking.getUsuario();
-			fila[1] = ranking.getLenjuages();
-			}
-			
-			tModel.addRow(fila);
-		}
-	
-	
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
 
-	private void crearComponentes() {
-		scrpContenedor = new JScrollPane();
-		getContentPane().add(scrpContenedor, BorderLayout.CENTER);
-	}
+        tModel.addColumn("USUARIO");
+        tModel.addColumn("LENGUAJES COMPLETADOS");
 
-	private void configurarFrame() {
-		setSize(ANCHO, ALTO);
-		
-		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
-		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
-	}
+        tblRanking.setModel(tModel);
 
-	public void setListener(VentanaPrincipalListener l) {
-		btnSalirRanking.addActionListener(l);
-		btnConsultar.addActionListener(l);
-	}
-	
-	public JButton getBtnSalirRanking() {
-		return btnSalirRanking;
-	}
+        tblRanking.getColumn("USUARIO").setPreferredWidth(80);
+        tblRanking.getColumn("LENGUAJES COMPLETADOS").setPreferredWidth(50);
+    }
 
-	public JButton getBtnConsultar() {
-		return btnConsultar;
-	}
+    public void cargarTabla(ArrayList<Ranking> listaRanking) {
+        tModel.getDataVector().clear();
+        Object[] fila = new Object[2];
 
-	public JComboBox<String> getComboBRanking() {
-		return comboBRanking;
-	}
-	
-	
-	
-	
+        for (Ranking ranking : listaRanking) {
+            fila[0] = ranking.getUsuario();
+            fila[1] = ranking.getLenguajesCompletados();
+            tModel.addRow(fila);
+        }
+    }
+
+    private void crearComponentes() {
+        scrpContenedor = new JScrollPane();
+        getContentPane().add(scrpContenedor, BorderLayout.CENTER);
+    }
+
+    private void configurarFrame() {
+        setSize(ANCHO, ALTO);
+
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
+    }
+
+    public void setListener(VentanaPrincipalListener l) {
+        btnConsultar.addActionListener(l);
+        btnSalirRanking.addActionListener(l);
+    }
+
+    public JButton getBtnSalirRanking() {
+        return btnSalirRanking;
+    }
+
+    public JButton getBtnConsultar() {
+        return btnConsultar;
+    }
+
+    public JComboBox<String> getComboBoxOpciones() {
+        return comboBRanking;
+    }
+
+    public DefaultTableModel getTableModel() {
+        return tModel;
+    }
 }
 

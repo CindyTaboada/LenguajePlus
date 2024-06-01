@@ -2,13 +2,13 @@ package model;
 
 public class Ranking {
 	
-	private String usuario;
-    private int lenjuages;
 
-    public Ranking(String usuario, int lenjuages) {
+    private String usuario;
+    private int lenguajesCompletados;
+
+    public Ranking(String usuario, int lenguajesCompletados) {
         this.usuario = usuario;
-        this.lenjuages = lenjuages;
-        
+        this.lenguajesCompletados = lenguajesCompletados;
     }
 
     public String getUsuario() {
@@ -19,13 +19,11 @@ public class Ranking {
         this.usuario = usuario;
     }
 
-	public int getLenjuages() {
-		return lenjuages;
-	}
+    public int getLenguajesCompletados() {
+        return lenguajesCompletados;
+    }
 
-	public void setLenjuages(int lenjuages) {
-		this.lenjuages = lenjuages;
-	}
-
-   
+    public void setLenguajesCompletados(int lenguajesCompletados) {
+        this.lenguajesCompletados = lenguajesCompletados;
+    }
 }
