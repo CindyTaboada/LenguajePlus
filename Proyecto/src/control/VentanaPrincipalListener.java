@@ -31,11 +31,11 @@ import model.db.NivelPersistencia;
 import model.db.RankingPersistencia;
 import model.db.UsuarioPersistencia;
 import model.db.Usuario_LenguajePersistencia;
-import view.VPrincipalNivel;
-import view.VPrincipalLenguaje;
-import view.VentanaCrearCuenta;
-import view.VentanaPrincipalInicio;
-import view.VentanaRanking;
+import view.VpNiveles;
+import view.VpLenguajes;
+import view.VpCrearCuenta;
+import view.VpInicio;
+import view.VpRanking;
 import view.Java.MaterialJavaAvanzado;
 import view.Java.MaterialJavaBasico;
 import view.Java.MaterialJavaIntermedio;
@@ -69,11 +69,11 @@ import view.sql.PreguntasSqlIntermedio;
 
 public class VentanaPrincipalListener implements ActionListener {
 
-	private VentanaPrincipalInicio vpi;
-	private VentanaCrearCuenta vcc;
-	private VentanaRanking vr;
-	private VPrincipalLenguaje vpl;
-	private VPrincipalNivel vpd;
+	private VpInicio vpi;
+	private VpCrearCuenta vcc;
+	private VpRanking vr;
+	private VpLenguajes vpl;
+	private VpNiveles vpd;
 	// private FuenteDatos datos;
 	private Clase_NivelPersistencia cnp;
 	private ClasePersistencia cp;
@@ -121,8 +121,8 @@ public class VentanaPrincipalListener implements ActionListener {
 
 	String lenguaje = "";
 
-	public VentanaPrincipalListener(VentanaPrincipalInicio vpi, VentanaCrearCuenta vcc, VentanaRanking vr,
-			VPrincipalLenguaje vpl, VPrincipalNivel vpd) {
+	public VentanaPrincipalListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr,
+			VpLenguajes vpl, VpNiveles vpd) {
 		this.vpi = vpi;
 		this.vcc = vcc;
 		this.vr = vr;

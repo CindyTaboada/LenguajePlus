@@ -18,7 +18,7 @@ import java.awt.Toolkit;
 import javax.swing.JPasswordField;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
-public class VentanaCrearCuenta extends JFrame {
+public class VpCrearCuenta extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -43,7 +43,7 @@ public class VentanaCrearCuenta extends JFrame {
 	private JSpinner spnEdad;
 	private JButton btnAtras;
 	
-	public VentanaCrearCuenta() {
+	public VpCrearCuenta() {
 		getContentPane().setBackground(new Color(51, 255, 102));
 		
 		configurarFrame();
