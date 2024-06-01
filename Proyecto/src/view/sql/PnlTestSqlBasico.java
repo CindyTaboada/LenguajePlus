@@ -14,12 +14,12 @@ public class PnlTestSqlBasico extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
-	private JRadioButton rdbtnRepuesta1;
-	private JLabel lblPregutanas;
+	private JRadioButton rbtnA;
+	private JLabel lblPregunta;
 	private final ButtonGroup buttonGroupRespuestas = new ButtonGroup();
-	private JRadioButton rdbtnRespuesta3;
-	private JRadioButton rdbtnRespuesta4;
-	private JRadioButton rdbtnRespuesta2;
+	private JRadioButton rbtnC;
+	private JRadioButton rbtnD;
+	private JRadioButton rbtnB;
 	private JButton btnComprobar;
 
 	public PnlTestSqlBasico() {
@@ -32,34 +32,34 @@ public class PnlTestSqlBasico extends JPanel {
 	private void initComponentes() {
 		setBackground(new Color(51, 255, 102));
 		setLayout(null);
-		lblPregutanas = new JLabel("PREGUNTA 1");
-		lblPregutanas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
-		lblPregutanas.setBounds(77, 27, 414, 13);
-		add(lblPregutanas);
+		lblPregunta = new JLabel("Pregunta:");
+		lblPregunta.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
+		lblPregunta.setBounds(77, 27, 414, 13);
+		add(lblPregunta);
 
-		rdbtnRepuesta1 = new JRadioButton("New radio button");
-		buttonGroupRespuestas.add(rdbtnRepuesta1);
-		rdbtnRepuesta1.setBounds(77, 136, 103, 21);
-		add(rdbtnRepuesta1);
+		rbtnA = new JRadioButton("A");
+		buttonGroupRespuestas.add(rbtnA);
+		rbtnA.setBounds(77, 136, 103, 21);
+		add(rbtnA);
 
-		rdbtnRespuesta3 = new JRadioButton("New radio button");
-		buttonGroupRespuestas.add(rdbtnRespuesta3);
-		rdbtnRespuesta3.setBounds(77, 228, 103, 21);
-		add(rdbtnRespuesta3);
+		rbtnC = new JRadioButton("C");
+		buttonGroupRespuestas.add(rbtnC);
+		rbtnC.setBounds(77, 202, 103, 21);
+		add(rbtnC);
 
-		rdbtnRespuesta2 = new JRadioButton("New radio button");
-		buttonGroupRespuestas.add(rdbtnRespuesta2);
-		rdbtnRespuesta2.setBounds(406, 136, 103, 21);
-		add(rdbtnRespuesta2);
+		rbtnB = new JRadioButton("B");
+		buttonGroupRespuestas.add(rbtnB);
+		rbtnB.setBounds(77, 169, 103, 21);
+		add(rbtnB);
 
-		rdbtnRespuesta4 = new JRadioButton("New radio button");
-		buttonGroupRespuestas.add(rdbtnRespuesta4);
-		rdbtnRespuesta4.setBounds(406, 239, 103, 21);
-		add(rdbtnRespuesta4);
+		rbtnD = new JRadioButton("D");
+		buttonGroupRespuestas.add(rbtnD);
+		rbtnD.setBounds(77, 230, 103, 21);
+		add(rbtnD);
 
 		btnComprobar = new JButton("Comprobar");
 		btnComprobar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnComprobar.setBounds(208, 281, 164, 42);
+		btnComprobar.setBounds(147, 278, 164, 42);
 		add(btnComprobar);
 	}
 	
