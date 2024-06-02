@@ -145,11 +145,7 @@ public class VpCrearCuenta extends JFrame {
 		btnCancelarCrearCuenta.setBounds(277, 271, 97, 33);
 		getContentPane().add(btnCancelarCrearCuenta);
 		
-		btnAtras = new JButton("Volver");
-		btnAtras.setVerticalAlignment(SwingConstants.TOP);
-		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
-		btnAtras.setBounds(511, 290, 83, 26);
-		getContentPane().add(btnAtras);
+
 	}
 	
 
@@ -171,7 +167,7 @@ public class VpCrearCuenta extends JFrame {
 	public void setListener(VentanaListener l) {
 		btnCancelarCrearCuenta.addActionListener(l);
 		btnConfirmarCrearCuenta.addActionListener(l);	
-		btnAtras.addActionListener(l);
+		
 	}
 	
 	

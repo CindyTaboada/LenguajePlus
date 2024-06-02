@@ -38,6 +38,7 @@ import model.db.Usuario_LenguajePersistencia;
 import view.VpNiveles;
 import view.VpLenguajes;
 import view.VpCrearCuenta;
+import view.VpFelicitaciones;
 import view.VpInicio;
 import view.VpRanking;
 import view.Java.VDeficionesJavaAvanzado;
@@ -128,7 +129,7 @@ public class VentanaListener implements ActionListener {
 
 	String lenguaje = "";
 
-	public VentanaListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr, VpLenguajes vpl, 
+	public VentanaListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr, VpFelicitaciones vf, VpLenguajes vpl, 
 			VpNiveles vpd, VDefinicionesGitBasico mGitB, VDefinicionesGitIntermedio mGitI, 
 			VDefinicionesGitAvanzado mGitA, VDefinicionesSqlBasico mSqlB, VDefinicionesSqlIntermedio 
 			mSqlI, VDefinicionesSqlAvanzado mSqlA, VDefinicionesJavaScriptBasico mJavaScriptB, 

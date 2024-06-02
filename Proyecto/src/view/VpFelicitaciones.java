@@ -6,6 +6,9 @@ import java.awt.Dimension;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import control.VentanaListener;
+
 import java.awt.Font;
 import java.awt.Toolkit;
 
@@ -45,8 +48,8 @@ public class VpFelicitaciones extends JFrame {
 		getContentPane().add(lblTexto);
 		
 		btnVolver = new JButton("Volver");
-		btnVolver.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnVolver.setBounds(248, 255, 89, 29);
+		btnVolver.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		btnVolver.setBounds(248, 255, 102, 42);
 		getContentPane().add(btnVolver);
 		
 		btnIcon = new JButton("");
@@ -85,4 +88,14 @@ public class VpFelicitaciones extends JFrame {
 		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
 		
 	}
+	public void setListener(VentanaListener l) {
+		btnVolver.addActionListener(l);
+		
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	
 }

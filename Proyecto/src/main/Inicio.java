@@ -75,13 +75,10 @@ public class Inicio {
 				
 				
 				
-				VentanaListener l = new VentanaListener(vpi, vcc, vr, vpl, vpd, mGitB, mGitI, mGitA, mSqlB, mSqlI, mSqlA,
+				VentanaListener l = new VentanaListener(vpi, vcc, vr,vf, vpl, vpd, mGitB, mGitI, mGitA, mSqlB, mSqlI, mSqlA,
 						mJavaScriptB, mJavaScriptI, mJavaScriptA, mJavaB, mJavaI, mJavaA, mLinuxB, mLinuxI, mLinuxA);
 
 				
-				
-				
-			
 
 				
 				vpi.setListener(l);
@@ -89,6 +86,8 @@ public class Inicio {
 				vr.setListener(l);
 				vpl.setListener(l);
 				vpd.setListener(l);
+				vf.setListener(l);
+				
 				
 				
 				    mGitB.pruebaListener(l);
