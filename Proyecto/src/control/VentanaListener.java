@@ -201,11 +201,13 @@ public class VentanaListener implements ActionListener {
 				vpi.hacerVisible();
 			} else if (e.getSource().equals(vpi.getBtnCrearCuenta())) {
 				vcc.hacerVisible();
+				vpl.hacerVisible();
 			} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
 				vcc.setVisible(false);
 				vpi.setVisible(true);
 			} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
 				crearCuenta();
+				vpl.hacerVisible();
 			} else if (e.getSource().equals(vpl.getBtnAtras())) {
 				vpl.setVisible(false);
 				vpi.setVisible(true);
