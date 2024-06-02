@@ -15,14 +15,20 @@ import view.Java.PnlTestJavaIntermedio;
 import view.Java.VDeficionesJavaAvanzado;
 import view.Java.VDeficionesJavaBasico;
 import view.Java.VDefinicionesJavaIntermedio;
+import view.Javascript.PnlTestJavaScriptAvanzado;
 import view.Javascript.PnlTestJavaScriptBasico;
 import view.Javascript.PnlTestJavaScriptIntermedio;
 import view.Javascript.VDefinicionesJavaScriptAvanzado;
 import view.Javascript.VDefinicionesJavaScriptBasico;
 import view.Javascript.VDefinicionesJavaScriptIntermedio;
+import view.git.PnlTestGitAvanzado;
+import view.git.PnlTestGitIntermedio;
 import view.git.VDefinicionesGitAvanzado;
 import view.git.VDefinicionesGitBasico;
 import view.git.VDefinicionesGitIntermedio;
+import view.linux.PnlTestLinuxAvanzado;
+import view.linux.PnlTestLinuxBasico;
+import view.linux.PnlTestLinuxIntermedio;
 import view.linux.VDefinicionesLinuxAvanzado;
 import view.linux.VDefinicionesLinuxBasico;
 import view.linux.VDefinicionesLinuxIntermedio;
@@ -51,18 +57,22 @@ public class Inicio {
 				//LENGUAJES
 				VpLenguajes vpl = new VpLenguajes();
 				
-				//SQL TEMARIO+TEST
+				//SQL TEMARIO
 				VDefinicionesSqlBasico vsqlb= new VDefinicionesSqlBasico();
 				VDefinicionesSqlIntermedio vsqli=new VDefinicionesSqlIntermedio();
 				VDefinicionesSqlAvanzado vsqla= new VDefinicionesSqlAvanzado();
+				
+				//SQL PREGUNTAS+RESPUESTAS
 				PnlTestSqlBasico psqlb=new PnlTestSqlBasico();
 				PnlTestSqlIntermedio psqli =new PnlTestSqlIntermedio();
 				PnlTestSqlAvanzado psqla=new PnlTestSqlAvanzado();
 				
-				//JAVA TEMARIO + TEST
+				//JAVA TEMARIO 
 				VDeficionesJavaBasico vjb= new VDeficionesJavaBasico();
 				VDefinicionesJavaIntermedio vji= new VDefinicionesJavaIntermedio();
 				VDeficionesJavaAvanzado vja= new VDeficionesJavaAvanzado();
+				
+				//JAVA PREGUNTAS+RESPUESTAS
 				PnlTestJavaBasico pjb=new PnlTestJavaBasico();
 				PnlTestJavaIntermedio pji = new PnlTestJavaIntermedio();
 				PnlTestJavaAvanzado pja=new PnlTestJavaAvanzado();
@@ -71,7 +81,11 @@ public class Inicio {
 				VDefinicionesJavaScriptBasico vjsb= new VDefinicionesJavaScriptBasico();
 				VDefinicionesJavaScriptIntermedio vjsi= new VDefinicionesJavaScriptIntermedio();
 				VDefinicionesJavaScriptAvanzado vjsa= new VDefinicionesJavaScriptAvanzado();
+				
+				//JAVASCRIPT PREGUNTAS+RESPUESTAS
 				PnlTestJavaScriptBasico pjsb=new PnlTestJavaScriptBasico();
+				PnlTestJavaScriptIntermedio pjsi= new PnlTestJavaScriptIntermedio();
+				PnlTestJavaScriptAvanzado pjsa=new PnlTestJavaScriptAvanzado();
 			
 				
 				//GIT TEMARIO + TEST
@@ -79,10 +93,22 @@ public class Inicio {
 				VDefinicionesGitIntermedio vgi = new VDefinicionesGitIntermedio();
 				VDefinicionesGitAvanzado vga = new VDefinicionesGitAvanzado();
 				
-				//GIT
+				//GIT PREGUNTAS+RESPUESTAS
+			
+				PnlTestGitIntermedio pgi=new PnlTestGitIntermedio();
+				PnlTestGitAvanzado pga=new PnlTestGitAvanzado();
+				
+				
+				//LINUX
 				VDefinicionesLinuxBasico vlb=new VDefinicionesLinuxBasico();
 				VDefinicionesLinuxIntermedio vli = new VDefinicionesLinuxIntermedio();
 				VDefinicionesLinuxAvanzado vla = new VDefinicionesLinuxAvanzado();
+				
+				//LINUX PREGUNTAS+RESPUESTAS
+				PnlTestLinuxBasico plb= new PnlTestLinuxBasico();
+				PnlTestLinuxIntermedio pli =new PnlTestLinuxIntermedio();
+				PnlTestLinuxAvanzado pla =new PnlTestLinuxAvanzado();
+				
 				
 				//ESTRELLAS
 				VpFelicitaciones vf=new VpFelicitaciones();
