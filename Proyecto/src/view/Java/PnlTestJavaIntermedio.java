@@ -1,4 +1,4 @@
-package view.linux;
+package view.Java;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PreguntasLinuxBasico extends JPanel {
+public class PnlTestJavaIntermedio extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -22,7 +22,7 @@ public class PreguntasLinuxBasico extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PreguntasLinuxBasico() {
+	public PnlTestJavaIntermedio() {
 		setSize(ANCHO, ALTO);
 
 		initComponentes();

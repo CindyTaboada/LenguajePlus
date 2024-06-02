@@ -5,24 +5,30 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
 
 import control.VentanaListener;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import java.awt.Font;
 
-public class MaterialJavaBasico extends JFrame {
+public class VDeficionesJavaBasico extends JFrame {
 	
+	public static final String ACT_CMD_BTN_PULSAR = "Pulsa Aqui";
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
+	private static final Icon ACT_CMN_BTN_VOLVER = null;
 	private JButton btnPrueba;
 	private JScrollPane scrollPane;
+	private JButton btnAtras;
 	
-	public MaterialJavaBasico() {
+	public VDeficionesJavaBasico() {
 		getContentPane().setBackground(new Color(51, 255, 102));
 		setTitle("Java Basico");
 		
@@ -46,10 +52,23 @@ public class MaterialJavaBasico extends JFrame {
 		scrollPane.setColumnHeaderView(txtpnJavaBasico);
 		scrollPane.setViewportView(txtpnJavaBasico);
 		
-		btnPrueba = new JButton("<html>Listo para una Prueba?<br>Plusar Aqui</html>");
+		btnPrueba = new JButton(ACT_CMD_BTN_PULSAR);
 		btnPrueba.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnPrueba.setBounds(247, 381, 229, 39);
+		btnPrueba.setBounds(289, 404, 162, 39);
 		getContentPane().add(btnPrueba);
+		
+		JLabel lblNewLabel = new JLabel("¿Listo para una prueba?");
+		lblNewLabel.setBackground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		lblNewLabel.setBounds(289, 365, 187, 29);
+		getContentPane().add(lblNewLabel);
+		
+		btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
+		btnAtras.setText("Volver");
+		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
+		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnAtras.setBounds(621, 404, 90, 39);
+		getContentPane().add(btnAtras);
 	}
 	
 	private void configurarFrame() {
@@ -64,8 +83,10 @@ public class MaterialJavaBasico extends JFrame {
 		return btnPrueba;
 	}
 
+
 	public void pruebaListener(VentanaListener l) {
 		btnPrueba.addActionListener(l);
+		btnAtras.addActionListener(l);
 	}
 	
 	public void cargarPanel(JPanel panel) {

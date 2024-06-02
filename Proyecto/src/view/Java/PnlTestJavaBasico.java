@@ -1,4 +1,4 @@
-package view.git;
+package view.Java;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,8 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PreguntasGitIntermedio extends JPanel {
-	
+public class PnlTestJavaBasico extends JPanel {
+
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
@@ -22,7 +22,7 @@ public class PreguntasGitIntermedio extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PreguntasGitIntermedio() {
+	public PnlTestJavaBasico() {
 		setSize(ANCHO, ALTO);
 
 		initComponentes();

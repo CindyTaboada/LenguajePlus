@@ -7,21 +7,21 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-import view.sql.MaterialSqlBasico;
-import view.sql.MaterialSqlIntermedio;
-import view.sql.MaterialSqlAvanzado;
-import view.git.MaterialGitBasico;
-import view.git.MaterialGitIntermedio;
-import view.git.MaterialGitAvanzado;
-import view.Java.MaterialJavaBasico;
-import view.Java.MaterialJavaIntermedio;
-import view.Java.MaterialJavaAvanzado;
-import view.Javascript.MaterialJavaScriptBasico;
-import view.Javascript.MaterialJavaScriptIntermedio;
-import view.Javascript.MaterialJavaScriptAvanzado;
-import view.linux.MaterialLinuxBasico;
-import view.linux.MaterialLinuxIntermedio;
-import view.linux.MaterialLinuxAvanzado;
+import view.sql.VDefinicionesSqlBasico;
+import view.sql.VDefinicionesSqlIntermedio;
+import view.sql.VDefinicionesSqlAvanzado;
+import view.git.VDefinicionesGitBasico;
+import view.git.VDefinicionesGitIntermedio;
+import view.git.VDefinicionesGitAvanzado;
+import view.Java.VDeficionesJavaBasico;
+import view.Java.VDefinicionesJavaIntermedio;
+import view.Java.VDeficionesJavaAvanzado;
+import view.Javascript.VDefinicionesJavaScriptBasico;
+import view.Javascript.VDefinicionesJavaScriptIntermedio;
+import view.Javascript.VDefinicionesJavaScriptAvanzado;
+import view.linux.VDefinicionesLinuxBasico;
+import view.linux.VDefinicionesLinuxIntermedio;
+import view.linux.VDefinicionesLinuxAvanzado;
 import model.FuenteDatos;
 import model.Ranking;
 import model.db.ClasePersistencia;
@@ -36,36 +36,36 @@ import view.VpLenguajes;
 import view.VpCrearCuenta;
 import view.VpInicio;
 import view.VpRanking;
-import view.Java.MaterialJavaAvanzado;
-import view.Java.MaterialJavaBasico;
-import view.Java.MaterialJavaIntermedio;
-import view.Java.PreguntasJavaAvanzado;
-import view.Java.PreguntasJavaBasico;
-import view.Java.PreguntasJavaIntermedio;
-import view.git.MaterialGitAvanzado;
-import view.git.MaterialGitBasico;
-import view.git.MaterialGitIntermedio;
-import view.git.PreguntasGitAvanzado;
-import view.git.PreguntasGitBasico;
-import view.git.PreguntasGitIntermedio;
-import view.Javascript.MaterialJavaScriptAvanzado;
-import view.Javascript.MaterialJavaScriptBasico;
-import view.Javascript.MaterialJavaScriptIntermedio;
-import view.Javascript.PreguntasJavaScriptAvanzado;
-import view.Javascript.PreguntasJavaScriptBasico;
-import view.Javascript.PreguntasJavaScriptIntermedio;
-import view.linux.MaterialLinuxAvanzado;
-import view.linux.MaterialLinuxBasico;
-import view.linux.MaterialLinuxIntermedio;
-import view.linux.PreguntasLinuxAvanzado;
-import view.linux.PreguntasLinuxBasico;
-import view.linux.PreguntasLinuxIntermedio;
-import view.sql.MaterialSqlAvanzado;
-import view.sql.MaterialSqlBasico;
-import view.sql.MaterialSqlIntermedio;
-import view.sql.PreguntasSqlAvanzado;
-import view.sql.PreguntasSqlBasico;
-import view.sql.PreguntasSqlIntermedio;
+import view.Java.VDeficionesJavaAvanzado;
+import view.Java.VDeficionesJavaBasico;
+import view.Java.VDefinicionesJavaIntermedio;
+import view.Java.PnlTestJavaAvanzado;
+import view.Java.PnlTestJavaBasico;
+import view.Java.PnlTestJavaIntermedio;
+import view.git.VDefinicionesGitAvanzado;
+import view.git.VDefinicionesGitBasico;
+import view.git.VDefinicionesGitIntermedio;
+import view.git.PnlTestGitAvanzado;
+import view.git.PnlTesGitBasico;
+import view.git.PnlTestGitIntermedio;
+import view.Javascript.VDefinicionesJavaScriptAvanzado;
+import view.Javascript.VDefinicionesJavaScriptBasico;
+import view.Javascript.VDefinicionesJavaScriptIntermedio;
+import view.Javascript.PnlTestJavaScriptAvanzado;
+import view.Javascript.PnlTestJavaScriptBasico;
+import view.Javascript.PnlTestJavaScriptIntermedio;
+import view.linux.VDefinicionesLinuxAvanzado;
+import view.linux.VDefinicionesLinuxBasico;
+import view.linux.VDefinicionesLinuxIntermedio;
+import view.linux.PnlTestLinuxAvanzado;
+import view.linux.PnlTestLinuxBasico;
+import view.linux.PnlTestLinuxIntermedio;
+import view.sql.VDefinicionesSqlAvanzado;
+import view.sql.VDefinicionesSqlBasico;
+import view.sql.VDefinicionesSqlIntermedio;
+import view.sql.PnlTestSqlAvanzado;
+import view.sql.PnlTestSqlBasico;
+import view.sql.PnlTestSqlIntermedio;
 
 public class VentanaListener implements ActionListener {
 
@@ -83,52 +83,54 @@ public class VentanaListener implements ActionListener {
 	private Usuario_LenguajePersistencia ulp;
 	private UsuarioPersistencia up;
 	// SQL Views
-	private MaterialSqlBasico mSqlB;
-	private MaterialSqlIntermedio mSqlI;
-	private MaterialSqlAvanzado mSqlA;
-	private PreguntasSqlBasico pSqlB;
-	private PreguntasSqlIntermedio pSqlI;
-	private PreguntasSqlAvanzado pSqlA;
+	private VDefinicionesSqlBasico mSqlB;
+	private VDefinicionesSqlIntermedio mSqlI;
+	private VDefinicionesSqlAvanzado mSqlA;
+	private PnlTestSqlBasico pSqlB;
+	private PnlTestSqlIntermedio pSqlI;
+	private PnlTestSqlAvanzado pSqlA;
 	// Git Views
-	private MaterialGitBasico mGitB;
-	private MaterialGitIntermedio mGitI;
-	private MaterialGitAvanzado mGitA;
-	private PreguntasGitBasico pGitB;
-	private PreguntasGitIntermedio pGitI;
-	private PreguntasGitAvanzado pGitA;
+	private VDefinicionesGitBasico mGitB;
+	private VDefinicionesGitIntermedio mGitI;
+	private VDefinicionesGitAvanzado mGitA;
+	private PnlTesGitBasico pGitB;
+	private PnlTestGitIntermedio pGitI;
+	private PnlTestGitAvanzado pGitA;
 	// Java Views
-	private MaterialJavaBasico mJavaB;
-	private MaterialJavaIntermedio mJavaI;
-	private MaterialJavaAvanzado mJavaA;
-	private PreguntasJavaBasico pJavaB;
-	private PreguntasJavaIntermedio pJavaI;
-	private PreguntasJavaAvanzado pJavaA;
+
+	private VDeficionesJavaBasico mJavaB;
+	private VDefinicionesJavaIntermedio mJavaI;
+	private VDeficionesJavaAvanzado mJavaA;
+	private PnlTestJavaBasico pJavaB;
+	private PnlTestJavaIntermedio pJavaI;
+	private PnlTestJavaAvanzado pJavaA;
 	
 	// JavaScript Views
-	private MaterialJavaScriptBasico mJavaScriptB;
-	private MaterialJavaScriptIntermedio mJavaScriptI;
-	private MaterialJavaScriptAvanzado mJavaScriptA;
-	private PreguntasJavaScriptBasico pJavaScriptB;
-	private PreguntasJavaScriptIntermedio pJavaScriptI;
-	private PreguntasJavaScriptAvanzado pJavaScriptA;
+	private VDefinicionesJavaScriptBasico mJavaScriptB;
+	private VDefinicionesJavaScriptIntermedio mJavaScriptI;
+	private VDefinicionesJavaScriptAvanzado mJavaScriptA;
+	private PnlTestJavaScriptBasico pJavaScriptB;
+	private PnlTestJavaScriptIntermedio pJavaScriptI;
+	private PnlTestJavaScriptAvanzado pJavaScriptA;
 	// Linux Views
-	private MaterialLinuxBasico mLinuxB;
-	private MaterialLinuxIntermedio mLinuxI;
-	private MaterialLinuxAvanzado mLinuxA;
-	private PreguntasLinuxBasico pLinuxB;
-	private PreguntasLinuxIntermedio pLinuxI;
-	private PreguntasLinuxAvanzado pLinuxA;
+	private VDefinicionesLinuxBasico mLinuxB;
+	private VDefinicionesLinuxIntermedio mLinuxI;
+	private VDefinicionesLinuxAvanzado mLinuxA;
+	private PnlTestLinuxBasico pLinuxB;
+	private PnlTestLinuxIntermedio pLinuxI;
+	private PnlTestLinuxAvanzado pLinuxA;
 
 	String lenguaje = "";
 
-	public VentanaListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr,
-			VpLenguajes vpl, VpNiveles vpd, MaterialGitBasico mGitB, MaterialGitIntermedio mGitI, MaterialGitAvanzado mGitA,
-			 MaterialSqlBasico mSqlB, MaterialSqlIntermedio mSqlI, 
-			MaterialSqlAvanzado mSqlA, MaterialJavaScriptBasico mJavaScriptB, 
-			MaterialJavaScriptIntermedio mJavaScriptI, MaterialJavaScriptAvanzado mJavaScriptA, 
-			MaterialJavaBasico mJavaB, MaterialJavaIntermedio mJavaI, MaterialJavaAvanzado mJavaA, 
-			MaterialLinuxBasico mLinuxB, MaterialLinuxIntermedio mLinuxI, MaterialLinuxAvanzado mLinxA) {
-		
+	public VentanaListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr, VpLenguajes vpl, 
+			VpNiveles vpd, VDefinicionesGitBasico mGitB, VDefinicionesGitIntermedio mGitI, 
+			VDefinicionesGitAvanzado mGitA, VDefinicionesSqlBasico mSqlB, VDefinicionesSqlIntermedio 
+			mSqlI, VDefinicionesSqlAvanzado mSqlA, VDefinicionesJavaScriptBasico mJavaScriptB, 
+			VDefinicionesJavaScriptIntermedio mJavaScriptI, VDefinicionesJavaScriptAvanzado mJavaScriptA, 
+			VDeficionesJavaBasico mJavaB, VDefinicionesJavaIntermedio mJavaI, VDeficionesJavaAvanzado mJavaA, 
+			VDefinicionesLinuxBasico mLinuxB, VDefinicionesLinuxIntermedio mLinuxI, 
+			VDefinicionesLinuxAvanzado mLinuxA) {
+
 		this.vpi = vpi;
 		this.vcc = vcc;
 		this.vr = vr;
@@ -148,7 +150,7 @@ public class VentanaListener implements ActionListener {
 	    this.mJavaA = mJavaA;
 	    this.mLinuxB = mLinuxB;
 	    this.mLinuxI = mLinuxI;
-	    this.mLinuxA = mLinxA;
+	    this.mLinuxA = mLinuxA;
 		
 		// datos = new FuenteDatos();
 		cnp = new Clase_NivelPersistencia();
@@ -159,29 +161,29 @@ public class VentanaListener implements ActionListener {
 		ulp = new Usuario_LenguajePersistencia();
 		up = new UsuarioPersistencia();
 
-		// Instantiate the view classes
 		
 
-		pGitB = new PreguntasGitBasico();
-		pGitI = new PreguntasGitIntermedio();
-		pGitA = new PreguntasGitAvanzado();
+		pGitB = new PnlTesGitBasico();
+		pGitI = new PnlTestGitIntermedio();
+		pGitA = new PnlTestGitAvanzado();
 		
-		pSqlB = new PreguntasSqlBasico();
-		pSqlI = new PreguntasSqlIntermedio();
-		pSqlA = new PreguntasSqlAvanzado();
+		pSqlB = new PnlTestSqlBasico();
+		pSqlI = new PnlTestSqlIntermedio();
+		pSqlA = new PnlTestSqlAvanzado();
 		
-		pJavaScriptB = new PreguntasJavaScriptBasico();
-		pJavaScriptI = new PreguntasJavaScriptIntermedio();
-		pJavaScriptA = new PreguntasJavaScriptAvanzado();
+		pJavaScriptB = new PnlTestJavaScriptBasico();
+		pJavaScriptI = new PnlTestJavaScriptIntermedio();
+		pJavaScriptA = new PnlTestJavaScriptAvanzado();
 		
-		pJavaB = new PreguntasJavaBasico();
-		pJavaI = new PreguntasJavaIntermedio();
-		pJavaA = new PreguntasJavaAvanzado();
+		pJavaB = new PnlTestJavaBasico();
+		pJavaI = new PnlTestJavaIntermedio();
+		pJavaA = new PnlTestJavaAvanzado();
 	
+		pLinuxB = new PnlTestLinuxBasico();		
+		pLinuxI = new PnlTestLinuxIntermedio();
+		pLinuxA = new PnlTestLinuxAvanzado();
 		
-		pLinuxA = new PreguntasLinuxAvanzado();
-		pLinuxI = new PreguntasLinuxIntermedio();
-		pLinuxB = new PreguntasLinuxBasico();
+
 
 	}
 

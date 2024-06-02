@@ -1,4 +1,4 @@
-package view.Javascript;
+package view.git;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PreguntasJavaScriptBasico extends JPanel {
+public class PnlTestGitIntermedio extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -22,7 +22,7 @@ public class PreguntasJavaScriptBasico extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PreguntasJavaScriptBasico() {
+	public PnlTestGitIntermedio() {
 		setSize(ANCHO, ALTO);
 
 		initComponentes();

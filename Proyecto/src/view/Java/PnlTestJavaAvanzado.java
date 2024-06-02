@@ -9,8 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PreguntasJavaBasico extends JPanel {
-	
+
+public class PnlTestJavaAvanzado extends JPanel {
+
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
@@ -22,7 +23,9 @@ public class PreguntasJavaBasico extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PreguntasJavaBasico() {
+
+	public PnlTestJavaAvanzado() {
+		setBackground(new Color(51, 255, 102));
 		setSize(ANCHO, ALTO);
 
 		initComponentes();

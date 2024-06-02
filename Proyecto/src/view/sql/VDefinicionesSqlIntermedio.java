@@ -5,23 +5,28 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 
 import control.VentanaListener;
 
-public class MaterialSqlIntermedio extends JFrame {
+public class VDefinicionesSqlIntermedio extends JFrame {
 
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
+	private static final Icon ACT_CMN_BTN_VOLVER = null;
 	private JButton btnPrueba;
 	private JScrollPane scrollPane;
+	private JButton btnAtras;
 
-	public MaterialSqlIntermedio() {
+	public VDefinicionesSqlIntermedio() {
 		getContentPane().setEnabled(false);
 
 		setTitle("SQL Intermedio");
@@ -49,10 +54,23 @@ public class MaterialSqlIntermedio extends JFrame {
 		scrollPane.setColumnHeaderView(txtpnSqlIntermedio);
 		scrollPane.setViewportView(txtpnSqlIntermedio);
 
-		btnPrueba = new JButton("<html>Listo para una Prueba?<br>Plusar Aqui</html>");
+		btnPrueba = new JButton("Pulsa Aqui");
 		btnPrueba.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnPrueba.setBounds(247, 381, 229, 39);
+		btnPrueba.setBounds(289, 404, 162, 39);
 		getContentPane().add(btnPrueba);
+		
+		JLabel lblNewLabel = new JLabel("¿Listo para una prueba?");
+		lblNewLabel.setBackground(new Color(255, 255, 255));
+		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 14));
+		lblNewLabel.setBounds(289, 365, 187, 29);
+		getContentPane().add(lblNewLabel);
+		
+		btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
+		btnAtras.setText("Volver");
+		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
+		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnAtras.setBounds(621, 404, 90, 39);
+		getContentPane().add(btnAtras);
 	}
 
 	private void configurarFrame() {

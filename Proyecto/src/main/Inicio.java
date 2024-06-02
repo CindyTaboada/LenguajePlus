@@ -6,23 +6,25 @@ import control.VentanaListener;
 import view.VpNiveles;
 import view.VpLenguajes;
 import view.VpCrearCuenta;
+import view.VpFelicitaciones;
 import view.VpInicio;
 import view.VpRanking;
-import view.Java.MaterialJavaAvanzado;
-import view.Java.MaterialJavaBasico;
-import view.Java.MaterialJavaIntermedio;
-import view.Javascript.MaterialJavaScriptAvanzado;
-import view.Javascript.MaterialJavaScriptBasico;
-import view.Javascript.MaterialJavaScriptIntermedio;
-import view.git.MaterialGitAvanzado;
-import view.git.MaterialGitBasico;
-import view.git.MaterialGitIntermedio;
-import view.linux.MaterialLinuxAvanzado;
-import view.linux.MaterialLinuxBasico;
-import view.linux.MaterialLinuxIntermedio;
-import view.sql.MaterialSqlAvanzado;
-import view.sql.MaterialSqlBasico;
-import view.sql.MaterialSqlIntermedio;
+import view.Java.VDeficionesJavaAvanzado;
+import view.Java.VDeficionesJavaBasico;
+import view.Java.VDefinicionesJavaIntermedio;
+import view.Javascript.VDefinicionesJavaScriptAvanzado;
+import view.Javascript.VDefinicionesJavaScriptBasico;
+import view.Javascript.VDefinicionesJavaScriptIntermedio;
+import view.git.VDefinicionesGitAvanzado;
+import view.git.VDefinicionesGitBasico;
+import view.git.VDefinicionesGitIntermedio;
+import view.linux.VDefinicionesLinuxAvanzado;
+import view.linux.VDefinicionesLinuxBasico;
+import view.linux.VDefinicionesLinuxIntermedio;
+import view.sql.VDefinicionesSqlAvanzado;
+import view.sql.VDefinicionesSqlBasico;
+import view.sql.VDefinicionesSqlIntermedio;
+
 
 public class Inicio {
 
@@ -32,38 +34,55 @@ public class Inicio {
 			@Override
 			public void run() {
 				
+				//LENGUAJES
+				VpLenguajes vpl = new VpLenguajes();
+				
+				//ESTRELLAS
+				VpFelicitaciones vf=new VpFelicitaciones();
+				
+				//RANKING
+				VpRanking vr = new VpRanking();
+				
+				
+				//INICIO
 				VpInicio vpi = new VpInicio();
 				VpCrearCuenta vcc = new VpCrearCuenta();
-				VpRanking vr = new VpRanking();
-			    VpLenguajes vpl = new VpLenguajes();
-				VpNiveles vpd = new VpNiveles();
 				
+				//NIVELES
+				VpNiveles vpd = new VpNiveles();
+
 				//View para Ventanas Git
-				MaterialGitBasico mGitB = new MaterialGitBasico();
-				MaterialGitIntermedio mGitI = new MaterialGitIntermedio();
-				MaterialGitAvanzado mGitA = new MaterialGitAvanzado();
+				VDefinicionesGitBasico mGitB = new VDefinicionesGitBasico();
+				VDefinicionesGitIntermedio mGitI = new VDefinicionesGitIntermedio();
+				VDefinicionesGitAvanzado mGitA = new VDefinicionesGitAvanzado();
 				//View para Ventanas SQL
-				MaterialSqlBasico mSqlB = new MaterialSqlBasico();
-				MaterialSqlIntermedio mSqlI = new MaterialSqlIntermedio();
-				MaterialSqlAvanzado mSqlA  = new MaterialSqlAvanzado();
+				VDefinicionesSqlBasico mSqlB = new VDefinicionesSqlBasico();
+				VDefinicionesSqlIntermedio mSqlI = new VDefinicionesSqlIntermedio();
+			    VDefinicionesSqlAvanzado mSqlA  = new VDefinicionesSqlAvanzado();
 				//View para Ventanas JavaScript
-				MaterialJavaScriptBasico mJavaScriptB = new MaterialJavaScriptBasico();
-				MaterialJavaScriptIntermedio mJavaScriptI = new MaterialJavaScriptIntermedio();
-				MaterialJavaScriptAvanzado mJavaScriptA = new MaterialJavaScriptAvanzado();
+				VDefinicionesJavaScriptBasico mJavaScriptB = new VDefinicionesJavaScriptBasico();
+				VDefinicionesJavaScriptIntermedio mJavaScriptI = new VDefinicionesJavaScriptIntermedio();
+				VDefinicionesJavaScriptAvanzado mJavaScriptA = new VDefinicionesJavaScriptAvanzado();
 				//View para Ventanas Java
-				MaterialJavaBasico mJavaB = new MaterialJavaBasico();
-				MaterialJavaIntermedio mJavaI = new MaterialJavaIntermedio();
-				MaterialJavaAvanzado mJavaA = new MaterialJavaAvanzado();
+				VDeficionesJavaBasico mJavaB = new VDeficionesJavaBasico();
+				VDefinicionesJavaIntermedio mJavaI = new VDefinicionesJavaIntermedio();
+				VDeficionesJavaAvanzado mJavaA = new VDeficionesJavaAvanzado();
 				//View para Ventanas Linux
-				MaterialLinuxBasico mLinuxB = new MaterialLinuxBasico();
-				MaterialLinuxIntermedio mLinuxI = new MaterialLinuxIntermedio();
-				MaterialLinuxAvanzado mLinuxA = new MaterialLinuxAvanzado();
+				VDefinicionesLinuxBasico mLinuxB = new VDefinicionesLinuxBasico();
+			    VDefinicionesLinuxIntermedio mLinuxI = new VDefinicionesLinuxIntermedio();
+				VDefinicionesLinuxAvanzado mLinuxA = new VDefinicionesLinuxAvanzado();
 				
 				
 				
 				
 				VentanaListener l = new VentanaListener(vpi, vcc, vr, vpl, vpd, mGitB, mGitI, mGitA, mSqlB, mSqlI, mSqlA,
 						mJavaScriptB, mJavaScriptI, mJavaScriptA, mJavaB, mJavaI, mJavaA, mLinuxB, mLinuxI, mLinuxA);
+
+				
+				
+				
+			
+
 				
 				vpi.setListener(l);
 				vcc.setListener(l);

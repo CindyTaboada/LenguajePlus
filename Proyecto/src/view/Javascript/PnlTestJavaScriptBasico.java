@@ -1,4 +1,4 @@
-package view.sql;
+package view.Javascript;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -9,8 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PreguntasSqlIntermedio extends JPanel {
-	
+
+public class PnlTestJavaScriptBasico extends JPanel {
+
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
@@ -22,7 +23,7 @@ public class PreguntasSqlIntermedio extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PreguntasSqlIntermedio() {
+	public PnlTestJavaScriptBasico() {
 		setSize(ANCHO, ALTO);
 
 		initComponentes();
@@ -61,6 +62,10 @@ public class PreguntasSqlIntermedio extends JPanel {
 		btnComprobar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnComprobar.setBounds(208, 281, 164, 42);
 		add(btnComprobar);
+	}
+
+	public JButton getBtnComprobar() {
+		return btnComprobar;
 	}
 
 

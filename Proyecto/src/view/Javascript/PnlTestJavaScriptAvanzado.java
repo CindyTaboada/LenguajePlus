@@ -1,8 +1,7 @@
-package view.sql;
+package view.Javascript;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.ScrollPane;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -10,7 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PreguntasSqlBasico extends JPanel {
+
+public class PnlTestJavaScriptAvanzado extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
@@ -23,7 +23,8 @@ public class PreguntasSqlBasico extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PreguntasSqlBasico() {
+	public PnlTestJavaScriptAvanzado() {
+		setBackground(new Color(51, 255, 102));
 		setSize(ANCHO, ALTO);
 
 		initComponentes();
@@ -64,6 +65,9 @@ public class PreguntasSqlBasico extends JPanel {
 		add(btnComprobar);
 	}
 
+	public JButton getBtnComprobar() {
+		return btnComprobar;
+	}
 
 
 }

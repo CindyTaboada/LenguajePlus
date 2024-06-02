@@ -9,8 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PreguntasGitBasico extends JPanel {
-	
+public class PnlTesGitBasico extends JPanel {
+
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
@@ -22,9 +22,8 @@ public class PreguntasGitBasico extends JPanel {
 	private JRadioButton rdbtnRespuesta2;
 	private JButton btnComprobar;
 
-	public PreguntasGitBasico() {
+	public PnlTesGitBasico() {
 		setSize(ANCHO, ALTO);
-
 		initComponentes();
 
 	}

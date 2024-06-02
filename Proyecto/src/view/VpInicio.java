@@ -41,7 +41,7 @@ public class VpInicio extends JFrame {
 	private JButton btnIcon;
 	
 	public VpInicio() {
-		setTitle("LenjuagePlus");
+		setTitle("Lenjuage Plus Inicio");
 		
 		crearComponentes();
 		
