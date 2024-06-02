@@ -407,10 +407,10 @@ public class VentanaListener implements ActionListener {
     }
 
 	private void crearCuenta() {
-        String nombre = vcc.getTxtNombre();
-        String apellido1 = vcc.getTxtApellido1();
-        String apellido2 = vcc.getTxtApellido2();
-        String email = vcc.getTxtEmail();
+		String nombre = vcc.getTxtNombre().getText();
+        String apellido1 = vcc.getTxtApellido1().getText();
+        String apellido2 = vcc.getTxtApellido2().getText();
+        String email = vcc.getTxtEmail().getText();
         String pssw = new String(vcc.getPwdConstrasenia().getPassword());
         String confirmarPsswd = new String(vcc.getPwdConfirmarContrasenia().getPassword());
 
@@ -442,8 +442,8 @@ public class VentanaListener implements ActionListener {
 
 
 	private Usuario iniciarSesion() {
-	    String email = vpi.getTxtEmail();
-	    String pssw = vpi.getPwdContrasenia();
+	       String email = vpi.getTxtEmail().getText();
+	        String pssw = new String(vpi.getPwdContrasenia().getPassword());
 
 	    if (email.isBlank()) {
 	        mostrarError("Introduce un email");
