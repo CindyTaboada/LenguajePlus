@@ -233,156 +233,33 @@ public class VentanaListener implements ActionListener {
 				vpd.setVisible(false);
 				vpl.setVisible(true);
 			} else if (e.getSource().equals(vpd.getBtnBeginner())) {
-				switch (lenguaje) {
-				case "Git":
-
-					break;
-				case "Linux":
-
-					break;
-				case "Java":
-
-					break;
-				case "JavaScript":
-
-					break;
-				case "Sql":
-
-					break;
-				default:
-					JOptionPane.showMessageDialog(vpl, "Lenguaje incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
-					break;
-				}
+				openMaterialWindow("Beginner");
 			} else if (e.getSource().equals(vpd.getBtnIntermediate())) {
-				switch (lenguaje) {
-				case "Git":
-
-					break;
-				case "Linux":
-
-					break;
-				case "Java":
-
-					break;
-				case "JavaScript":
-
-					break;
-				case "Sql":
-
-					break;
-				default:
-					JOptionPane.showMessageDialog(vpl, "Lenguaje incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
-					break;
-				}
+				openMaterialWindow("Intermediate");
 			} else if (e.getSource().equals(vpd.getBtnAvance())) {
-				switch (lenguaje) {
-				case "Git":
-
-					break;
-				case "Linux":
-
-					break;
-				case "Java":
-
-					break;
-				case "JavaScript":
-
-					break;
-				case "Sql":
-
-					break;
-				default:
-					JOptionPane.showMessageDialog(vpl, "Lenguaje incorrecto", "ERROR", JOptionPane.ERROR_MESSAGE);
-					break;
-				}
+				openMaterialWindow("Advanced");
 			} else if (e.getSource().equals(vr.getBtnSalirRanking())) {
 				vr.setVisible(false);
-
-			}
-			if (e.getSource() instanceof JButton) {
-				 if (e.getActionCommand().equals(VpInicio.ACT_CMN_BTN_CREAR_CUENTA)) {
-			        crearCuenta();
-					vpi.hacerVisible();
-				} else if (e.getActionCommand().equals(VpInicio.ACT_CMN_BTN_INICIAR_SESION)) {
-		            iniciarSesion();;
-					vpi.hacerVisible();	
-				} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
-					vpi.hacerVisible();
-					vcc.hacerVisible();
-				} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
-					vpi.hacerVisible();
-				} else if (e.getSource().equals(vpl.getBtnAtras())) {
-					vpl.setVisible(false);
-					vpi.setVisible(true);
-				} else if (e.getSource().equals(vpl.getBtnGit())) {
-					vpl.setVisible(false);
-					vpd.setVisible(true);
-					lenguaje = "Git";
-				} else if (e.getSource().equals(vpl.getBtnLinux())) {
-					vpl.setVisible(false);
-					vpd.setVisible(true);
-					lenguaje = "Linux";
-				} else if (e.getSource().equals(vpl.getBtnJava())) {
-					vpl.setVisible(false);
-					vpd.setVisible(true);
-					lenguaje = "Java";
-				} else if (e.getSource().equals(vpl.getBtnJavaScript())) {
-					vpl.setVisible(false);
-					vpd.setVisible(true);
-					lenguaje = "JavaScript";
-				} else if (e.getSource().equals(vpl.getBtnSql())) {
-					vpl.setVisible(false);
-					vpd.setVisible(true);
-					lenguaje = "Sql";
-				} else if (e.getSource().equals(vpd.getBtnAtras())) {
-					vpd.setVisible(false);
-					vpl.setVisible(true);
-				} else if (e.getSource().equals(vpd.getBtnBeginner())) {
-					openMaterialWindow("Beginner");
-				} else if (e.getSource().equals(vpd.getBtnIntermediate())) {
-					openMaterialWindow("Intermediate");
-				} else if (e.getSource().equals(vpd.getBtnAvance())) {
-					openMaterialWindow("Advanced");
-				} else if (e.getSource().equals(vr.getBtnSalirRanking())) {
-					vr.setVisible(false);
-				 } else if (e.getSource().equals(mGitB.getBtnPrueba())) {
-			            mGitB.cargarPanel(pGitB);
-			        } else if (e.getSource().equals(mGitI.getBtnPrueba())) {
-			            mGitI.cargarPanel(pGitI);
-			        } else if (e.getSource().equals(mGitA.getBtnPrueba())) {
-			            mGitA.cargarPanel(pGitA);
-			        } else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
-			            mSqlB.cargarPanel(pSqlB);
-			        } else if (e.getSource().equals(mSqlI.getBtnPrueba())) {
-			            mSqlI.cargarPanel(pSqlI);
-			        } else if (e.getSource().equals(mSqlA.getBtnPrueba())) {
-			            mSqlA.cargarPanel(pSqlA);
-			        } else if (e.getSource().equals(mJavaScriptB.getBtnPrueba())) {
-			            mJavaScriptB.cargarPanel(pJavaScriptB);
-			        } else if (e.getSource().equals(mJavaScriptI.getBtnPrueba())) {
-			            mJavaScriptI.cargarPanel(pJavaScriptI);
-			        } else if (e.getSource().equals(mJavaScriptA.getBtnPrueba())) {
-			            mJavaScriptA.cargarPanel(pJavaScriptA);
-			        } else if (e.getSource().equals(mJavaB.getBtnPrueba())) {
-			            mJavaB.cargarPanel(pJavaB);
-			        } else if (e.getSource().equals(mJavaI.getBtnPrueba())) {
-			            mJavaI.cargarPanel(pJavaI);
-			        } else if (e.getSource().equals(mJavaA.getBtnPrueba())) {
-			            mJavaA.cargarPanel(pJavaA);
-			        } else if (e.getSource().equals(mLinuxB.getBtnPrueba())) {
-			            mLinuxB.cargarPanel(pLinuxB);
-			        } else if (e.getSource().equals(mLinuxI.getBtnPrueba())) {
-			            mLinuxI.cargarPanel(pLinuxI);
-			        } else if (e.getSource().equals(mLinuxA.getBtnPrueba())) {
-			            mLinuxA.cargarPanel(pLinuxA);
-			        }else if (e.getSource().equals(vr.getBtnConsultar())) {
-	                String selectedOption = (String) vr.getComboBRanking().getSelectedItem();
-	                if (selectedOption.equals("TOP 10 N1")) {
-	                    cargarRanking("10"); 
-	                } else if (selectedOption.equals("TODAS")) {
-	                    cargarRanking("TODAS");
-	                }
-	            }
+			} else if (e.getSource().equals(vr.getBtnConsultar())) {
+				String selectedOption = (String) vr.getComboBRanking().getSelectedItem();
+				if (selectedOption.equals("TOP 10 N1")) {
+					cargarRanking("10");
+				} else if (selectedOption.equals("TODAS")) {
+					cargarRanking("TODAS");
+				}
+			} else if (e.getSource().equals(mGitB.getBtnPrueba())) {
+				mGitB.cargarPanel(pGitB);
+			} else if (e.getSource().equals(mGitI.getBtnPrueba())) {
+				mGitI.cargarPanel(pGitI);
+			} else if (e.getSource().equals(mGitA.getBtnPrueba())) {
+				mGitA.cargarPanel(pGitA);
+			} else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
+				mSqlB.cargarPanel(pSqlB);
+			} else if (e.getSource().equals(mSqlI.getBtnPrueba())) {
+				mSqlI.cargarPanel(pSqlI);
+			} else if (e.getSource().equals(mSqlA.getBtnPrueba())) {
+				mSqlA.cargarPanel(pSqlA);
+	            
 	        }
 		}
 	}
