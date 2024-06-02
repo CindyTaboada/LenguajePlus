@@ -70,7 +70,7 @@ public class VDeficionesJavaAvanzado extends JFrame {
 		lblNewLabel.setBounds(289, 365, 187, 29);
 		getContentPane().add(lblNewLabel);
 		
-		btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
+		btnAtras = new JButton();
 		btnAtras.setText("Volver");
 		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));

@@ -65,7 +65,7 @@ public class VDefinicionesSqlIntermedio extends JFrame {
 		lblNewLabel.setBounds(289, 365, 187, 29);
 		getContentPane().add(lblNewLabel);
 		
-		btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
+		btnAtras = new JButton();
 		btnAtras.setText("Volver");
 		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -84,9 +84,16 @@ public class VDefinicionesSqlIntermedio extends JFrame {
 	public JButton getBtnPrueba() {
 		return btnPrueba;
 	}
+	
+	
+
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
 
 	public void pruebaListener(VentanaListener l) {
 		btnPrueba.addActionListener(l);
+		btnAtras.addActionListener(l);
 	}
 	
 	public void cargarPanel(JPanel panel) {
