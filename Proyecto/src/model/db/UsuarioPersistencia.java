@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import model.Usuario;
 
 public class UsuarioPersistencia {
-	static final String NOM_TABLA = "USUARIOS";
+	static final String NOM_TABLA = "USUARIO";
 	static final String ID_USUARIO= "ID_USUARIO";
 	static final String NOMBRE_USUARIO= "NOMBRE_USUARIO";
 	static final String APELLIDO1= "APELLIDO1";
