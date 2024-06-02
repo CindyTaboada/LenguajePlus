@@ -22,9 +22,9 @@ public class VDefinicionesSqlAvanzado extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
-	private static final Icon ACT_CMN_BTN_VOLVER = null;
 	private JButton btnPrueba;
 	private JScrollPane scrollPane;
+	private JButton btnAtras;
 
 	public VDefinicionesSqlAvanzado() {
 		getContentPane().setEnabled(false);
@@ -65,7 +65,7 @@ public class VDefinicionesSqlAvanzado extends JFrame {
 		lblNewLabel.setBounds(289, 365, 187, 29);
 		getContentPane().add(lblNewLabel);
 
-		JButton btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
+		btnAtras = new JButton();
 		btnAtras.setText("Volver");
 		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -84,9 +84,16 @@ public class VDefinicionesSqlAvanzado extends JFrame {
 	public JButton getBtnPrueba() {
 		return btnPrueba;
 	}
+	
+	
+
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
 
 	public void pruebaListener(VentanaListener l) {
 		btnPrueba.addActionListener(l);
+		btnAtras.addActionListener(l);
 	}
 
 	public void cargarPanel(JPanel panel) {

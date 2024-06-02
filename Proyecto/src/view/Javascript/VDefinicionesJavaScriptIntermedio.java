@@ -85,7 +85,11 @@ public class VDefinicionesJavaScriptIntermedio extends JFrame {
 	public JButton getBtnPrueba() {
 		return btnPrueba;
 	}
+	
 
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
 
 	public void pruebaListener(VentanaListener l) {
 		btnPrueba.addActionListener(l);
