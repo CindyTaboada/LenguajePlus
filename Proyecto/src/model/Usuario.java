@@ -8,6 +8,7 @@ public class Usuario {
 	private int edad;
 	private String email;
 	private String contrasenia;
+	
 
 	public Usuario(int idUsuario,String nombreUsuario, String apellido1, String apellido2, int edad, String email, String contrasenia) {
 		super();

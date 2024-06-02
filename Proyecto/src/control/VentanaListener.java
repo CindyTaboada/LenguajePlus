@@ -3,9 +3,12 @@ package control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 import view.sql.VDefinicionesSqlBasico;
 import view.sql.VDefinicionesSqlIntermedio;
@@ -24,6 +27,7 @@ import view.linux.VDefinicionesLinuxIntermedio;
 import view.linux.VDefinicionesLinuxAvanzado;
 import model.FuenteDatos;
 import model.Ranking;
+import model.Usuario;
 import model.db.ClasePersistencia;
 import model.db.Clase_NivelPersistencia;
 import model.db.LenguajePersistencia;
@@ -69,6 +73,8 @@ import view.sql.PnlTestSqlIntermedio;
 
 public class VentanaListener implements ActionListener {
 
+	
+	
 	private VpInicio vpi;
 	private VpCrearCuenta vcc;
 	private VpRanking vr;
@@ -303,13 +309,12 @@ public class VentanaListener implements ActionListener {
 
 			}
 			if (e.getSource() instanceof JButton) {
-				if (e.getSource().equals(vpi.getBtnIniciarSesion())) {
-					// esto es temporal
+				 if (e.getActionCommand().equals(VpInicio.ACT_CMN_BTN_CREAR_CUENTA)) {
+			        crearCuenta();
 					vpi.setVisible(false);
 					vpl.setVisible(true);
-				} else if (e.getSource().equals(vpi.getBtnCrearCuenta())) {
-					// VentanaPrincipalInicio.ACT_CMN_BTN_CREARCUENTA
-					// vpi.cargarPanel(vcc);
+				} else if (e.getActionCommand().equals(VpInicio.ACT_CMN_BTN_INICIAR_SESION)) {
+		            iniciarSesion();;
 					vpi.setVisible(false);
 					vcc.setVisible(true);
 				} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
@@ -402,15 +407,85 @@ public class VentanaListener implements ActionListener {
     }
 
 	private void crearCuenta() {
+        String nombre = vcc.getTxtNombre();
+        String apellido1 = vcc.getTxtApellido1();
+        String apellido2 = vcc.getTxtApellido2();
+        String email = vcc.getTxtEmail();
+        String pssw = new String(vcc.getPwdConstrasenia().getPassword());
+        String confirmarPsswd = new String(vcc.getPwdConfirmarContrasenia().getPassword());
+
+        if (nombre.isBlank()) {
+            mostrarError("El nombre es un dato obligatorio");
+        } else if (apellido1.isBlank()) {
+            mostrarError("El primer apellido es un dato obligatorio");
+        } else if (email.isBlank()) {
+            mostrarError("El email es un dato obligatorio");
+        } else if (!emailValido(email)) {
+            mostrarError("No es una dirección de correo válida. Ejemplo: info@lenguajeplus.com");
+        } else if (up.emailRepe(email)) {
+            mostrarError("El email ya existe");
+        } else if (pssw.isBlank()) {
+            mostrarError("Introduce una contraseña");
+        } else if (pssw.length() > UsuarioPersistencia.TAM_CONTRASENIA) {
+            mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
+        } else if (confirmarPsswd.isBlank()) {
+            mostrarError("Vuelve a escribir la contraseña");
+        } else if (!pssw.equals(confirmarPsswd)) {
+            mostrarError("Las contraseñas no coinciden");
+        } else {
+            Usuario usuario = new Usuario(0, nombre, apellido1, apellido2, 0, email, pssw);
+            up.registrarUsuario(usuario);
+            mensajeInfo("¡Enhorabuena! Registro completado!");
+        }
+    }
+
+
+
+	private Usuario iniciarSesion() {
+	    String email = vpi.getTxtEmail();
+	    String pssw = vpi.getPwdContrasenia();
+
+	    if (email.isBlank()) {
+	        mostrarError("Introduce un email");
+	    } else if (pssw.isBlank()) {
+	        mostrarError("Introduce una contraseña");
+	    } else if (pssw.length() > UsuarioPersistencia.TAM_CONTRASENIA) {
+	        mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
+	    } else {
+	        boolean emailOk = up.existeUsuario(email.trim());
+	        if (!emailOk) {
+	            mostrarError("El usuario no existe. Crea una cuenta");
+	        } else {
+	            boolean psswOk = up.contraCorrecta(email.trim(), pssw);
+	            if (!psswOk) {
+	                mostrarError("Contraseña incorrecta");
+	            } else {
+	                return up.obtenerUsuario(email.trim());
+	            }
+	        }
+	    }
+	    return null; // Devolver null si la autenticación falla
+	}
+
+
+
+
+	private void mostrarError(String string) {
+		JOptionPane.showMessageDialog(vpi, string, "Error de datos", JOptionPane.ERROR_MESSAGE);
 		
+	}
+	
+	private void mensajeInfo(String string) {
+		JOptionPane.showMessageDialog(vpi, string, "Mensaje info", JOptionPane.INFORMATION_MESSAGE);
 		
 	}
 
-	private void iniciarSesion() {
-			
-		
-	}
-
+	
+    private boolean emailValido(String email) {
+        String regex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+        return email.matches(regex);
+    }
+    
 	private void openMaterialWindow(String level) {
 		switch (lenguaje) {
 		case "Sql":

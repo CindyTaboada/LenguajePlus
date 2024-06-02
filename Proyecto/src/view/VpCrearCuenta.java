@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -175,33 +176,38 @@ public class VpCrearCuenta extends JFrame {
 	
 	
 	
+
+
 	public JTextField getTxtNombre() {
+		txtNombre.getText();
 		return txtNombre;
 	}
 
 	public JTextField getTxtApellido1() {
+		txtApellido1.getText();
 		return txtApellido1;
 	}
 
 	public JTextField getTxtEmail() {
+		txtEmail.getText();
 		return txtEmail;
+	}
+
+	public JTextField getTxtApellido2() {
+		txtApellido2.getText();
+		return txtApellido2;
 	}
 
 	public JPasswordField getPwdConstrasenia() {
 		return pwdConstrasenia;
 	}
 
-	public JTextField getTxtApellido2() {
-		return txtApellido2;
-	}
 
 	public JPasswordField getPwdConfirmarContrasenia() {
 		return pwdConfirmarContrasenia;
 	}
 
-	public JSpinner getSpnEdad() {
-		return spnEdad;
-	}
+
 
 	public void hacerVisible() {
 		setVisible(true);
@@ -217,6 +223,8 @@ public class VpCrearCuenta extends JFrame {
 		pwdConfirmarContrasenia.setText("");
 	}
 	
+
+
 }
 
 

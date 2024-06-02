@@ -16,6 +16,7 @@ public class UsuarioPersistencia {
 	static final String EDAD= "EDAD";
 	static final String EMAIL= "MAIL";
 	static final String CONTRASENIA= "CONTRASENA";
+	public static final int TAM_CONTRASENIA = 8;
 	
 
 private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
@@ -138,5 +139,20 @@ private AccesoBBDD acceso; //Encargdo de establecer la conexion con la BBDD
 		
 		return res;
 	}
+
+
+	public boolean emailRepe(String email2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	public boolean existeUsuario(String trim) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
 
 }
