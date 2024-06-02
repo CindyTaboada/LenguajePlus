@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.JFrame;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 import javax.swing.JButton;
 
@@ -105,7 +105,7 @@ public class VpLenguajes extends JFrame {
 		
 	}
 	
-	public void setListener(VentanaPrincipalListener listener) {
+	public void setListener(VentanaListener listener) {
 		btnJava.addActionListener(listener);
 		btnLinux.addActionListener(listener);
 		btnJavaScript.addActionListener(listener);

@@ -12,7 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 public class MaterialSqlAvanzado extends JFrame {
 
@@ -68,7 +68,7 @@ public class MaterialSqlAvanzado extends JFrame {
 		return btnPrueba;
 	}
 
-	public void pruebaListener(VentanaPrincipalListener l) {
+	public void pruebaListener(VentanaListener l) {
 		btnPrueba.addActionListener(l);
 	}
 	

@@ -11,7 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -167,7 +167,7 @@ public class VpCrearCuenta extends JFrame {
 		return btnAtras;
 	}
 
-	public void setListener(VentanaPrincipalListener l) {
+	public void setListener(VentanaListener l) {
 		btnCancelarCrearCuenta.addActionListener(l);
 		btnConfirmarCrearCuenta.addActionListener(l);	
 		btnAtras.addActionListener(l);

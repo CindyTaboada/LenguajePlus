@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 public class MaterialGitIntermedio extends JFrame {
 
@@ -65,7 +65,7 @@ public class MaterialGitIntermedio extends JFrame {
 		return btnPrueba;
 	}
 
-	public void pruebaListener(VentanaPrincipalListener l) {
+	public void pruebaListener(VentanaListener l) {
 		btnPrueba.addActionListener(l);
 	}
 	

@@ -67,7 +67,7 @@ import view.sql.PreguntasSqlAvanzado;
 import view.sql.PreguntasSqlBasico;
 import view.sql.PreguntasSqlIntermedio;
 
-public class VentanaPrincipalListener implements ActionListener {
+public class VentanaListener implements ActionListener {
 
 	private VpInicio vpi;
 	private VpCrearCuenta vcc;
@@ -121,7 +121,7 @@ public class VentanaPrincipalListener implements ActionListener {
 
 	String lenguaje = "";
 
-	public VentanaPrincipalListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr,
+	public VentanaListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr,
 			VpLenguajes vpl, VpNiveles vpd, MaterialGitBasico mGitB, MaterialGitIntermedio mGitI, MaterialGitAvanzado mGitA,
 			 MaterialSqlBasico mSqlB, MaterialSqlIntermedio mSqlI, 
 			MaterialSqlAvanzado mSqlA, MaterialJavaScriptBasico mJavaScriptB, 

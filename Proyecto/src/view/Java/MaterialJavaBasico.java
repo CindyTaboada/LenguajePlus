@@ -9,7 +9,7 @@ import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JTextPane;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 import javax.swing.JButton;
 import java.awt.Font;
@@ -64,7 +64,7 @@ public class MaterialJavaBasico extends JFrame {
 		return btnPrueba;
 	}
 
-	public void pruebaListener(VentanaPrincipalListener l) {
+	public void pruebaListener(VentanaListener l) {
 		btnPrueba.addActionListener(l);
 	}
 	

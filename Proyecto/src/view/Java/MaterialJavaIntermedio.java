@@ -12,7 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 
 public class MaterialJavaIntermedio extends JFrame {
 
@@ -67,7 +67,7 @@ public class MaterialJavaIntermedio extends JFrame {
 		return btnPrueba;
 	}
 
-	public void pruebaListener(VentanaPrincipalListener l) {
+	public void pruebaListener(VentanaListener l) {
 		btnPrueba.addActionListener(l);
 	}
 	

@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 import model.Ranking;
 
 import java.awt.BorderLayout;
@@ -123,7 +123,7 @@ public class VpRanking extends JFrame {
         setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
     }
 
-    public void setListener(VentanaPrincipalListener l) {
+    public void setListener(VentanaListener l) {
         btnConsultar.addActionListener(l);
         btnSalirRanking.addActionListener(l);
     }

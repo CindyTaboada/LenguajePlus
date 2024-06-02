@@ -2,7 +2,7 @@ package main;
 
 import java.awt.EventQueue;
 
-import control.VentanaPrincipalListener;
+import control.VentanaListener;
 import view.VpNiveles;
 import view.VpLenguajes;
 import view.VpCrearCuenta;
@@ -62,7 +62,7 @@ public class Inicio {
 				
 				
 				
-				VentanaPrincipalListener l = new VentanaPrincipalListener(vpi, vcc, vr, vpl, vpd, mGitB, mGitI, mGitA, mSqlB, mSqlI, mSqlA,
+				VentanaListener l = new VentanaListener(vpi, vcc, vr, vpl, vpd, mGitB, mGitI, mGitA, mSqlB, mSqlI, mSqlA,
 						mJavaScriptB, mJavaScriptI, mJavaScriptA, mJavaB, mJavaI, mJavaA, mLinuxB, mLinuxI, mLinuxA);
 				
 				vpi.setListener(l);
