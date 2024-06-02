@@ -55,12 +55,12 @@ public class VpRanking extends JFrame {
 		lblRanking = new JLabel("RANKING");
 		lblRanking.setHorizontalAlignment(SwingConstants.CENTER);
 		lblRanking.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblRanking.setBounds(214, 24, 116, 51);
+		lblRanking.setBounds(35, 8, 116, 51);
 		getContentPane().add(lblRanking);
 
 		btnSalirRanking = new JButton("Salir del Ranking");
 		btnSalirRanking.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnSalirRanking.setBounds(228, 279, 143, 21);
+		btnSalirRanking.setBounds(228, 271, 143, 39);
 		getContentPane().add(btnSalirRanking);
 		
 		JScrollPane scrpRanking = new JScrollPane();
@@ -72,12 +72,12 @@ public class VpRanking extends JFrame {
 		
 		btnConsultar = new JButton("Consultar");
 		btnConsultar.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnConsultar.setBounds(65, 16, 99, 28);
+		btnConsultar.setBounds(421, 33, 99, 39);
 		getContentPane().add(btnConsultar);
 		
 		comboBRanking = new JComboBox();
 		comboBRanking.setModel(new DefaultComboBoxModel<String>(new String[] {"TODAS", "TOP 10 N1", ""}));
-		comboBRanking.setBounds(75, 54, 59, 21);
+		comboBRanking.setBounds(217, 42, 166, 21);
 		getContentPane().add(comboBRanking);
 		
 		configurarTabla();
