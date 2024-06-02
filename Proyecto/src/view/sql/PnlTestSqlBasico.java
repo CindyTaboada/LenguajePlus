@@ -9,13 +9,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import control.VentanaListener;
+
 public class PnlTestSqlBasico extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 600;
 	private static final int ALTO = 350;
 	private JRadioButton rbtnA;
-	private JLabel lblPregunta;
 	private final ButtonGroup buttonGroupRespuestas = new ButtonGroup();
 	private JRadioButton rbtnC;
 	private JRadioButton rbtnD;
@@ -30,9 +31,11 @@ public class PnlTestSqlBasico extends JPanel {
 	}
 
 	private void initComponentes() {
+		
 		setBackground(new Color(51, 255, 102));
 		setLayout(null);
-		lblPregunta = new JLabel("Pregunta:");
+		
+		JLabel lblPregunta = new JLabel("Pregunta:");
 		lblPregunta.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
 		lblPregunta.setBounds(77, 27, 414, 13);
 		add(lblPregunta);
@@ -41,16 +44,16 @@ public class PnlTestSqlBasico extends JPanel {
 		buttonGroupRespuestas.add(rbtnA);
 		rbtnA.setBounds(77, 136, 103, 21);
 		add(rbtnA);
-
-		rbtnC = new JRadioButton("C");
-		buttonGroupRespuestas.add(rbtnC);
-		rbtnC.setBounds(77, 202, 103, 21);
-		add(rbtnC);
-
+		
 		rbtnB = new JRadioButton("B");
 		buttonGroupRespuestas.add(rbtnB);
 		rbtnB.setBounds(77, 169, 103, 21);
 		add(rbtnB);
+
+		rbtnC = new JRadioButton("C");
+		buttonGroupRespuestas.add(rbtnC);
+		rbtnC.setBounds(77, 197, 103, 21);
+		add(rbtnC);
 
 		rbtnD = new JRadioButton("D");
 		buttonGroupRespuestas.add(rbtnD);
@@ -59,9 +62,45 @@ public class PnlTestSqlBasico extends JPanel {
 
 		btnComprobar = new JButton("Comprobar");
 		btnComprobar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnComprobar.setBounds(147, 278, 164, 42);
+		btnComprobar.setBounds(218, 278, 164, 42);
 		add(btnComprobar);
 	}
+
+	public JRadioButton getRbtnA() {
+		return rbtnA;
+	}
+
+	public JRadioButton getRbtnC() {
+		return rbtnC;
+	}
+
+	public JRadioButton getRbtnD() {
+		return rbtnD;
+	}
+
+	public JRadioButton getRbtnB() {
+		return rbtnB;
+	}
+
+	public JButton getBtnComprobar() {
+		return btnComprobar;
+	}
+	
+	public void setListener(VentanaListener l) {
+		rbtnA.addActionListener(l);
+		rbtnB.addActionListener(l);
+		rbtnC.addActionListener(l);
+		rbtnD.addActionListener(l);
+		btnComprobar.addActionListener(l);
+	
+
+	}
+
+
+	
+	
+	
+	
 	
 
 }

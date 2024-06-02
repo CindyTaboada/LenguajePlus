@@ -30,18 +30,27 @@ public class VDeficionesJavaAvanzado extends JFrame {
 	private JButton btnAtras;
 
 	public VDeficionesJavaAvanzado() {
-		getContentPane().setEnabled(false);
-
+		
 		setTitle("Java Avanzado");
 
 		configurarFrame();
 
 		initComponentes();
 
+		
+	}
+	
+	private void configurarFrame() {
 		getContentPane().setBackground(new Color(51, 255, 102));
+		setSize(ANCHO, ALTO);
+
+		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
+
 	}
 
 	private void initComponentes() {
+		getContentPane().setEnabled(false);
 		getContentPane().setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -75,23 +84,31 @@ public class VDeficionesJavaAvanzado extends JFrame {
 		btnAtras.setBounds(621, 404, 90, 39);
 		getContentPane().add(btnAtras);
 		
-		preguntasFrame = new PnlTestJavaAvanzado();
+		setPreguntasFrame(new PnlTestJavaAvanzado());
 	}
 
 	public JButton getBtnPrueba() {
 		return btnPrueba;
 	}
+	
+
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
 
 	public void PruebaActionListener(VentanaListener Listener) {
 		btnPrueba.addActionListener(Listener);
+		btnAtras.addActionListener(Listener);
 	}
 
-	private void configurarFrame() {
-		setSize(ANCHO, ALTO);
-
-		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
-		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
-
+	public PnlTestJavaAvanzado getPreguntasFrame() {
+		return preguntasFrame;
 	}
+
+	public void setPreguntasFrame(PnlTestJavaAvanzado preguntasFrame) {
+		this.preguntasFrame = preguntasFrame;
+	}
+
+
 }
 

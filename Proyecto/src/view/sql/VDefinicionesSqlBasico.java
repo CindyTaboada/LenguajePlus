@@ -26,7 +26,7 @@ public class VDefinicionesSqlBasico extends JFrame {
 	private JButton btnAtras;
 	
 	public VDefinicionesSqlBasico() {
-		getContentPane().setBackground(new Color(51, 255, 102));
+		
 		setTitle("SQL Basico");
 		
 		configurarFrame();
@@ -35,6 +35,7 @@ public class VDefinicionesSqlBasico extends JFrame {
 	}
 
 	private void initComponentes() {
+		getContentPane().setBackground(new Color(51, 255, 102));
 		getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -79,8 +80,15 @@ public class VDefinicionesSqlBasico extends JFrame {
 	public JButton getBtnPrueba() {
 		return btnPrueba;
 	}
+	
+	
+
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
 
 	public void PruebaActionListener(VentanaListener Listener) {
 		btnPrueba.addActionListener(Listener);
+		btnAtras.addActionListener(Listener);
 	}
 }
