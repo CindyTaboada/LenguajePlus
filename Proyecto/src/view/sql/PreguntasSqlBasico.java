@@ -2,6 +2,7 @@ package view.sql;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.ScrollPane;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -62,5 +63,7 @@ public class PreguntasSqlBasico extends JPanel {
 		btnComprobar.setBounds(208, 281, 164, 42);
 		add(btnComprobar);
 	}
+
+
 
 }

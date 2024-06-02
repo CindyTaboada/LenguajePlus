@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.ScrollPaneConstants;
@@ -21,6 +22,7 @@ public class MaterialJavaAvanzado extends JFrame {
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
 	private PreguntasJavaAvanzado preguntasFrame;
+	private JScrollPane scrollPane;
 
 	public MaterialJavaAvanzado() {
 		getContentPane().setEnabled(false);
@@ -37,7 +39,7 @@ public class MaterialJavaAvanzado extends JFrame {
 	private void initComponentes() {
 		getContentPane().setLayout(null);
 
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scrollPane.setBounds(68, 10, 639, 343);
 		getContentPane().add(scrollPane);
@@ -57,15 +59,7 @@ public class MaterialJavaAvanzado extends JFrame {
 		
 		preguntasFrame = new PreguntasJavaAvanzado();
 	}
-
-	public JButton getBtnPrueba() {
-		return btnPrueba;
-	}
-
-	public void PruebaActionListener(VentanaPrincipalListener Listener) {
-		btnPrueba.addActionListener(Listener);
-	}
-
+	
 	private void configurarFrame() {
 		setSize(ANCHO, ALTO);
 
@@ -73,5 +67,22 @@ public class MaterialJavaAvanzado extends JFrame {
 		setLocation((pantalla.width - this.getSize().width) / 2, (pantalla.height - this.getSize().height) / 2);
 
 	}
+
+	public JButton getBtnPrueba() {
+		return btnPrueba;
+	}
+
+	public void pruebaListener(VentanaPrincipalListener l) {
+		btnPrueba.addActionListener(l);
+	}
+
+	
+	public void cargarPanel(JPanel panel) {
+		scrollPane.setViewportView(panel);
+		
+	}
+	
+	
 }
+
 

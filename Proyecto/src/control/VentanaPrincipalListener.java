@@ -100,7 +100,7 @@ public class VentanaPrincipalListener implements ActionListener {
 	private MaterialJavaBasico mJavaB;
 	private MaterialJavaIntermedio mJavaI;
 	private MaterialJavaAvanzado mJavaA;
-	private PreguntasJavaIntermedio pJavaB;
+	private PreguntasJavaBasico pJavaB;
 	private PreguntasJavaIntermedio pJavaI;
 	private PreguntasJavaAvanzado pJavaA;
 	
@@ -122,12 +122,34 @@ public class VentanaPrincipalListener implements ActionListener {
 	String lenguaje = "";
 
 	public VentanaPrincipalListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr,
-			VpLenguajes vpl, VpNiveles vpd) {
+			VpLenguajes vpl, VpNiveles vpd, MaterialGitBasico mGitB, MaterialGitIntermedio mGitI, MaterialGitAvanzado mGitA,
+			 MaterialSqlBasico mSqlB, MaterialSqlIntermedio mSqlI, 
+			MaterialSqlAvanzado mSqlA, MaterialJavaScriptBasico mJavaScriptB, 
+			MaterialJavaScriptIntermedio mJavaScriptI, MaterialJavaScriptAvanzado mJavaScriptA, 
+			MaterialJavaBasico mJavaB, MaterialJavaIntermedio mJavaI, MaterialJavaAvanzado mJavaA, 
+			MaterialLinuxBasico mLinuxB, MaterialLinuxIntermedio mLinuxI, MaterialLinuxAvanzado mLinxA) {
+		
 		this.vpi = vpi;
 		this.vcc = vcc;
 		this.vr = vr;
 		this.vpl = vpl;
 		this.vpd = vpd;
+		this.mGitB = mGitB;
+	    this.mGitI = mGitI;
+	    this.mGitA = mGitA;
+	    this.mSqlB = mSqlB;
+	    this.mSqlI = mSqlI;
+	    this.mSqlA = mSqlA;
+	    this.mJavaScriptB = mJavaScriptB;
+	    this.mJavaScriptI = mJavaScriptI;
+	    this.mJavaScriptA = mJavaScriptA;
+	    this.mJavaB = mJavaB;
+	    this.mJavaI = mJavaI;
+	    this.mJavaA = mJavaA;
+	    this.mLinuxB = mLinuxB;
+	    this.mLinuxI = mLinuxI;
+	    this.mLinuxA = mLinxA;
+		
 		// datos = new FuenteDatos();
 		cnp = new Clase_NivelPersistencia();
 		cp = new ClasePersistencia();
@@ -138,21 +160,28 @@ public class VentanaPrincipalListener implements ActionListener {
 		up = new UsuarioPersistencia();
 
 		// Instantiate the view classes
-		mSqlB = new MaterialSqlBasico();
-		mSqlI = new MaterialSqlIntermedio();
-		mSqlA = new MaterialSqlAvanzado();
-		mGitB = new MaterialGitBasico();
-		mGitI = new MaterialGitIntermedio();
-		mGitA = new MaterialGitAvanzado();
-		mJavaB = new MaterialJavaBasico();
-		mJavaI = new MaterialJavaIntermedio();
-		mJavaA = new MaterialJavaAvanzado();
-		mJavaScriptB = new MaterialJavaScriptBasico();
-		mJavaScriptI = new MaterialJavaScriptIntermedio();
-		mJavaScriptA = new MaterialJavaScriptAvanzado();
-		mLinuxB = new MaterialLinuxBasico();
-		mLinuxI = new MaterialLinuxIntermedio();
-		mLinuxA = new MaterialLinuxAvanzado();
+		
+
+		pGitB = new PreguntasGitBasico();
+		pGitI = new PreguntasGitIntermedio();
+		pGitA = new PreguntasGitAvanzado();
+		
+		pSqlB = new PreguntasSqlBasico();
+		pSqlI = new PreguntasSqlIntermedio();
+		pSqlA = new PreguntasSqlAvanzado();
+		
+		pJavaScriptB = new PreguntasJavaScriptBasico();
+		pJavaScriptI = new PreguntasJavaScriptIntermedio();
+		pJavaScriptA = new PreguntasJavaScriptAvanzado();
+		
+		pJavaB = new PreguntasJavaBasico();
+		pJavaI = new PreguntasJavaIntermedio();
+		pJavaA = new PreguntasJavaAvanzado();
+	
+		
+		pLinuxA = new PreguntasLinuxAvanzado();
+		pLinuxI = new PreguntasLinuxIntermedio();
+		pLinuxB = new PreguntasLinuxBasico();
 
 	}
 
@@ -322,37 +351,37 @@ public class VentanaPrincipalListener implements ActionListener {
 					openMaterialWindow("Advanced");
 				} else if (e.getSource().equals(vr.getBtnSalirRanking())) {
 					vr.setVisible(false);
-				} else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
-	                pSqlB.setVisible(true);
-	            } else if (e.getSource().equals(mSqlI.getBtnPrueba())) {
-	                pSqlI.setVisible(true);
-	            } else if (e.getSource().equals(mSqlA.getBtnPrueba())) {
-	                pSqlA.setVisible(true);
-	            } else if (e.getSource().equals(mGitB.getBtnPrueba())) {
-	                pGitB.setVisible(true);
-	            } else if (e.getSource().equals(mGitI.getBtnPrueba())) {
-	                pGitI.setVisible(true);
-	            } else if (e.getSource().equals(mGitA.getBtnPrueba())) {
-	                pGitA.setVisible(true);
-	            } else if (e.getSource().equals(mJavaB.getBtnPrueba())) {
-	                pJavaB.setVisible(true);
-	            } else if (e.getSource().equals(mJavaI.getBtnPrueba())) {
-	                pJavaI.setVisible(true);
-	            } else if (e.getSource().equals(mJavaA.getBtnPrueba())) {
-	                pJavaA.setVisible(true);
-	            } else if (e.getSource().equals(mJavaScriptB.getBtnPrueba())) {
-	                pJavaScriptB.setVisible(true);
-	            } else if (e.getSource().equals(mJavaScriptI.getBtnPrueba())) {
-	                pJavaScriptI.setVisible(true);
-	            } else if (e.getSource().equals(mJavaScriptA.getBtnPrueba())) {
-	                pJavaScriptA.setVisible(true);
-	            } else if (e.getSource().equals(mLinuxB.getBtnPrueba())) {
-	                pLinuxB.setVisible(true);
-	            } else if (e.getSource().equals(mLinuxI.getBtnPrueba())) {
-	                pLinuxI.setVisible(true);
-	            } else if (e.getSource().equals(mLinuxA.getBtnPrueba())) {
-	                pLinuxA.setVisible(true);
-	            }else if (e.getSource().equals(vr.getBtnConsultar())) {
+				 } else if (e.getSource().equals(mGitB.getBtnPrueba())) {
+			            mGitB.cargarPanel(pGitB);
+			        } else if (e.getSource().equals(mGitI.getBtnPrueba())) {
+			            mGitI.cargarPanel(pGitI);
+			        } else if (e.getSource().equals(mGitA.getBtnPrueba())) {
+			            mGitA.cargarPanel(pGitA);
+			        } else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
+			            mSqlB.cargarPanel(pSqlB);
+			        } else if (e.getSource().equals(mSqlI.getBtnPrueba())) {
+			            mSqlI.cargarPanel(pSqlI);
+			        } else if (e.getSource().equals(mSqlA.getBtnPrueba())) {
+			            mSqlA.cargarPanel(pSqlA);
+			        } else if (e.getSource().equals(mJavaScriptB.getBtnPrueba())) {
+			            mJavaScriptB.cargarPanel(pJavaScriptB);
+			        } else if (e.getSource().equals(mJavaScriptI.getBtnPrueba())) {
+			            mJavaScriptI.cargarPanel(pJavaScriptI);
+			        } else if (e.getSource().equals(mJavaScriptA.getBtnPrueba())) {
+			            mJavaScriptA.cargarPanel(pJavaScriptA);
+			        } else if (e.getSource().equals(mJavaB.getBtnPrueba())) {
+			            mJavaB.cargarPanel(pJavaB);
+			        } else if (e.getSource().equals(mJavaI.getBtnPrueba())) {
+			            mJavaI.cargarPanel(pJavaI);
+			        } else if (e.getSource().equals(mJavaA.getBtnPrueba())) {
+			            mJavaA.cargarPanel(pJavaA);
+			        } else if (e.getSource().equals(mLinuxB.getBtnPrueba())) {
+			            mLinuxB.cargarPanel(pLinuxB);
+			        } else if (e.getSource().equals(mLinuxI.getBtnPrueba())) {
+			            mLinuxI.cargarPanel(pLinuxI);
+			        } else if (e.getSource().equals(mLinuxA.getBtnPrueba())) {
+			            mLinuxA.cargarPanel(pLinuxA);
+			        }else if (e.getSource().equals(vr.getBtnConsultar())) {
 	                String selectedOption = (String) vr.getComboBRanking().getSelectedItem();
 	                if (selectedOption.equals("TOP 10 N1")) {
 	                    cargarRanking("10"); 

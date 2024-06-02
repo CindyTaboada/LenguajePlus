@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.Color;
 import javax.swing.JTextPane;
@@ -19,6 +20,7 @@ public class MaterialLinuxBasico extends JFrame {
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
 	private JButton btnPrueba;
+	private JScrollPane scrollPane;
 	
 	public MaterialLinuxBasico() {
 		getContentPane().setBackground(new Color(51, 255, 102));
@@ -32,7 +34,7 @@ public class MaterialLinuxBasico extends JFrame {
 	private void initComponentes() {
 		getContentPane().setLayout(null);
 		
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		scrollPane.setEnabled(false);
 		scrollPane.setBounds(68, 10, 639, 343);
 		getContentPane().add(scrollPane);
@@ -61,8 +63,13 @@ public class MaterialLinuxBasico extends JFrame {
 	public JButton getBtnPrueba() {
 		return btnPrueba;
 	}
+	
+	public void cargarPanel(JPanel panel) {
+		scrollPane.setViewportView(panel);
+		
+	}
 
-	public void PruebaActionListener(VentanaPrincipalListener Listener) {
-		btnPrueba.addActionListener(Listener);
+	public void pruebaListener(VentanaPrincipalListener l) {
+		btnPrueba.addActionListener(l);
 	}
 }
