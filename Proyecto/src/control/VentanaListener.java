@@ -158,7 +158,7 @@ public class VentanaListener implements ActionListener {
 	    this.mLinuxI = mLinuxI;
 	    this.mLinuxA = mLinuxA;
 		
-		// datos = new FuenteDatos();
+		
 		cnp = new Clase_NivelPersistencia();
 		cp = new ClasePersistencia();
 		lp = new LenguajePersistencia();
@@ -198,23 +198,14 @@ public class VentanaListener implements ActionListener {
 		if (e.getSource() instanceof JButton) {
 			if (e.getSource().equals(vpi.getBtnIniciarSesion())) {
 				iniciarSesion();
-				vpi.setVisible(false);
-				vpl.setVisible(true);
+				vpi.hacerVisible();
 			} else if (e.getSource().equals(vpi.getBtnCrearCuenta())) {
-				// No conseguimos que funcione con JPanels a si que hicimos todo JFrames
-				// VentanaPrincipalInicio.ACT_CMN_BTN_CREARCUENTA
-				// vpi.cargarPanel(vcc);
-				crearCuenta();
-				vpi.setVisible(false);
-				vcc.setVisible(true);
+				vcc.hacerVisible();
 			} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
-				vpi.setVisible(true);
 				vcc.setVisible(false);
+				vpi.setVisible(true);
 			} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
-				// esto tambien es temporal
-				vpi.setVisible(true);
-				vcc.setVisible(false);
-				
+				crearCuenta();
 			} else if (e.getSource().equals(vpl.getBtnAtras())) {
 				vpl.setVisible(false);
 				vpi.setVisible(true);
@@ -311,19 +302,15 @@ public class VentanaListener implements ActionListener {
 			if (e.getSource() instanceof JButton) {
 				 if (e.getActionCommand().equals(VpInicio.ACT_CMN_BTN_CREAR_CUENTA)) {
 			        crearCuenta();
-					vpi.setVisible(false);
-					vpl.setVisible(true);
+					vpi.hacerVisible();
 				} else if (e.getActionCommand().equals(VpInicio.ACT_CMN_BTN_INICIAR_SESION)) {
 		            iniciarSesion();;
-					vpi.setVisible(false);
-					vcc.setVisible(true);
+					vpi.hacerVisible();	
 				} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
-					vpi.setVisible(true);
-					vcc.setVisible(false);
+					vpi.hacerVisible();
+					vcc.hacerVisible();
 				} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
-					// esto tambien es temporal
-					vpi.setVisible(true);
-					vcc.setVisible(false);
+					vpi.hacerVisible();
 				} else if (e.getSource().equals(vpl.getBtnAtras())) {
 					vpl.setVisible(false);
 					vpi.setVisible(true);
