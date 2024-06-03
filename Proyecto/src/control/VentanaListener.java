@@ -25,6 +25,7 @@ import view.Javascript.VDefinicionesJavaScriptAvanzado;
 import view.linux.VDefinicionesLinuxBasico;
 import view.linux.VDefinicionesLinuxIntermedio;
 import view.linux.VDefinicionesLinuxAvanzado;
+import model.ClaseNivel;
 import model.FuenteDatos;
 import model.Ranking;
 import model.Usuario;
@@ -74,8 +75,6 @@ import view.sql.PnlTestSqlIntermedio;
 
 public class VentanaListener implements ActionListener {
 
-	
-	
 	private VpInicio vpi;
 	private VpCrearCuenta vcc;
 	private VpRanking vr;
@@ -111,7 +110,7 @@ public class VentanaListener implements ActionListener {
 	private PnlTestJavaBasico pJavaB;
 	private PnlTestJavaIntermedio pJavaI;
 	private PnlTestJavaAvanzado pJavaA;
-	
+
 	// JavaScript Views
 	private VDefinicionesJavaScriptBasico mJavaScriptB;
 	private VDefinicionesJavaScriptIntermedio mJavaScriptI;
@@ -127,15 +126,17 @@ public class VentanaListener implements ActionListener {
 	private PnlTestLinuxIntermedio pLinuxI;
 	private PnlTestLinuxAvanzado pLinuxA;
 
+	private int currentQuestion = 1;
+
 	String lenguaje = "";
 
-	public VentanaListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr, VpFelicitaciones vf, VpLenguajes vpl, 
-			VpNiveles vpd, VDefinicionesGitBasico mGitB, VDefinicionesGitIntermedio mGitI, 
-			VDefinicionesGitAvanzado mGitA, VDefinicionesSqlBasico mSqlB, VDefinicionesSqlIntermedio 
-			mSqlI, VDefinicionesSqlAvanzado mSqlA, VDefinicionesJavaScriptBasico mJavaScriptB, 
-			VDefinicionesJavaScriptIntermedio mJavaScriptI, VDefinicionesJavaScriptAvanzado mJavaScriptA, 
-			VDeficionesJavaBasico mJavaB, VDefinicionesJavaIntermedio mJavaI, VDeficionesJavaAvanzado mJavaA, 
-			VDefinicionesLinuxBasico mLinuxB, VDefinicionesLinuxIntermedio mLinuxI, 
+	public VentanaListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr, VpFelicitaciones vf, VpLenguajes vpl,
+			VpNiveles vpd, VDefinicionesGitBasico mGitB, VDefinicionesGitIntermedio mGitI,
+			VDefinicionesGitAvanzado mGitA, VDefinicionesSqlBasico mSqlB, VDefinicionesSqlIntermedio mSqlI,
+			VDefinicionesSqlAvanzado mSqlA, VDefinicionesJavaScriptBasico mJavaScriptB,
+			VDefinicionesJavaScriptIntermedio mJavaScriptI, VDefinicionesJavaScriptAvanzado mJavaScriptA,
+			VDeficionesJavaBasico mJavaB, VDefinicionesJavaIntermedio mJavaI, VDeficionesJavaAvanzado mJavaA,
+			VDefinicionesLinuxBasico mLinuxB, VDefinicionesLinuxIntermedio mLinuxI,
 			VDefinicionesLinuxAvanzado mLinuxA) {
 
 		this.vpi = vpi;
@@ -144,22 +145,21 @@ public class VentanaListener implements ActionListener {
 		this.vpl = vpl;
 		this.vpd = vpd;
 		this.mGitB = mGitB;
-	    this.mGitI = mGitI;
-	    this.mGitA = mGitA;
-	    this.mSqlB = mSqlB;
-	    this.mSqlI = mSqlI;
-	    this.mSqlA = mSqlA;
-	    this.mJavaScriptB = mJavaScriptB;
-	    this.mJavaScriptI = mJavaScriptI;
-	    this.mJavaScriptA = mJavaScriptA;
-	    this.mJavaB = mJavaB;
-	    this.mJavaI = mJavaI;
-	    this.mJavaA = mJavaA;
-	    this.mLinuxB = mLinuxB;
-	    this.mLinuxI = mLinuxI;
-	    this.mLinuxA = mLinuxA;
-		
-		
+		this.mGitI = mGitI;
+		this.mGitA = mGitA;
+		this.mSqlB = mSqlB;
+		this.mSqlI = mSqlI;
+		this.mSqlA = mSqlA;
+		this.mJavaScriptB = mJavaScriptB;
+		this.mJavaScriptI = mJavaScriptI;
+		this.mJavaScriptA = mJavaScriptA;
+		this.mJavaB = mJavaB;
+		this.mJavaI = mJavaI;
+		this.mJavaA = mJavaA;
+		this.mLinuxB = mLinuxB;
+		this.mLinuxI = mLinuxI;
+		this.mLinuxA = mLinuxA;
+
 		cnp = new Clase_NivelPersistencia();
 		cp = new ClasePersistencia();
 		lp = new LenguajePersistencia();
@@ -168,149 +168,197 @@ public class VentanaListener implements ActionListener {
 		ulp = new Usuario_LenguajePersistencia();
 		up = new UsuarioPersistencia();
 
-		
-
 		pGitB = new PnlTesGitBasico();
 		pGitI = new PnlTestGitIntermedio();
 		pGitA = new PnlTestGitAvanzado();
-		
+
 		pSqlB = new PnlTestSqlBasico();
 		pSqlI = new PnlTestSqlIntermedio();
 		pSqlA = new PnlTestSqlAvanzado();
-		
+
 		pJavaScriptB = new PnlTestJavaScriptBasico();
 		pJavaScriptI = new PnlTestJavaScriptIntermedio();
 		pJavaScriptA = new PnlTestJavaScriptAvanzado();
-		
+
 		pJavaB = new PnlTestJavaBasico();
 		pJavaI = new PnlTestJavaIntermedio();
 		pJavaA = new PnlTestJavaAvanzado();
-	
-		pLinuxB = new PnlTestLinuxBasico();		
+
+		pLinuxB = new PnlTestLinuxBasico();
 		pLinuxI = new PnlTestLinuxIntermedio();
 		pLinuxA = new PnlTestLinuxAvanzado();
-		
-
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() instanceof JButton) {
-			if (e.getSource().equals(vpi.getBtnIniciarSesion())) {
-				iniciarSesion();
-				vpi.hacerVisible();
-			} else if (e.getSource().equals(vpi.getBtnCrearCuenta())) {
-				vcc.hacerVisible();
-				vpl.hacerVisible();
-			} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
-				vcc.setVisible(false);
-				vpi.setVisible(true);
-			} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
-				crearCuenta();
-				vpl.hacerVisible();
-			} else if (e.getSource().equals(vpl.getBtnAtras())) {
-				vpl.setVisible(false);
-				vpi.setVisible(true);
-			} else if (e.getSource().equals(vpl.getBtnGit())) {
-				vpl.setVisible(false);
-				vpd.setVisible(true);
-				lenguaje = "Git";
-			} else if (e.getSource().equals(vpl.getBtnLinux())) {
-				vpl.setVisible(false);
-				vpd.setVisible(true);
-				lenguaje = "Linux";
-			} else if (e.getSource().equals(vpl.getBtnJava())) {
-				vpl.setVisible(false);
-				vpd.setVisible(true);
-				lenguaje = "Java";
-			} else if (e.getSource().equals(vpl.getBtnJavaScript())) {
-				vpl.setVisible(false);
-				vpd.setVisible(true);
-				lenguaje = "JavaScript";
-			} else if (e.getSource().equals(vpl.getBtnSql())) {
-				vpl.setVisible(false);
-				vpd.setVisible(true);
-				lenguaje = "Sql";
-			} else if (e.getSource().equals(vpd.getBtnAtras())) {
-				vpd.setVisible(false);
-				vpl.setVisible(true);
-			} else if (e.getSource().equals(vpd.getBtnBeginner())) {
-				openMaterialWindow("Beginner");
-			} else if (e.getSource().equals(vpd.getBtnIntermediate())) {
-				openMaterialWindow("Intermediate");
-			} else if (e.getSource().equals(vpd.getBtnAvance())) {
-				openMaterialWindow("Advanced");
-			} else if (e.getSource().equals(vr.getBtnSalirRanking())) {
-				vr.setVisible(false);
-			} else if (e.getSource().equals(vr.getBtnConsultar())) {
-				String selectedOption = (String) vr.getComboBRanking().getSelectedItem();
-				if (selectedOption.equals("TOP 10 N1")) {
-					cargarRanking("10");
-				} else if (selectedOption.equals("TODAS")) {
-					cargarRanking("TODAS");
+			if (e.getSource() == vpi.getBtnIniciarSesion()) {
+				Usuario usuario = iniciarSesion();
+				if (usuario != null) {
+					JOptionPane.showMessageDialog(vpi, "Login Successful");
+					// Proceed to the next screen or action
 				}
-			} else if (e.getSource().equals(mGitB.getBtnPrueba())) {
-				mGitB.cargarPanel(pGitB);
-			} else if (e.getSource().equals(mGitI.getBtnPrueba())) {
-				mGitI.cargarPanel(pGitI);
-			} else if (e.getSource().equals(mGitA.getBtnPrueba())) {
-				mGitA.cargarPanel(pGitA);
-			} else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
-				mSqlB.cargarPanel(pSqlB);
-			} else if (e.getSource().equals(mSqlI.getBtnPrueba())) {
-				mSqlI.cargarPanel(pSqlI);
-			} else if (e.getSource().equals(mSqlA.getBtnPrueba())) {
-				mSqlA.cargarPanel(pSqlA);
-	            
-	        }
+			} else if (e.getSource() == vpi.getBtnCrearCuenta()) {
+				// Handle create account action
+				vpi.setVisible(false);
+				vcc.setVisible(true);
+				
+			}
+		} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
+			vcc.setVisible(false);
+			vpi.setVisible(true);
+		} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
+			crearCuenta();
+			vpl.hacerVisible();
+		} else if (e.getSource().equals(vpl.getBtnAtras())) {
+			vpl.setVisible(false);
+			vpi.setVisible(true);
+		} else if (e.getSource().equals(vpl.getBtnGit())) {
+			vpl.setVisible(false);
+			vpd.setVisible(true);
+			lenguaje = "Git";
+		} else if (e.getSource().equals(vpl.getBtnLinux())) {
+			vpl.setVisible(false);
+			vpd.setVisible(true);
+			lenguaje = "Linux";
+		} else if (e.getSource().equals(vpl.getBtnJava())) {
+			vpl.setVisible(false);
+			vpd.setVisible(true);
+			lenguaje = "Java";
+		} else if (e.getSource().equals(vpl.getBtnJavaScript())) {
+			vpl.setVisible(false);
+			vpd.setVisible(true);
+			lenguaje = "JavaScript";
+		} else if (e.getSource().equals(vpl.getBtnSql())) {
+			vpl.setVisible(false);
+			vpd.setVisible(true);
+			lenguaje = "Sql";
+		} else if (e.getSource().equals(vpd.getBtnAtras())) {
+			vpd.setVisible(false);
+			vpl.setVisible(true);
+		} else if (e.getSource().equals(vpd.getBtnBeginner())) {
+			openMaterialWindow("Beginner");
+		} else if (e.getSource().equals(vpd.getBtnIntermediate())) {
+			openMaterialWindow("Intermediate");
+		} else if (e.getSource().equals(vpd.getBtnAvance())) {
+			openMaterialWindow("Advanced");
+		} else if (e.getSource().equals(vr.getBtnSalirRanking())) {
+			vr.setVisible(false);
+		} else if (e.getSource().equals(vr.getBtnConsultar())) {
+			String selectedOption = (String) vr.getComboBRanking().getSelectedItem();
+			if (selectedOption.equals("TOP 10 N1")) {
+				cargarRanking("10");
+			} else if (selectedOption.equals("TODAS")) {
+				cargarRanking("TODAS");
+			}
+		} else if (e.getSource().equals(mGitB.getBtnPrueba())) {
+			mGitB.cargarPanel(pGitB);
+		} else if (e.getSource().equals(mGitI.getBtnPrueba())) {
+			mGitI.cargarPanel(pGitI);
+		} else if (e.getSource().equals(mGitA.getBtnPrueba())) {
+			mGitA.cargarPanel(pGitA);
+		} else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
+			mSqlB.cargarPanel(pSqlB);
+		} else if (e.getSource().equals(mSqlI.getBtnPrueba())) {
+			mSqlI.cargarPanel(pSqlI);
+		} else if (e.getSource().equals(mSqlA.getBtnPrueba())) {
+			mSqlA.cargarPanel(pSqlA);
+		} else if (e.getSource().equals(mJavaB.getBtnPrueba())) {
+			mJavaB.cargarPanel(pJavaB);
+		} else if (e.getSource().equals(mJavaI.getBtnPrueba())) {
+			mJavaI.cargarPanel(pJavaI);
+		} else if (e.getSource().equals(mJavaA.getBtnPrueba())) {
+			loadQuestion(currentQuestion);
+			mJavaA.cargarPanel(pJavaA);
+		} else if (e.getSource().equals(pJavaA.getBtnComprobar())) {
+			checkAnswer();
+		} else if (e.getSource().equals(mLinuxB.getBtnPrueba())) {
+			mLinuxB.cargarPanel(pLinuxB);
+		} else if (e.getSource().equals(mLinuxI.getBtnPrueba())) {
+			mLinuxI.cargarPanel(pLinuxI);
+		} else if (e.getSource().equals(mLinuxA.getBtnPrueba())) {
+			mLinuxA.cargarPanel(pLinuxA);
+		} else if (e.getSource().equals(mJavaScriptB.getBtnPrueba())) {
+			mJavaScriptB.cargarPanel(pJavaScriptB);
+		} else if (e.getSource().equals(mJavaScriptI.getBtnPrueba())) {
+			mJavaScriptI.cargarPanel(pJavaScriptI);
+		} else if (e.getSource().equals(mJavaScriptA.getBtnPrueba())) {
+			mJavaScriptA.cargarPanel(pJavaScriptA);
 		}
 	}
 
 
+	private void loadQuestion(int questionIndex) {
+		ClaseNivel claseNivel = cp.getQuestion(1, questionIndex); // 1 for Java Language
+		if (claseNivel != null) {
+			String question = claseNivel.getPreguntas();
+			String[] answers = claseNivel.getRespuestas().split(";");
+			pJavaA.setPregunta(question, answers[0], answers[1], answers[2], answers[3]);
+		}
+	}
+
+	private void checkAnswer() {
+		if (pJavaA.getCorrectAnswerButton().isSelected()) {
+			currentQuestion++;
+			loadQuestion(currentQuestion);
+		} else {
+			JOptionPane.showMessageDialog(pJavaA, "Respuesta incorrecta. Intenta de nuevo.");
+		}
+	}
+
 	private void cargarRanking(String filtro) {
-        ArrayList<Ranking> listaRanking = rp.consultarPilotos(filtro);
-        vr.cargarTabla(listaRanking);
-    }
+		ArrayList<Ranking> listaRanking = rp.consultarPilotos(filtro);
+		vr.cargarTabla(listaRanking);
+	}
 
 	private void crearCuenta() {
-		String nombre = vcc.getTxtNombre().getText();
-        String apellido1 = vcc.getTxtApellido1().getText();
-        String apellido2 = vcc.getTxtApellido2().getText();
-        String email = vcc.getTxtEmail().getText();
-        String pssw = new String(vcc.getPwdConstrasenia().getPassword());
-        String confirmarPsswd = new String(vcc.getPwdConfirmarContrasenia().getPassword());
+	    String nombre = vcc.getTxtNombre().getText();
+	    String apellido1 = vcc.getTxtApellido1().getText();
+	    String apellido2 = vcc.getTxtApellido2().getText();
+	    String email = vcc.getTxtEmail().getText();
+	    String pssw = new String(vcc.getPwdConstrasenia().getPassword());
+	    String confirmarPsswd = new String(vcc.getPwdConfirmarContrasenia().getPassword());
 
-        if (nombre.isBlank()) {
-            mostrarError("El nombre es un dato obligatorio");
-        } else if (apellido1.isBlank()) {
-            mostrarError("El primer apellido es un dato obligatorio");
-        } else if (email.isBlank()) {
-            mostrarError("El email es un dato obligatorio");
-        } else if (!emailValido(email)) {
-            mostrarError("No es una dirección de correo válida. Ejemplo: info@lenguajeplus.com");
-        } else if (up.emailRepe(email)) {
-            mostrarError("El email ya existe");
-        } else if (pssw.isBlank()) {
-            mostrarError("Introduce una contraseña");
-        } else if (pssw.length() > UsuarioPersistencia.TAM_CONTRASENIA) {
-            mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
-        } else if (confirmarPsswd.isBlank()) {
-            mostrarError("Vuelve a escribir la contraseña");
-        } else if (!pssw.equals(confirmarPsswd)) {
-            mostrarError("Las contraseñas no coinciden");
-        } else {
-            Usuario usuario = new Usuario(0, nombre, apellido1, apellido2, 0, email, pssw);
-            up.registrarUsuario(usuario);
-            mensajeInfo("¡Enhorabuena! Registro completado!");
-        }
-    }
-
-
+	    if (nombre.isBlank()) {
+	        mostrarError("El nombre es un dato obligatorio");
+	    } else if (apellido1.isBlank()) {
+	        mostrarError("El primer apellido es un dato obligatorio");
+	    } else if (email.isBlank()) {
+	        mostrarError("El email es un dato obligatorio");
+	    } else if (!emailValido(email)) {
+	        mostrarError("No es una dirección de correo válida. Ejemplo: info@lenguajeplus.com");
+	    } else if (up.existeUsuario(email)) {
+	        mostrarError("El email ya existe");
+	    } else if (pssw.isBlank()) {
+	        mostrarError("Introduce una contraseña");
+	    } else if (pssw.length() > UsuarioPersistencia.TAM_CONTRASENIA) {
+	        mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
+	    } else if (confirmarPsswd.isBlank()) {
+	        mostrarError("Vuelve a escribir la contraseña");
+	    } else if (!pssw.equals(confirmarPsswd)) {
+	        mostrarError("Las contraseñas no coinciden");
+	    } else {
+	        try {
+	            Usuario usuario = new Usuario(0, nombre, apellido1, apellido2, 0, email, pssw);
+	            int result = up.registrarUsuario(usuario);
+	            if (result > 0) {
+	                mensajeInfo("¡Enhorabuena! Registro completado!");
+	            } else {
+	                mostrarError("Error en el registro. Inténtelo de nuevo.");
+	            }
+	        } catch (Exception e) {
+	            mostrarError("Error en el registro: " + e.getMessage());
+	        }
+	    }
+	}
 
 	private Usuario iniciarSesion() {
-	       String email = vpi.getTxtEmail().getText();
-	        String pssw = new String(vpi.getPwdContrasenia().getPassword());
+	    String email = vpi.getTxtEmail().getText();
+	    String pssw = new String(vpi.getPwdContrasenia().getPassword());
+
+	    System.out.println("Email: " + email); // Debug print
+	    System.out.println("Password: " + pssw); // Debug print
 
 	    if (email.isBlank()) {
 	        mostrarError("Introduce un email");
@@ -320,39 +368,40 @@ public class VentanaListener implements ActionListener {
 	        mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
 	    } else {
 	        boolean emailOk = up.existeUsuario(email.trim());
+	        System.out.println("Email exists: " + emailOk); // Debug print
 	        if (!emailOk) {
 	            mostrarError("El usuario no existe. Crea una cuenta");
 	        } else {
 	            boolean psswOk = up.contraCorrecta(email.trim(), pssw);
+	            System.out.println("Password correct: " + psswOk); // Debug print
 	            if (!psswOk) {
 	                mostrarError("Contraseña incorrecta");
 	            } else {
-	                return up.obtenerUsuario(email.trim());
+	                Usuario usuario = up.obtenerUsuario(email.trim());
+	                System.out.println("Usuario: " + usuario); // Debug print
+	                vpi.setVisible(false); // Hide the login window
+	                vpl.setVisible(true); // Show the Lenguajes window
+	                return usuario;
 	            }
 	        }
 	    }
-	    return null; // Devolver null si la autenticación falla
+	    return null; // Return null if authentication fails
 	}
 
-
-
-
-	private void mostrarError(String string) {
-		JOptionPane.showMessageDialog(vpi, string, "Error de datos", JOptionPane.ERROR_MESSAGE);
-		
-	}
-	
-	private void mensajeInfo(String string) {
-		JOptionPane.showMessageDialog(vpi, string, "Mensaje info", JOptionPane.INFORMATION_MESSAGE);
-		
+	private void mostrarError(String mensaje) {
+	    JOptionPane.showMessageDialog(vcc, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
 	}
 
-	
-    private boolean emailValido(String email) {
-        String regex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-        return email.matches(regex);
-    }
-    
+	private void mensajeInfo(String mensaje) {
+	    JOptionPane.showMessageDialog(vcc, mensaje, "Información", JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	private boolean emailValido(String email) {
+	    // Simple email validation regex
+	    String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+	    return email.matches(emailRegex);
+	}
+
 	private void openMaterialWindow(String level) {
 		switch (lenguaje) {
 		case "Sql":

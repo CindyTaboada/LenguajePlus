@@ -2,22 +2,24 @@ package model;
 
 public class ClaseNivel {
     private int idClase;
-    private int idNivel;
-    
-	public ClaseNivel(int idClase, int idNivel) {
-	
-		this.idClase = idClase;
-		this.idNivel = idNivel;
-	}
+    private String preguntas;
+    private String respuestas;
 
-	public int getIdClase() {
-		return idClase;
-	}
+    public ClaseNivel(int idClase, String preguntas, String respuestas) {
+        this.idClase = idClase;
+        this.preguntas = preguntas;
+        this.respuestas = respuestas;
+    }
 
-	public int getIdNivel() {
-		return idNivel;
-	}
-    
-    
+    public int getIdClase() {
+        return idClase;
+    }
 
+    public String getPreguntas() {
+        return preguntas;
+    }
+
+    public String getRespuestas() {
+        return respuestas;
+    }
 }
