@@ -321,30 +321,28 @@ public class VentanaListener implements ActionListener {
 	    String pssw = new String(vcc.getPwdConstrasenia().getPassword());
 	    String confirmarPsswd = new String(vcc.getPwdConfirmarContrasenia().getPassword());
 
-	    if (nombre.isBlank()) {
+	    if (nombre.isEmpty()) {
 	        mostrarError("El nombre es un dato obligatorio");
-	    } else if (apellido1.isBlank()) {
+	    } else if (apellido1.isEmpty()) {
 	        mostrarError("El primer apellido es un dato obligatorio");
-	    } else if (email.isBlank()) {
+	    } else if (email.isEmpty()) {
 	        mostrarError("El email es un dato obligatorio");
 	    } else if (!emailValido(email)) {
 	        mostrarError("No es una dirección de correo válida. Ejemplo: info@lenguajeplus.com");
 	    } else if (up.existeUsuario(email)) {
 	        mostrarError("El email ya existe");
-	    } else if (pssw.isBlank()) {
+	    } else if (pssw.isEmpty()) {
 	        mostrarError("Introduce una contraseña");
 	    } else if (pssw.length() > UsuarioPersistencia.TAM_CONTRASENIA) {
 	        mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
-	    } else if (confirmarPsswd.isBlank()) {
+	    } else if (confirmarPsswd.isEmpty()) {
 	        mostrarError("Vuelve a escribir la contraseña");
 	    } else if (!pssw.equals(confirmarPsswd)) {
 	        mostrarError("Las contraseñas no coinciden");
 	    } else {
 	        try {
-	            System.out.println("User Data: " + nombre + ", " + apellido1 + ", " + apellido2 + ", " + email + ", " + pssw);  // Debug statement
 	            Usuario usuario = new Usuario(0, nombre, apellido1, apellido2, 0, email, pssw);
 	            int result = up.registrarUsuario(usuario);
-	            System.out.println("Register result: " + result);  // Debug statement
 	            if (result > 0) {
 	                mensajeInfo("¡Enhorabuena! Registro completado!");
 	                vcc.setVisible(false);
@@ -356,14 +354,15 @@ public class VentanaListener implements ActionListener {
 	            mostrarError("Error en el registro: " + e.getMessage());
 	        }
 	    }
+
+	    //reset texto
+	    vcc.getPwdConstrasenia().setText("");
+	    vcc.getPwdConfirmarContrasenia().setText("");
 	}
 
 	private Usuario iniciarSesion() {
 		String email = vpi.getTxtEmail().getText();
 		String pssw = new String(vpi.getPwdContrasenia().getPassword());
-
-		System.out.println("Email: " + email); // Debug print
-		System.out.println("Password: " + pssw); // Debug print
 
 		if (email.isBlank()) {
 			mostrarError("Introduce un email");
@@ -373,12 +372,10 @@ public class VentanaListener implements ActionListener {
 			mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
 		} else {
 			boolean emailOk = up.existeUsuario(email.trim());
-			System.out.println("Email exists: " + emailOk); // Debug print
 			if (!emailOk) {
 				mostrarError("El usuario no existe. Crea una cuenta");
 			} else {
 				boolean psswOk = up.contraCorrecta(email.trim(), pssw);
-				System.out.println("Password correct: " + psswOk); // Debug print
 				if (!psswOk) {
 					mostrarError("Contraseña incorrecta");
 				} else {
@@ -388,7 +385,7 @@ public class VentanaListener implements ActionListener {
 				}
 			}
 		}
-		return null; // Return null if authentication fails
+		return null; 
 	}
 
 	private void mostrarError(String mensaje) {
@@ -400,7 +397,6 @@ public class VentanaListener implements ActionListener {
 	}
 
 	private boolean emailValido(String email) {
-		// Simple email validation regex
 		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
 		return email.matches(emailRegex);
 	}
