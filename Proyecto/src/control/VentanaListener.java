@@ -25,7 +25,7 @@ import view.Javascript.VDefinicionesJavaScriptAvanzado;
 import view.linux.VDefinicionesLinuxBasico;
 import view.linux.VDefinicionesLinuxIntermedio;
 import view.linux.VDefinicionesLinuxAvanzado;
-import model.ClaseNivel;
+import model.ClaseQnA;
 import model.FuenteDatos;
 import model.Ranking;
 import model.Usuario;
@@ -193,107 +193,108 @@ public class VentanaListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() instanceof JButton) {
-			if (e.getSource() == vpi.getBtnIniciarSesion()) {
+			if (e.getSource().equals(vpi.getBtnIniciarSesion())) {
 				Usuario usuario = iniciarSesion();
 				if (usuario != null) {
 					JOptionPane.showMessageDialog(vpi, "Login Successful");
-					// Proceed to the next screen or action
+					vpi.setVisible(false);
+					vpl.setVisible(true);
 				}
-			} else if (e.getSource() == vpi.getBtnCrearCuenta()) {
-				// Handle create account action
+
+			} else if (e.getSource().equals(vpi.getBtnCrearCuenta())) {
 				vpi.setVisible(false);
 				vcc.setVisible(true);
-				
+
+			} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
+				vcc.setVisible(false);
+				vpi.setVisible(true);
+
+			} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
+				crearCuenta();
+			} else if (e.getSource().equals(vpl.getBtnAtras())) {
+				vpl.setVisible(false);
+				vpi.setVisible(true);
+			} else if (e.getSource().equals(vpl.getBtnGit())) {
+				vpl.setVisible(false);
+				vpd.setVisible(true);
+				lenguaje = "Git";
+			} else if (e.getSource().equals(vpl.getBtnLinux())) {
+				vpl.setVisible(false);
+				vpd.setVisible(true);
+				lenguaje = "Linux";
+			} else if (e.getSource().equals(vpl.getBtnJava())) {
+				vpl.setVisible(false);
+				vpd.setVisible(true);
+				lenguaje = "Java";
+			} else if (e.getSource().equals(vpl.getBtnJavaScript())) {
+				vpl.setVisible(false);
+				vpd.setVisible(true);
+				lenguaje = "JavaScript";
+			} else if (e.getSource().equals(vpl.getBtnSql())) {
+				vpl.setVisible(false);
+				vpd.setVisible(true);
+				lenguaje = "Sql";
+			} else if (e.getSource().equals(vpd.getBtnAtras())) {
+				vpd.setVisible(false);
+				vpl.setVisible(true);
+			} else if (e.getSource().equals(vpd.getBtnBeginner())) {
+				openMaterialWindow("Beginner");
+			} else if (e.getSource().equals(vpd.getBtnIntermediate())) {
+				openMaterialWindow("Intermediate");
+			} else if (e.getSource().equals(vpd.getBtnAvance())) {
+				openMaterialWindow("Advanced");
+			} else if (e.getSource().equals(vr.getBtnSalirRanking())) {
+				vr.setVisible(false);
+			} else if (e.getSource().equals(vr.getBtnConsultar())) {
+				String selectedOption = (String) vr.getComboBRanking().getSelectedItem();
+				if (selectedOption.equals("TOP 10 N1")) {
+					cargarRanking("10");
+				} else if (selectedOption.equals("TODAS")) {
+					cargarRanking("TODAS");
+				}
+			} else if (e.getSource().equals(mGitB.getBtnPrueba())) {
+				mGitB.cargarPanel(pGitB);
+			} else if (e.getSource().equals(mGitI.getBtnPrueba())) {
+				mGitI.cargarPanel(pGitI);
+			} else if (e.getSource().equals(mGitA.getBtnPrueba())) {
+				mGitA.cargarPanel(pGitA);
+			} else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
+				mSqlB.cargarPanel(pSqlB);
+			} else if (e.getSource().equals(mSqlI.getBtnPrueba())) {
+				mSqlI.cargarPanel(pSqlI);
+			} else if (e.getSource().equals(mSqlA.getBtnPrueba())) {
+				mSqlA.cargarPanel(pSqlA);
+			} else if (e.getSource().equals(mJavaB.getBtnPrueba())) {
+				mJavaB.cargarPanel(pJavaB);
+			} else if (e.getSource().equals(mJavaI.getBtnPrueba())) {
+				mJavaI.cargarPanel(pJavaI);
+			} else if (e.getSource().equals(mJavaA.getBtnPrueba())) {
+				loadQuestion(currentQuestion);
+				mJavaA.cargarPanel(pJavaA);
+			} else if (e.getSource().equals(pJavaA.getBtnComprobar())) {
+				checkAnswer();
+			} else if (e.getSource().equals(mLinuxB.getBtnPrueba())) {
+				mLinuxB.cargarPanel(pLinuxB);
+			} else if (e.getSource().equals(mLinuxI.getBtnPrueba())) {
+				mLinuxI.cargarPanel(pLinuxI);
+			} else if (e.getSource().equals(mLinuxA.getBtnPrueba())) {
+				mLinuxA.cargarPanel(pLinuxA);
+			} else if (e.getSource().equals(mJavaScriptB.getBtnPrueba())) {
+				mJavaScriptB.cargarPanel(pJavaScriptB);
+			} else if (e.getSource().equals(mJavaScriptI.getBtnPrueba())) {
+				mJavaScriptI.cargarPanel(pJavaScriptI);
+			} else if (e.getSource().equals(mJavaScriptA.getBtnPrueba())) {
+				mJavaScriptA.cargarPanel(pJavaScriptA);
 			}
-		} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
-			vcc.setVisible(false);
-			vpi.setVisible(true);
-		} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
-			crearCuenta();
-			vpl.hacerVisible();
-		} else if (e.getSource().equals(vpl.getBtnAtras())) {
-			vpl.setVisible(false);
-			vpi.setVisible(true);
-		} else if (e.getSource().equals(vpl.getBtnGit())) {
-			vpl.setVisible(false);
-			vpd.setVisible(true);
-			lenguaje = "Git";
-		} else if (e.getSource().equals(vpl.getBtnLinux())) {
-			vpl.setVisible(false);
-			vpd.setVisible(true);
-			lenguaje = "Linux";
-		} else if (e.getSource().equals(vpl.getBtnJava())) {
-			vpl.setVisible(false);
-			vpd.setVisible(true);
-			lenguaje = "Java";
-		} else if (e.getSource().equals(vpl.getBtnJavaScript())) {
-			vpl.setVisible(false);
-			vpd.setVisible(true);
-			lenguaje = "JavaScript";
-		} else if (e.getSource().equals(vpl.getBtnSql())) {
-			vpl.setVisible(false);
-			vpd.setVisible(true);
-			lenguaje = "Sql";
-		} else if (e.getSource().equals(vpd.getBtnAtras())) {
-			vpd.setVisible(false);
-			vpl.setVisible(true);
-		} else if (e.getSource().equals(vpd.getBtnBeginner())) {
-			openMaterialWindow("Beginner");
-		} else if (e.getSource().equals(vpd.getBtnIntermediate())) {
-			openMaterialWindow("Intermediate");
-		} else if (e.getSource().equals(vpd.getBtnAvance())) {
-			openMaterialWindow("Advanced");
-		} else if (e.getSource().equals(vr.getBtnSalirRanking())) {
-			vr.setVisible(false);
-		} else if (e.getSource().equals(vr.getBtnConsultar())) {
-			String selectedOption = (String) vr.getComboBRanking().getSelectedItem();
-			if (selectedOption.equals("TOP 10 N1")) {
-				cargarRanking("10");
-			} else if (selectedOption.equals("TODAS")) {
-				cargarRanking("TODAS");
-			}
-		} else if (e.getSource().equals(mGitB.getBtnPrueba())) {
-			mGitB.cargarPanel(pGitB);
-		} else if (e.getSource().equals(mGitI.getBtnPrueba())) {
-			mGitI.cargarPanel(pGitI);
-		} else if (e.getSource().equals(mGitA.getBtnPrueba())) {
-			mGitA.cargarPanel(pGitA);
-		} else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
-			mSqlB.cargarPanel(pSqlB);
-		} else if (e.getSource().equals(mSqlI.getBtnPrueba())) {
-			mSqlI.cargarPanel(pSqlI);
-		} else if (e.getSource().equals(mSqlA.getBtnPrueba())) {
-			mSqlA.cargarPanel(pSqlA);
-		} else if (e.getSource().equals(mJavaB.getBtnPrueba())) {
-			mJavaB.cargarPanel(pJavaB);
-		} else if (e.getSource().equals(mJavaI.getBtnPrueba())) {
-			mJavaI.cargarPanel(pJavaI);
-		} else if (e.getSource().equals(mJavaA.getBtnPrueba())) {
-			loadQuestion(currentQuestion);
-			mJavaA.cargarPanel(pJavaA);
-		} else if (e.getSource().equals(pJavaA.getBtnComprobar())) {
-			checkAnswer();
-		} else if (e.getSource().equals(mLinuxB.getBtnPrueba())) {
-			mLinuxB.cargarPanel(pLinuxB);
-		} else if (e.getSource().equals(mLinuxI.getBtnPrueba())) {
-			mLinuxI.cargarPanel(pLinuxI);
-		} else if (e.getSource().equals(mLinuxA.getBtnPrueba())) {
-			mLinuxA.cargarPanel(pLinuxA);
-		} else if (e.getSource().equals(mJavaScriptB.getBtnPrueba())) {
-			mJavaScriptB.cargarPanel(pJavaScriptB);
-		} else if (e.getSource().equals(mJavaScriptI.getBtnPrueba())) {
-			mJavaScriptI.cargarPanel(pJavaScriptI);
-		} else if (e.getSource().equals(mJavaScriptA.getBtnPrueba())) {
-			mJavaScriptA.cargarPanel(pJavaScriptA);
 		}
+
 	}
 
-
 	private void loadQuestion(int questionIndex) {
-		ClaseNivel claseNivel = cp.getQuestion(1, questionIndex); // 1 for Java Language
-		if (claseNivel != null) {
-			String question = claseNivel.getPreguntas();
-			String[] answers = claseNivel.getRespuestas().split(";");
+		ClaseQnA claseQnA = cp.getQuestion(1, questionIndex); // 1 for Java Language
+		if (claseQnA != null) {
+			String question = claseQnA.getPreguntas();
+			String[] answers = claseQnA.getRespuestas().split(";");
 			pJavaA.setPregunta(question, answers[0], answers[1], answers[2], answers[3]);
 		}
 	}
@@ -340,10 +341,14 @@ public class VentanaListener implements ActionListener {
 	        mostrarError("Las contraseñas no coinciden");
 	    } else {
 	        try {
+	            System.out.println("User Data: " + nombre + ", " + apellido1 + ", " + apellido2 + ", " + email + ", " + pssw);  // Debug statement
 	            Usuario usuario = new Usuario(0, nombre, apellido1, apellido2, 0, email, pssw);
 	            int result = up.registrarUsuario(usuario);
+	            System.out.println("Register result: " + result);  // Debug statement
 	            if (result > 0) {
 	                mensajeInfo("¡Enhorabuena! Registro completado!");
+	                vcc.setVisible(false);
+	                vpi.setVisible(true); 
 	            } else {
 	                mostrarError("Error en el registro. Inténtelo de nuevo.");
 	            }
@@ -354,52 +359,50 @@ public class VentanaListener implements ActionListener {
 	}
 
 	private Usuario iniciarSesion() {
-	    String email = vpi.getTxtEmail().getText();
-	    String pssw = new String(vpi.getPwdContrasenia().getPassword());
+		String email = vpi.getTxtEmail().getText();
+		String pssw = new String(vpi.getPwdContrasenia().getPassword());
 
-	    System.out.println("Email: " + email); // Debug print
-	    System.out.println("Password: " + pssw); // Debug print
+		System.out.println("Email: " + email); // Debug print
+		System.out.println("Password: " + pssw); // Debug print
 
-	    if (email.isBlank()) {
-	        mostrarError("Introduce un email");
-	    } else if (pssw.isBlank()) {
-	        mostrarError("Introduce una contraseña");
-	    } else if (pssw.length() > UsuarioPersistencia.TAM_CONTRASENIA) {
-	        mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
-	    } else {
-	        boolean emailOk = up.existeUsuario(email.trim());
-	        System.out.println("Email exists: " + emailOk); // Debug print
-	        if (!emailOk) {
-	            mostrarError("El usuario no existe. Crea una cuenta");
-	        } else {
-	            boolean psswOk = up.contraCorrecta(email.trim(), pssw);
-	            System.out.println("Password correct: " + psswOk); // Debug print
-	            if (!psswOk) {
-	                mostrarError("Contraseña incorrecta");
-	            } else {
-	                Usuario usuario = up.obtenerUsuario(email.trim());
-	                System.out.println("Usuario: " + usuario); // Debug print
-	                vpi.setVisible(false); // Hide the login window
-	                vpl.setVisible(true); // Show the Lenguajes window
-	                return usuario;
-	            }
-	        }
-	    }
-	    return null; // Return null if authentication fails
+		if (email.isBlank()) {
+			mostrarError("Introduce un email");
+		} else if (pssw.isBlank()) {
+			mostrarError("Introduce una contraseña");
+		} else if (pssw.length() > UsuarioPersistencia.TAM_CONTRASENIA) {
+			mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
+		} else {
+			boolean emailOk = up.existeUsuario(email.trim());
+			System.out.println("Email exists: " + emailOk); // Debug print
+			if (!emailOk) {
+				mostrarError("El usuario no existe. Crea una cuenta");
+			} else {
+				boolean psswOk = up.contraCorrecta(email.trim(), pssw);
+				System.out.println("Password correct: " + psswOk); // Debug print
+				if (!psswOk) {
+					mostrarError("Contraseña incorrecta");
+				} else {
+					Usuario usuario = up.obtenerUsuario(email.trim());
+					System.out.println("Usuario: " + usuario);
+					return usuario;
+				}
+			}
+		}
+		return null; // Return null if authentication fails
 	}
 
 	private void mostrarError(String mensaje) {
-	    JOptionPane.showMessageDialog(vcc, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(vcc, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
 	}
 
 	private void mensajeInfo(String mensaje) {
-	    JOptionPane.showMessageDialog(vcc, mensaje, "Información", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(vcc, mensaje, "Información", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	private boolean emailValido(String email) {
-	    // Simple email validation regex
-	    String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-	    return email.matches(emailRegex);
+		// Simple email validation regex
+		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+		return email.matches(emailRegex);
 	}
 
 	private void openMaterialWindow(String level) {

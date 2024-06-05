@@ -131,43 +131,42 @@ public class UsuarioPersistencia {
         return usuario;
     }
 
-	public int registrarUsuario(Usuario usuario) {
-    String insert = "INSERT INTO " + NOM_TABLA 
-                    + " (" + NOMBRE_USUARIO + ", " + APELLIDO1 + ", " + APELLIDO2 + ", " 
-                    + EDAD + ", " + EMAIL + ", " + CONTRASENIA + ") "
-                    + "VALUES (?, ?, ?, ?, ?, ?)";
-    
-    Connection con = null;
-    PreparedStatement stmt = null;
-    int res = 0;
+    public int registrarUsuario(Usuario usuario) {
+        String insert = "INSERT INTO " + NOM_TABLA 
+                        + " (" + NOMBRE_USUARIO + ", " + APELLIDO1 + ", " + APELLIDO2 + ", " 
+                        + EDAD + ", " + EMAIL + ", " + CONTRASENIA + ") "
+                        + "VALUES (?, ?, ?, ?, ?, ?)";
+        
+        Connection con = null;
+        PreparedStatement stmt = null;
+        int res = 0;
 
-    try {
-        con = acceso.getConexion();
-        stmt = con.prepareStatement(insert);
-        stmt.setString(1, usuario.getNombreUsuario());
-        stmt.setString(2, usuario.getApellido1());
-        stmt.setString(3, usuario.getApellido2());
-        stmt.setInt(4, usuario.getEdad());
-        stmt.setString(5, usuario.getEmail());
-        stmt.setString(6, usuario.getContrasenia());
-
-        res = stmt.executeUpdate();
-
-    } catch (Exception e) {
-        e.printStackTrace();
-
-    } finally {
         try {
-            if (stmt != null) stmt.close();
-            if (con != null) con.close();
-        } catch (SQLException e) {
+            con = acceso.getConexion();
+            stmt = con.prepareStatement(insert);
+            stmt.setString(1, usuario.getNombreUsuario());
+            stmt.setString(2, usuario.getApellido1());
+            stmt.setString(3, usuario.getApellido2());
+            stmt.setInt(4, usuario.getEdad());
+            stmt.setString(5, usuario.getEmail());
+            stmt.setString(6, usuario.getContrasenia());
+
+            res = stmt.executeUpdate();
+
+        } catch (Exception e) {
             e.printStackTrace();
+
+        } finally {
+            try {
+                if (stmt != null) stmt.close();
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+
+        return res;
     }
-
-    return res;
-	}
 }
-
 
 

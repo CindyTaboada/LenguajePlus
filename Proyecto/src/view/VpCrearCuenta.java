@@ -148,8 +148,13 @@ public class VpCrearCuenta extends JFrame {
 
 	}
 	
-
+	public void setListener(VentanaListener l) {
+		btnCancelarCrearCuenta.addActionListener(l);
+		btnConfirmarCrearCuenta.addActionListener(l);	
+		
+	}
 	
+
 	public JButton getBtnCancelarCrearCuenta() {
 		return btnCancelarCrearCuenta;
 	}
@@ -163,15 +168,6 @@ public class VpCrearCuenta extends JFrame {
 	public JButton getBtnAtras() {
 		return btnAtras;
 	}
-
-	public void setListener(VentanaListener l) {
-		btnCancelarCrearCuenta.addActionListener(l);
-		btnConfirmarCrearCuenta.addActionListener(l);	
-		
-	}
-	
-	
-	
 
 
 	public JTextField getTxtNombre() {

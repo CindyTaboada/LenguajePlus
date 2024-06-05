@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import model.ClaseNivel;
+import model.ClaseQnA;
 
 public class ClasePersistencia {
     static final String NOM_TABLA = "CLASE";
@@ -22,8 +22,8 @@ public class ClasePersistencia {
         acceso = new AccesoBBDD();
     }
 
-    public ClaseNivel getQuestion(int idLenguaje, int leccion) {
-        ClaseNivel claseNivel = null;
+    public ClaseQnA getQuestion(int idLenguaje, int leccion) {
+        ClaseQnA claseQnA = null;
         String query = "SELECT * FROM " + NOM_TABLA + " WHERE " + ID_LENGUAJE + " = ? AND " + LECCION + " = ?";
 
         Connection con = null;
@@ -40,7 +40,7 @@ public class ClasePersistencia {
             if (rs.next()) {
                 String preguntas = rs.getString(PREGUNTAS);
                 String respuestas = rs.getString(RESPUESTAS);
-                claseNivel = new ClaseNivel(rs.getInt(ID_CLASE), preguntas, respuestas);
+                claseQnA = new ClaseQnA(rs.getInt(ID_CLASE), preguntas, respuestas);
             }
 
         } catch (ClassNotFoundException | SQLException e) {
@@ -55,7 +55,7 @@ public class ClasePersistencia {
             }
         }
 
-        return claseNivel;
+        return claseQnA;
     }
 
 	

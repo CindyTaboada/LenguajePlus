@@ -1,11 +1,11 @@
 package model;
 
-public class ClaseNivel {
+public class ClaseQnA {
     private int idClase;
     private String preguntas;
     private String respuestas;
 
-    public ClaseNivel(int idClase, String preguntas, String respuestas) {
+    public ClaseQnA(int idClase, String preguntas, String respuestas) {
         this.idClase = idClase;
         this.preguntas = preguntas;
         this.respuestas = respuestas;

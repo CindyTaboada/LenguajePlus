@@ -25,94 +25,80 @@ import view.sql.VDefinicionesSqlAvanzado;
 import view.sql.VDefinicionesSqlBasico;
 import view.sql.VDefinicionesSqlIntermedio;
 
-
 public class Inicio {
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
-			
+
 			@Override
 			public void run() {
-				
-				//LENGUAJES
+
+				// LENGUAJES
 				VpLenguajes vpl = new VpLenguajes();
-				
-				//ESTRELLAS
-				VpFelicitaciones vf=new VpFelicitaciones();
-				
-				//RANKING
+
+				// ESTRELLAS
+				VpFelicitaciones vf = new VpFelicitaciones();
+
+				// RANKING
 				VpRanking vr = new VpRanking();
-				
-				
-				//INICIO
+
+				// INICIO
 				VpInicio vpi = new VpInicio();
 				VpCrearCuenta vcc = new VpCrearCuenta();
-				
-				//NIVELES
+
+				// NIVELES
 				VpNiveles vpd = new VpNiveles();
 
-				//View para Ventanas Git
+				// View para Ventanas Git
 				VDefinicionesGitBasico mGitB = new VDefinicionesGitBasico();
 				VDefinicionesGitIntermedio mGitI = new VDefinicionesGitIntermedio();
 				VDefinicionesGitAvanzado mGitA = new VDefinicionesGitAvanzado();
-				//View para Ventanas SQL
+				// View para Ventanas SQL
 				VDefinicionesSqlBasico mSqlB = new VDefinicionesSqlBasico();
 				VDefinicionesSqlIntermedio mSqlI = new VDefinicionesSqlIntermedio();
-			    VDefinicionesSqlAvanzado mSqlA  = new VDefinicionesSqlAvanzado();
-				//View para Ventanas JavaScript
+				VDefinicionesSqlAvanzado mSqlA = new VDefinicionesSqlAvanzado();
+				// View para Ventanas JavaScript
 				VDefinicionesJavaScriptBasico mJavaScriptB = new VDefinicionesJavaScriptBasico();
 				VDefinicionesJavaScriptIntermedio mJavaScriptI = new VDefinicionesJavaScriptIntermedio();
 				VDefinicionesJavaScriptAvanzado mJavaScriptA = new VDefinicionesJavaScriptAvanzado();
-				//View para Ventanas Java
+				// View para Ventanas Java
 				VDeficionesJavaBasico mJavaB = new VDeficionesJavaBasico();
 				VDefinicionesJavaIntermedio mJavaI = new VDefinicionesJavaIntermedio();
 				VDeficionesJavaAvanzado mJavaA = new VDeficionesJavaAvanzado();
-				//View para Ventanas Linux
+				// View para Ventanas Linux
 				VDefinicionesLinuxBasico mLinuxB = new VDefinicionesLinuxBasico();
-			    VDefinicionesLinuxIntermedio mLinuxI = new VDefinicionesLinuxIntermedio();
+				VDefinicionesLinuxIntermedio mLinuxI = new VDefinicionesLinuxIntermedio();
 				VDefinicionesLinuxAvanzado mLinuxA = new VDefinicionesLinuxAvanzado();
-				
-				
-				
-				
-				VentanaListener l = new VentanaListener(vpi, vcc, vr,vf, vpl, vpd, mGitB, mGitI, mGitA, mSqlB, mSqlI, mSqlA,
-						mJavaScriptB, mJavaScriptI, mJavaScriptA, mJavaB, mJavaI, mJavaA, mLinuxB, mLinuxI, mLinuxA);
 
-				
+				VentanaListener l = new VentanaListener(vpi, vcc, vr, vf, vpl, vpd, mGitB, mGitI, mGitA, mSqlB, mSqlI,
+						mSqlA, mJavaScriptB, mJavaScriptI, mJavaScriptA, mJavaB, mJavaI, mJavaA, mLinuxB, mLinuxI,
+						mLinuxA);
 
-				
 				vpi.setListener(l);
 				vcc.setListener(l);
 				vr.setListener(l);
 				vpl.setListener(l);
 				vpd.setListener(l);
 				vf.setListener(l);
-				
-				
-				
-				    mGitB.pruebaListener(l);
-	                mGitI.pruebaListener(l);
-	                mGitA.pruebaListener(l);
-	                mSqlB.pruebaListener(l);
-	                mSqlI.pruebaListener(l);
-	                mSqlA.pruebaListener(l);
-	                mJavaScriptB.pruebaListener(l);
-	                mJavaScriptI.pruebaListener(l);
-	                mJavaScriptA.pruebaListener(l);
-	                mJavaB.pruebaListener(l);
-	                mJavaI.pruebaListener(l);
-	                mJavaA.pruebaListener(l);
-	                mLinuxB.pruebaListener(l);
-	                mLinuxI.pruebaListener(l);
-	                mLinuxA.pruebaListener(l);
-				
-				
-				
+
+				mGitB.pruebaListener(l);
+				mGitI.pruebaListener(l);
+				mGitA.pruebaListener(l);
+				mSqlB.pruebaListener(l);
+				mSqlI.pruebaListener(l);
+				mSqlA.pruebaListener(l);
+				mJavaScriptB.pruebaListener(l);
+				mJavaScriptI.pruebaListener(l);
+				mJavaScriptA.pruebaListener(l);
+				mJavaB.pruebaListener(l);
+				mJavaI.pruebaListener(l);
+				mJavaA.pruebaListener(l);
+				mLinuxB.pruebaListener(l);
+				mLinuxI.pruebaListener(l);
+				mLinuxA.pruebaListener(l);
+
 				vpi.setVisible(true);
-				
-				
-				
-				
+
 			}
 		});
 
