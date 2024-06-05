@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,42 +8,53 @@
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Lenguajes+ Logo" id="logo">
+        <img src="./img/logo1.png" alt="Logo de Lenguajes+" id="logo">
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#support">Customer Support</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#descargar">Descargar</a></li>
+                <li><a href="#soporte">Soporte</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <h1>Welcome to Lenguajes+</h1>
-        <p>Your ultimate solution for language learning and app development.</p>
+    <section id="inicio">
+        <h1>Bienvenido a Lenguajes+</h1>
+        <p>Tu solución definitiva para el aprendizaje de idiomas y desarrollo de aplicaciones.</p>
     </section>
 
-    <section id="download">
-        <h2>Download Lenguajes+</h2>
-        <p>Click the button below to download the latest version of Lenguajes+.</p>
-        <button id="downloadBtn">Download Now</button>
+    <section id="descargar">
+        <h2>Descargar Lenguajes+</h2>
+        <p>Haz clic en el botón de abajo para descargar la última versión de Lenguajes+.</p>
+        <button id="descargarBtn">Descargar Ahora</button>
     </section>
 
-    <section id="support">
-        <h2>Customer Support</h2>
-        <form id="supportForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <section id="soporte">
+        <h2>Soporte al Cliente</h2>
+        <form id="formularioSoporte">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-            <label for="email">Email:</label>
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" required>
+
+            <label for="email">Correo Electrónico:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="issue">Describe your issue:</label>
-            <textarea id="issue" name="issue" required></textarea>
+            <label for="problema">Describa su problema:</label>
+            <textarea id="problema" name="problema" required></textarea>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Enviar</button>
         </form>
-        <div id="formResponse"></div>
+        <div id="respuestaFormulario"></div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Correo: <a href="mailto:info@LenjuagePlus.com">info@LenjuagePlus.com</a></p>
+        <p>Dirección: Av. de Fernando Alonso, 8, 28108 Alcobendas, Madrid</p>
+        <p>Instagram: <a href="https://www.instagram.com/lenjuageplus/" target="_blank">https://www.instagram.com/lenjuageplus/</a></p>
     </section>
 
     <footer>

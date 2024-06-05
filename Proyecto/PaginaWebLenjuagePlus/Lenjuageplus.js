@@ -1,20 +1,21 @@
-document.getElementById('supportForm').addEventListener('submit', function(e) {
+document.getElementById('formularioSoporte').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const name = document.getElementById('name').value;
+    const nombre = document.getElementById('nombre').value;
+    const numero = document.getElementById('numero').value;
     const email = document.getElementById('email').value;
-    const issue = document.getElementById('issue').value;
+    const problema = document.getElementById('problema').value;
 
-    const formResponse = document.getElementById('formResponse');
+    const respuestaFormulario = document.getElementById('respuestaFormulario');
 
-    // Simulate form submission
-    formResponse.innerHTML = `Thank you, ${name}. Your issue has been submitted. We will contact you at ${email} soon.`;
 
-    // Clear the form
-    document.getElementById('supportForm').reset();
+    respuestaFormulario.innerHTML = `Gracias, ${nombre}. Su problema ha sido enviado. Nos pondremos en contacto con usted en ${email} pronto.`;
+
+  
+    document.getElementById('formularioSoporte').reset();
 });
 
-document.getElementById('downloadBtn').addEventListener('click', function() {
-    alert('Starting download...');
-    // You can add the actual download functionality here
+document.getElementById('descargarBtn').addEventListener('click', function() {
+    alert('Iniciando descarga...');
+   
 });
