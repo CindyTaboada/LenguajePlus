@@ -320,6 +320,7 @@ public class VentanaListener implements ActionListener {
 	    String email = vcc.getTxtEmail().getText();
 	    String pssw = new String(vcc.getPwdConstrasenia().getPassword());
 	    String confirmarPsswd = new String(vcc.getPwdConfirmarContrasenia().getPassword());
+	    int edad = (int) vcc.getSpnEdad().getValue();
 
 	    if (nombre.isEmpty()) {
 	        mostrarError("El nombre es un dato obligatorio");
@@ -341,7 +342,7 @@ public class VentanaListener implements ActionListener {
 	        mostrarError("Las contraseñas no coinciden");
 	    } else {
 	        try {
-	            Usuario usuario = new Usuario(0, nombre, apellido1, apellido2, 0, email, pssw);
+	            Usuario usuario = new Usuario(0, nombre, apellido1, apellido2, edad, email, pssw);
 	            int result = up.registrarUsuario(usuario);
 	            if (result > 0) {
 	                mensajeInfo("¡Enhorabuena! Registro completado!");

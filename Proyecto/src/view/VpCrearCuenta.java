@@ -198,8 +198,11 @@ public class VpCrearCuenta extends JFrame {
 	public JPasswordField getPwdConfirmarContrasenia() {
 		return pwdConfirmarContrasenia;
 	}
-
-
+	
+	
+	public JSpinner getSpnEdad() {
+		return spnEdad;
+	}
 
 	public void hacerVisible() {
 		setVisible(true);
