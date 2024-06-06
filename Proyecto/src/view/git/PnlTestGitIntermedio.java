@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import control.VentanaListener;
+
 public class PnlTestGitIntermedio extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
@@ -32,29 +34,29 @@ public class PnlTestGitIntermedio extends JPanel {
 	private void initComponentes() {
 		setBackground(new Color(51, 255, 102));
 		setLayout(null);
-		lblPregutanas = new JLabel("PREGUNTA 1");
+		lblPregutanas = new JLabel("<html>¿Qué es un stash de Git?</html>");
 		lblPregutanas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
-		lblPregutanas.setBounds(77, 27, 414, 13);
+		lblPregutanas.setBounds(77, 27, 414, 30);
 		add(lblPregutanas);
 
-		rdbtnRepuesta1 = new JRadioButton("New radio button");
+		rdbtnRepuesta1 = new JRadioButton("<html>Un almacenamiento temporal para cambios no confirmados</html>");
 		buttonGroupRespuestas.add(rdbtnRepuesta1);
-		rdbtnRepuesta1.setBounds(77, 136, 103, 21);
+		rdbtnRepuesta1.setBounds(42, 132, 146, 42);
 		add(rdbtnRepuesta1);
 
-		rdbtnRespuesta3 = new JRadioButton("New radio button");
+		rdbtnRespuesta3 = new JRadioButton("<html> Una forma de deshacer el último commit </html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta3);
-		rdbtnRespuesta3.setBounds(77, 228, 103, 21);
+		rdbtnRespuesta3.setBounds(49, 228, 139, 32);
 		add(rdbtnRespuesta3);
 
-		rdbtnRespuesta2 = new JRadioButton("New radio button");
+		rdbtnRespuesta2 = new JRadioButton("<html>Una forma de compartir código con otros desarrolladores sin enviar a un repositorio remoto </html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta2);
-		rdbtnRespuesta2.setBounds(406, 136, 103, 21);
+		rdbtnRespuesta2.setBounds(406, 136, 174, 70);
 		add(rdbtnRespuesta2);
 
-		rdbtnRespuesta4 = new JRadioButton("New radio button");
+		rdbtnRespuesta4 = new JRadioButton("<html>Una rama que no está conectada a la rama principal</html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta4);
-		rdbtnRespuesta4.setBounds(406, 239, 103, 21);
+		rdbtnRespuesta4.setBounds(406, 239, 174, 42);
 		add(rdbtnRespuesta4);
 
 		btnComprobar = new JButton("Comprobar");
@@ -65,6 +67,27 @@ public class PnlTestGitIntermedio extends JPanel {
 
 	public JButton getBtnComprobar() {
 		return btnComprobar;
+	}
+
+	public void setListener(VentanaListener l) {
+		btnComprobar.addActionListener(l);
+		
+	}
+	
+	public JRadioButton getRdbtnRepuesta1() {
+		return rdbtnRepuesta1;
+	}
+
+	public JRadioButton getRdbtnRespuesta3() {
+		return rdbtnRespuesta3;
+	}
+
+	public JRadioButton getRdbtnRespuesta4() {
+		return rdbtnRespuesta4;
+	}
+
+	public JRadioButton getRdbtnRespuesta2() {
+		return rdbtnRespuesta2;
 	}
 
 

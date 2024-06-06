@@ -96,6 +96,9 @@ public class VpFelicitaciones extends JFrame {
 	public void hacerVisible() {
 		setVisible(true);
 	}
+	public JButton getBtnVolver() {
+		return btnVolver;
+	}
 	
 	
 }

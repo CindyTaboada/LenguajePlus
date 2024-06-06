@@ -37,6 +37,7 @@ public class VpLenguajes extends JFrame {
 	private JButton btnJavaScript;
 	private JLabel lblEligeLen;
 	private JButton btnAtras;
+	private JButton btnRanking;
 
 	public VpLenguajes() {
 		
@@ -73,27 +74,27 @@ public class VpLenguajes extends JFrame {
 		
 		btnJava = new JButton(ACT_CMN_BTN_JAVA);
 		btnJava.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnJava.setBounds(38, 76, 159, 47);
+		btnJava.setBounds(38, 69, 159, 47);
 		getContentPane().add(btnJava);
 		
 		btnLinux = new JButton(ACT_CMN_BTN_LINUX);
 		btnLinux.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnLinux.setBounds(399, 199, 159, 47);
+		btnLinux.setBounds(399, 185, 159, 47);
 		getContentPane().add(btnLinux);
 		
 		btnGit = new JButton(ACT_CMN_BTN_GIT);
 		btnGit.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnGit.setBounds(38, 199, 159, 47);
+		btnGit.setBounds(38, 185, 159, 47);
 		getContentPane().add(btnGit);
 		
 		btnJavaScript = new JButton( ACT_CMN_BTN_JAVASCRIPT);
 		btnJavaScript.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnJavaScript.setBounds(399, 76, 159, 47);
+		btnJavaScript.setBounds(399, 69, 159, 47);
 		getContentPane().add(btnJavaScript);
 		
 		btnSql = new JButton(ACT_CMN_BTN_SQL);
 		btnSql.setFont(new Font("Sylfaen", Font.BOLD, 18));
-		btnSql.setBounds(214, 137, 159, 47);
+		btnSql.setBounds(214, 127, 159, 47);
 		getContentPane().add(btnSql);
 		
 		btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
@@ -101,6 +102,11 @@ public class VpLenguajes extends JFrame {
 		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
 		btnAtras.setBounds(511, 290, 83, 26);
 		getContentPane().add(btnAtras);
+		
+		btnRanking = new JButton("Ranking");
+		btnRanking.setFont(new Font("Sylfaen", Font.BOLD, 18));
+		btnRanking.setBounds(156, 256, 284, 47);
+		getContentPane().add(btnRanking);
 		
 		
 	}
@@ -112,6 +118,7 @@ public class VpLenguajes extends JFrame {
 		btnGit.addActionListener(listener);
 		btnSql.addActionListener(listener);
 		btnAtras.addActionListener(listener);
+		btnRanking.addActionListener(listener);
 
 	}
 	
@@ -147,6 +154,13 @@ public class VpLenguajes extends JFrame {
 	public void hacerVisible() {
 		setVisible(true);
 	}
+
+
+	public JButton getBtnRanking() {
+		return btnRanking;
+	}
+	
+	
 	
 }
 

@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import control.VentanaListener;
+
 public class PnlTestLinuxAvanzado extends JPanel {
 
 	private static final long serialVersionUID = 1L;
@@ -67,6 +69,27 @@ public class PnlTestLinuxAvanzado extends JPanel {
 
 	public JButton getBtnComprobar() {
 		return btnComprobar;
+	}
+
+	public void setListener(VentanaListener l) {
+		btnComprobar.addActionListener(l);
+		
+	}
+	
+	public JRadioButton getRdbtnRepuesta1() {
+		return rdbtnRepuesta1;
+	}
+
+	public JRadioButton getRdbtnRespuesta3() {
+		return rdbtnRespuesta3;
+	}
+
+	public JRadioButton getRdbtnRespuesta4() {
+		return rdbtnRespuesta4;
+	}
+
+	public JRadioButton getRdbtnRespuesta2() {
+		return rdbtnRespuesta2;
 	}
 
 

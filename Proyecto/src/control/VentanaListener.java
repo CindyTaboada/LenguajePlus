@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import view.sql.VDefinicionesSqlBasico;
@@ -80,6 +82,7 @@ public class VentanaListener implements ActionListener {
 	private VpRanking vr;
 	private VpLenguajes vpl;
 	private VpNiveles vpd;
+	private VpFelicitaciones vf;
 	// private FuenteDatos datos;
 	private Clase_NivelPersistencia cnp;
 	private ClasePersistencia cp;
@@ -126,8 +129,6 @@ public class VentanaListener implements ActionListener {
 	private PnlTestLinuxIntermedio pLinuxI;
 	private PnlTestLinuxAvanzado pLinuxA;
 
-	private int currentQuestion = 1;
-
 	String lenguaje = "";
 
 	public VentanaListener(VpInicio vpi, VpCrearCuenta vcc, VpRanking vr, VpFelicitaciones vf, VpLenguajes vpl,
@@ -136,14 +137,19 @@ public class VentanaListener implements ActionListener {
 			VDefinicionesSqlAvanzado mSqlA, VDefinicionesJavaScriptBasico mJavaScriptB,
 			VDefinicionesJavaScriptIntermedio mJavaScriptI, VDefinicionesJavaScriptAvanzado mJavaScriptA,
 			VDeficionesJavaBasico mJavaB, VDefinicionesJavaIntermedio mJavaI, VDeficionesJavaAvanzado mJavaA,
-			VDefinicionesLinuxBasico mLinuxB, VDefinicionesLinuxIntermedio mLinuxI,
-			VDefinicionesLinuxAvanzado mLinuxA) {
+			VDefinicionesLinuxBasico mLinuxB, VDefinicionesLinuxIntermedio mLinuxI, VDefinicionesLinuxAvanzado mLinuxA,
+			PnlTesGitBasico pGitB, PnlTestGitIntermedio pGitI, PnlTestGitAvanzado pGitA, PnlTestSqlBasico pSqlB,
+			PnlTestSqlIntermedio pSqlI, PnlTestSqlAvanzado pSqlA, PnlTestJavaScriptBasico pJavaScriptB,
+			PnlTestJavaScriptIntermedio pJavaScriptI, PnlTestJavaScriptAvanzado pJavaScriptA, PnlTestJavaBasico pJavaB,
+			PnlTestJavaIntermedio pJavaI, PnlTestJavaAvanzado pJavaA, PnlTestLinuxBasico pLinuxB,
+			PnlTestLinuxIntermedio pLinuxI, PnlTestLinuxAvanzado pLinuxA) {
 
 		this.vpi = vpi;
 		this.vcc = vcc;
 		this.vr = vr;
 		this.vpl = vpl;
 		this.vpd = vpd;
+		this.vf = vf;
 		this.mGitB = mGitB;
 		this.mGitI = mGitI;
 		this.mGitA = mGitA;
@@ -160,6 +166,26 @@ public class VentanaListener implements ActionListener {
 		this.mLinuxI = mLinuxI;
 		this.mLinuxA = mLinuxA;
 
+		this.pGitB = pGitB;
+		this.pGitI = pGitI;
+		this.pGitA = pGitA;
+
+		this.pSqlB = pSqlB;
+		this.pSqlI = pSqlI;
+		this.pSqlA = pSqlA;
+
+		this.pJavaScriptB = pJavaScriptB;
+		this.pJavaScriptI = pJavaScriptI;
+		this.pJavaScriptA = pJavaScriptA;
+
+		this.pJavaB = pJavaB;
+		this.pJavaI = pJavaI;
+		this.pJavaA = pJavaA;
+
+		this.pLinuxB = pLinuxB;
+		this.pLinuxI = pLinuxI;
+		this.pLinuxA = pLinuxA;
+
 		cnp = new Clase_NivelPersistencia();
 		cp = new ClasePersistencia();
 		lp = new LenguajePersistencia();
@@ -167,26 +193,6 @@ public class VentanaListener implements ActionListener {
 		rp = new RankingPersistencia();
 		ulp = new Usuario_LenguajePersistencia();
 		up = new UsuarioPersistencia();
-
-		pGitB = new PnlTesGitBasico();
-		pGitI = new PnlTestGitIntermedio();
-		pGitA = new PnlTestGitAvanzado();
-
-		pSqlB = new PnlTestSqlBasico();
-		pSqlI = new PnlTestSqlIntermedio();
-		pSqlA = new PnlTestSqlAvanzado();
-
-		pJavaScriptB = new PnlTestJavaScriptBasico();
-		pJavaScriptI = new PnlTestJavaScriptIntermedio();
-		pJavaScriptA = new PnlTestJavaScriptAvanzado();
-
-		pJavaB = new PnlTestJavaBasico();
-		pJavaI = new PnlTestJavaIntermedio();
-		pJavaA = new PnlTestJavaAvanzado();
-
-		pLinuxB = new PnlTestLinuxBasico();
-		pLinuxI = new PnlTestLinuxIntermedio();
-		pLinuxA = new PnlTestLinuxAvanzado();
 
 	}
 
@@ -208,12 +214,19 @@ public class VentanaListener implements ActionListener {
 			} else if (e.getSource().equals(vcc.getBtnCancelarCrearCuenta())) {
 				vcc.setVisible(false);
 				vpi.setVisible(true);
+				
+			}else if(e.getSource().equals(vpl.getBtnRanking())) {
+				vpl.setVisible(false);
+				vr.setVisible(true);
 
 			} else if (e.getSource().equals(vcc.getBtnConfirmarCrearCuenta())) {
 				crearCuenta();
 			} else if (e.getSource().equals(vpl.getBtnAtras())) {
 				vpl.setVisible(false);
 				vpi.setVisible(true);
+			}else if (e.getSource().equals(vf.getBtnVolver())) {
+				vf.setVisible(false);
+				vpd.setVisible(true);
 			} else if (e.getSource().equals(vpl.getBtnGit())) {
 				vpl.setVisible(false);
 				vpd.setVisible(true);
@@ -254,111 +267,186 @@ public class VentanaListener implements ActionListener {
 				}
 			} else if (e.getSource().equals(mGitB.getBtnPrueba())) {
 				mGitB.cargarPanel(pGitB);
+			} else if (e.getSource().equals(pGitB.getBtnComprobar())) {
+                comprobarRespuesta(pGitB);
 			} else if (e.getSource().equals(mGitI.getBtnPrueba())) {
 				mGitI.cargarPanel(pGitI);
+			} else if (e.getSource().equals(pGitI.getBtnComprobar())) {
+                comprobarRespuesta(pGitI);
 			} else if (e.getSource().equals(mGitA.getBtnPrueba())) {
 				mGitA.cargarPanel(pGitA);
+			} else if (e.getSource().equals(pGitA.getBtnComprobar())) {
+                comprobarRespuesta(pGitA);
 			} else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
 				mSqlB.cargarPanel(pSqlB);
+			} else if (e.getSource().equals(pSqlB.getBtnComprobar())) {
+                comprobarRespuesta(pSqlB);
+            
 			} else if (e.getSource().equals(mSqlI.getBtnPrueba())) {
 				mSqlI.cargarPanel(pSqlI);
+			} else if (e.getSource().equals(pSqlI.getBtnComprobar())) {
+                comprobarRespuesta(pSqlI);
+            
 			} else if (e.getSource().equals(mSqlA.getBtnPrueba())) {
 				mSqlA.cargarPanel(pSqlA);
+			} else if (e.getSource().equals(pSqlA.getBtnComprobar())) {
+                comprobarRespuesta(pSqlA);
+                
 			} else if (e.getSource().equals(mJavaB.getBtnPrueba())) {
 				mJavaB.cargarPanel(pJavaB);
-			} else if (e.getSource().equals(mJavaI.getBtnPrueba())) {
-				mJavaI.cargarPanel(pJavaI);
+			}else if (e.getSource().equals(pJavaB.getBtnComprobar())) {
+				comprobarRespuesta(pJavaB);
+				
+		} else if (e.getSource().equals(mJavaI.getBtnPrueba())) {
+            mJavaI.cargarPanel(pJavaI);
+		} else if (e.getSource().equals(pJavaI.getBtnComprobar())) {
+            comprobarRespuesta(pJavaI);
+            
 			} else if (e.getSource().equals(mJavaA.getBtnPrueba())) {
-				loadQuestion(currentQuestion);
 				mJavaA.cargarPanel(pJavaA);
+				
 			} else if (e.getSource().equals(pJavaA.getBtnComprobar())) {
-				checkAnswer();
-			} else if (e.getSource().equals(mLinuxB.getBtnPrueba())) {
+                comprobarRespuesta(pJavaA);
+                
+            }else if (e.getSource().equals(mLinuxB.getBtnPrueba())) {
 				mLinuxB.cargarPanel(pLinuxB);
+            } else if (e.getSource().equals(pLinuxB.getBtnComprobar())) {
+                comprobarRespuesta(pLinuxB);
 			} else if (e.getSource().equals(mLinuxI.getBtnPrueba())) {
 				mLinuxI.cargarPanel(pLinuxI);
+			} else if (e.getSource().equals(pLinuxI.getBtnComprobar())) {
+                comprobarRespuesta(pLinuxI);
 			} else if (e.getSource().equals(mLinuxA.getBtnPrueba())) {
 				mLinuxA.cargarPanel(pLinuxA);
+				
+			 } else if (e.getSource().equals(pLinuxA.getBtnComprobar())) {
+	                comprobarRespuesta(pLinuxA);
+	                
 			} else if (e.getSource().equals(mJavaScriptB.getBtnPrueba())) {
 				mJavaScriptB.cargarPanel(pJavaScriptB);
+			} else if (e.getSource().equals(pJavaScriptB.getBtnComprobar())) {
+                comprobarRespuesta(pJavaScriptB);
 			} else if (e.getSource().equals(mJavaScriptI.getBtnPrueba())) {
 				mJavaScriptI.cargarPanel(pJavaScriptI);
+			} else if (e.getSource().equals(pJavaScriptI.getBtnComprobar())) {
+                comprobarRespuesta(pJavaScriptI);
 			} else if (e.getSource().equals(mJavaScriptA.getBtnPrueba())) {
 				mJavaScriptA.cargarPanel(pJavaScriptA);
+			} else if (e.getSource().equals(pJavaScriptA.getBtnComprobar())) {
+                comprobarRespuesta(pJavaScriptA);
 			}
 		}
-
 	}
 
-	private void loadQuestion(int questionIndex) {
-		ClaseQnA claseQnA = cp.getQuestion(1, questionIndex); // 1 for Java Language
-		if (claseQnA != null) {
-			String question = claseQnA.getPreguntas();
-			String[] answers = claseQnA.getRespuestas().split(";");
-			pJavaA.setPregunta(question, answers[0], answers[1], answers[2], answers[3]);
+	private void comprobarRespuesta(JPanel panel) {
+		JRadioButton correctAnswer = null;
+
+		if (panel instanceof PnlTestJavaAvanzado) {
+			correctAnswer = ((PnlTestJavaAvanzado) panel).getRdbtnRespuesta4();
+
+		} else if (panel instanceof PnlTestJavaBasico) {
+			correctAnswer = ((PnlTestJavaBasico) panel).getRdbtnRespuesta2();
+
+		} else if (panel instanceof PnlTestJavaIntermedio) {
+			// correctAnswer = ((PnlTestJavaIntermedio.getRdbtnRespuesta3();
+
+		} else if (panel instanceof PnlTesGitBasico) {
+			correctAnswer = ((PnlTesGitBasico) panel).getRdbtnRepuesta1();
+
+		} else if (panel instanceof PnlTestGitIntermedio) {
+			correctAnswer = ((PnlTestGitIntermedio) panel).getRdbtnRepuesta1();
+
+		} else if (panel instanceof PnlTestGitAvanzado) {
+			correctAnswer = ((PnlTestGitAvanzado) panel).getRdbtnRespuesta4();
+
+		} else if (panel instanceof PnlTestSqlBasico) {
+			// correctAnswer = ((PnlTestSqlBasico) panel).getRd();
+
+		} else if (panel instanceof PnlTestSqlIntermedio) {
+			correctAnswer = ((PnlTestSqlIntermedio) panel).getRdbtnRespuesta4();
+
+		} else if (panel instanceof PnlTestSqlAvanzado) {
+			correctAnswer = ((PnlTestSqlAvanzado) panel).getRdbtnRespuesta4();
+
+		} else if (panel instanceof PnlTestJavaScriptBasico) {
+			correctAnswer = ((PnlTestJavaScriptBasico) panel).getRdbtnRespuesta4();
+
+		} else if (panel instanceof PnlTestJavaScriptIntermedio) {
+			correctAnswer = ((PnlTestJavaIntermedio) panel).getRdbtnRespuesta4();
+
+		} else if (panel instanceof PnlTestJavaScriptAvanzado) {
+			correctAnswer = ((PnlTestJavaAvanzado) panel).getRdbtnRespuesta4();
+
+		} else if (panel instanceof PnlTestLinuxBasico) {
+			correctAnswer = ((PnlTestLinuxBasico) panel).getRdbtnRespuesta4();
+
+		} else if (panel instanceof PnlTestLinuxIntermedio) {
+			correctAnswer = ((PnlTestLinuxIntermedio) panel).getRdbtnRespuesta4();
+
+		} else if (panel instanceof PnlTestLinuxAvanzado) {
+			correctAnswer = ((PnlTestJavaScriptAvanzado) panel).getRdbtnRespuesta4();
 		}
-	}
 
-	private void checkAnswer() {
-		if (pJavaA.getCorrectAnswerButton().isSelected()) {
-			currentQuestion++;
-			loadQuestion(currentQuestion);
+		if (correctAnswer != null && correctAnswer.isSelected()) {
+			JOptionPane.showMessageDialog(panel, "¡Respuesta correcta!");
+			panel.setVisible(false);
+			vf.setVisible(true);
 		} else {
-			JOptionPane.showMessageDialog(pJavaA, "Respuesta incorrecta. Intenta de nuevo.");
+			JOptionPane.showMessageDialog(panel, "Respuesta incorrecta. Intentar otra vez.");
 		}
 	}
 
 	private void cargarRanking(String filtro) {
-		ArrayList<Ranking> listaRanking = rp.consultarPilotos(filtro);
+		ArrayList<Ranking> listaRanking = rp.consultarUsers(filtro);
 		vr.cargarTabla(listaRanking);
 	}
 
 	private void crearCuenta() {
-	    String nombre = vcc.getTxtNombre().getText();
-	    String apellido1 = vcc.getTxtApellido1().getText();
-	    String apellido2 = vcc.getTxtApellido2().getText();
-	    String email = vcc.getTxtEmail().getText();
-	    String pssw = new String(vcc.getPwdConstrasenia().getPassword());
-	    String confirmarPsswd = new String(vcc.getPwdConfirmarContrasenia().getPassword());
-	    int edad = (int) vcc.getSpnEdad().getValue();
+		String nombre = vcc.getTxtNombre().getText();
+		String apellido1 = vcc.getTxtApellido1().getText();
+		String apellido2 = vcc.getTxtApellido2().getText();
+		String email = vcc.getTxtEmail().getText();
+		String pssw = new String(vcc.getPwdConstrasenia().getPassword());
+		String confirmarPsswd = new String(vcc.getPwdConfirmarContrasenia().getPassword());
+		int edad = (int) vcc.getSpnEdad().getValue();
 
-	    if (nombre.isEmpty()) {
-	        mostrarError("El nombre es un dato obligatorio");
-	    } else if (apellido1.isEmpty()) {
-	        mostrarError("El primer apellido es un dato obligatorio");
-	    } else if (email.isEmpty()) {
-	        mostrarError("El email es un dato obligatorio");
-	    } else if (!emailValido(email)) {
-	        mostrarError("No es una dirección de correo válida. Ejemplo: info@lenguajeplus.com");
-	    } else if (up.existeUsuario(email)) {
-	        mostrarError("El email ya existe");
-	    } else if (pssw.isEmpty()) {
-	        mostrarError("Introduce una contraseña");
-	    } else if (pssw.length() > UsuarioPersistencia.TAM_CONTRASENIA) {
-	        mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
-	    } else if (confirmarPsswd.isEmpty()) {
-	        mostrarError("Vuelve a escribir la contraseña");
-	    } else if (!pssw.equals(confirmarPsswd)) {
-	        mostrarError("Las contraseñas no coinciden");
-	    } else {
-	        try {
-	            Usuario usuario = new Usuario(0, nombre, apellido1, apellido2, edad, email, pssw);
-	            int result = up.registrarUsuario(usuario);
-	            if (result > 0) {
-	                mensajeInfo("¡Enhorabuena! Registro completado!");
-	                vcc.setVisible(false);
-	                vpi.setVisible(true); 
-	            } else {
-	                mostrarError("Error en el registro. Inténtelo de nuevo.");
-	            }
-	        } catch (Exception e) {
-	            mostrarError("Error en el registro: " + e.getMessage());
-	        }
-	    }
+		if (nombre.isEmpty()) {
+			mostrarError("El nombre es un dato obligatorio");
+		} else if (apellido1.isEmpty()) {
+			mostrarError("El primer apellido es un dato obligatorio");
+		} else if (email.isEmpty()) {
+			mostrarError("El email es un dato obligatorio");
+		} else if (!emailValido(email)) {
+			mostrarError("No es una dirección de correo válida. Ejemplo: info@lenguajeplus.com");
+		} else if (up.existeUsuario(email)) {
+			mostrarError("El email ya existe");
+		} else if (pssw.isEmpty()) {
+			mostrarError("Introduce una contraseña");
+		} else if (pssw.length() > UsuarioPersistencia.TAM_CONTRASENIA) {
+			mostrarError("La contraseña no puede tener más de " + UsuarioPersistencia.TAM_CONTRASENIA + " caracteres");
+		} else if (confirmarPsswd.isEmpty()) {
+			mostrarError("Vuelve a escribir la contraseña");
+		} else if (!pssw.equals(confirmarPsswd)) {
+			mostrarError("Las contraseñas no coinciden");
+		} else {
+			try {
+				Usuario usuario = new Usuario(0, nombre, apellido1, apellido2, edad, email, pssw);
+				int result = up.registrarUsuario(usuario);
+				if (result > 0) {
+					mensajeInfo("¡Enhorabuena! Registro completado!");
+					vcc.setVisible(false);
+					vpi.setVisible(true);
+				} else {
+					mostrarError("Error en el registro. Inténtelo de nuevo.");
+				}
+			} catch (Exception e) {
+				mostrarError("Error en el registro: " + e.getMessage());
+			}
+		}
 
-	    //reset texto
-	    vcc.getPwdConstrasenia().setText("");
-	    vcc.getPwdConfirmarContrasenia().setText("");
+		// reset texto
+		vcc.getPwdConstrasenia().setText("");
+		vcc.getPwdConfirmarContrasenia().setText("");
 	}
 
 	private Usuario iniciarSesion() {
@@ -386,7 +474,7 @@ public class VentanaListener implements ActionListener {
 				}
 			}
 		}
-		return null; 
+		return null;
 	}
 
 	private void mostrarError(String mensaje) {

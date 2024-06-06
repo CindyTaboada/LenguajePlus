@@ -96,8 +96,24 @@ public class PnlTestSqlBasico extends JPanel {
 
 	}
 
+	public void setRbtnA(JRadioButton rbtnA) {
+		this.rbtnA = rbtnA;
+	}
 
-	
+	public void setRbtnC(JRadioButton rbtnC) {
+		this.rbtnC = rbtnC;
+	}
+
+	public void setRbtnD(JRadioButton rbtnD) {
+		this.rbtnD = rbtnD;
+	}
+
+	public void setRbtnB(JRadioButton rbtnB) {
+		this.rbtnB = rbtnB;
+	}
+
+
+
 	
 	
 	

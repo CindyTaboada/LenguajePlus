@@ -25,7 +25,6 @@ public class VDeficionesJavaAvanzado extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
-	private static final Icon ACT_CMN_BTN_VOLVER = null;
 	private JButton btnPrueba;
 	private JScrollPane scrollPane;
 	private JButton btnAtras;
@@ -60,6 +59,7 @@ public class VDeficionesJavaAvanzado extends JFrame {
 		scrollPane.setViewportView(txtpnJavaAvanzado);
 
 		btnPrueba = new JButton();
+		btnPrueba.setText("Pulsa aqui");
 		btnPrueba.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnPrueba.setBounds(289, 404, 162, 39);
 		getContentPane().add(btnPrueba);

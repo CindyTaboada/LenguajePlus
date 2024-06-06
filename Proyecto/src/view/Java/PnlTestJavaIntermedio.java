@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import control.VentanaListener;
+
 public class PnlTestJavaIntermedio extends JPanel {
 	
 	private static final long serialVersionUID = 1L;
@@ -32,19 +34,19 @@ public class PnlTestJavaIntermedio extends JPanel {
 	private void initComponentes() {
 		setBackground(new Color(51, 255, 102));
 		setLayout(null);
-		lblPregutanas = new JLabel("PREGUNTA 1");
+		lblPregutanas = new JLabel("<html>¿Cuál de las siguientes afirmaciones es verdadera acerca de los ArrayList en Java?</html>");
 		lblPregutanas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
-		lblPregutanas.setBounds(77, 27, 414, 13);
+		lblPregutanas.setBounds(50, 10, 459, 42);
 		add(lblPregutanas);
 
-		rdbtnRepuesta1 = new JRadioButton("New radio button");
+		rdbtnRepuesta1 = new JRadioButton("<html> Tienen un tamaño fijo y no se pueden redimensionar </html>");
 		buttonGroupRespuestas.add(rdbtnRepuesta1);
-		rdbtnRepuesta1.setBounds(77, 136, 103, 21);
+		rdbtnRepuesta1.setBounds(42, 143, 138, 36);
 		add(rdbtnRepuesta1);
 
-		rdbtnRespuesta3 = new JRadioButton("New radio button");
+		rdbtnRespuesta3 = new JRadioButton("<html>Almacenan elementos ordenados de un mismo tipo de dato</html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta3);
-		rdbtnRespuesta3.setBounds(77, 228, 103, 21);
+		rdbtnRespuesta3.setBounds(42, 244, 138, 36);
 		add(rdbtnRespuesta3);
 
 		rdbtnRespuesta2 = new JRadioButton("New radio button");
@@ -59,7 +61,7 @@ public class PnlTestJavaIntermedio extends JPanel {
 
 		btnComprobar = new JButton("Comprobar");
 		btnComprobar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnComprobar.setBounds(208, 281, 164, 42);
+		btnComprobar.setBounds(217, 281, 164, 42);
 		add(btnComprobar);
 	}
 
@@ -67,5 +69,25 @@ public class PnlTestJavaIntermedio extends JPanel {
 		return btnComprobar;
 	}
 
+	public void setListener(VentanaListener l) {
+		btnComprobar.addActionListener(l);
+		
+	}
+
+	public JRadioButton getRdbtnRepuesta1() {
+		return rdbtnRepuesta1;
+	}
+
+	public JRadioButton getRdbtnRespuesta3() {
+		return rdbtnRespuesta3;
+	}
+
+	public JRadioButton getRdbtnRespuesta4() {
+		return rdbtnRespuesta4;
+	}
+
+	public JRadioButton getRdbtnRespuesta2() {
+		return rdbtnRespuesta2;
+	}
 
 }
