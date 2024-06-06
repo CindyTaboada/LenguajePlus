@@ -31,7 +31,7 @@ public class PnlTesGitBasico extends JPanel {
 	}
 
 	private void initComponentes() {
-		setBackground(new Color(51, 255, 102));
+		setBackground(new Color(64, 224, 208));
 		setLayout(null);
 		lblPregutanas = new JLabel("PREGUNTA 1");
 		lblPregutanas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));

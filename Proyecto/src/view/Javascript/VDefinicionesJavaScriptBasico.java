@@ -28,7 +28,7 @@ public class VDefinicionesJavaScriptBasico extends JFrame {
 	private JButton btnAtras;
 	
 	public VDefinicionesJavaScriptBasico() {
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 		setTitle("JavaScript Basico");
 		
 		configurarFrame();

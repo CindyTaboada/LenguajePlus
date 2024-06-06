@@ -32,29 +32,29 @@ public class PnlTestLinuxIntermedio extends JPanel {
 	}
 
 	private void initComponentes() {
-		setBackground(new Color(51, 255, 102));
+		setBackground(new Color(64, 224, 208));
 		setLayout(null);
-		lblPregutanas = new JLabel("PREGUNTA 1");
+		lblPregutanas = new JLabel("<html>¿Cuál de estos comandos se usa para instalar nuevo software en Ubuntu?</html>");
 		lblPregutanas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
-		lblPregutanas.setBounds(77, 27, 414, 13);
+		lblPregutanas.setBounds(77, 27, 414, 42);
 		add(lblPregutanas);
 
-		rdbtnRepuesta1 = new JRadioButton("New radio button");
+		rdbtnRepuesta1 = new JRadioButton("brew\r\n");
 		buttonGroupRespuestas.add(rdbtnRepuesta1);
 		rdbtnRepuesta1.setBounds(77, 136, 103, 21);
 		add(rdbtnRepuesta1);
 
-		rdbtnRespuesta3 = new JRadioButton("New radio button");
+		rdbtnRespuesta3 = new JRadioButton("pacman");
 		buttonGroupRespuestas.add(rdbtnRespuesta3);
 		rdbtnRespuesta3.setBounds(77, 228, 103, 21);
 		add(rdbtnRespuesta3);
 
-		rdbtnRespuesta2 = new JRadioButton("New radio button");
+		rdbtnRespuesta2 = new JRadioButton("yum");
 		buttonGroupRespuestas.add(rdbtnRespuesta2);
 		rdbtnRespuesta2.setBounds(406, 136, 103, 21);
 		add(rdbtnRespuesta2);
 
-		rdbtnRespuesta4 = new JRadioButton("New radio button");
+		rdbtnRespuesta4 = new JRadioButton("apt\r\n");
 		buttonGroupRespuestas.add(rdbtnRespuesta4);
 		rdbtnRespuesta4.setBounds(406, 239, 103, 21);
 		add(rdbtnRespuesta4);

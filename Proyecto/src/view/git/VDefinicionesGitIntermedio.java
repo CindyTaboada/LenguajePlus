@@ -39,7 +39,7 @@ public class VDefinicionesGitIntermedio extends JFrame {
 
 		initComponentes();
 
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 
 	}
 
@@ -101,4 +101,10 @@ public class VDefinicionesGitIntermedio extends JFrame {
 		scrollPane.setViewportView(panel);
 		
 	}
+
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
+
+	
 }

@@ -53,7 +53,7 @@ public class VpLenguajes extends JFrame {
 	
 
 	private void configurarFrame() {
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 		
 		setSize(ANCHO, ALTO);
 		
@@ -100,7 +100,7 @@ public class VpLenguajes extends JFrame {
 		btnAtras = new JButton(ACT_CMN_BTN_VOLVER);
 		btnAtras.setVerticalAlignment(SwingConstants.TOP);
 		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
-		btnAtras.setBounds(511, 290, 83, 26);
+		btnAtras.setBounds(493, 277, 83, 26);
 		getContentPane().add(btnAtras);
 		
 		btnRanking = new JButton("Ranking");

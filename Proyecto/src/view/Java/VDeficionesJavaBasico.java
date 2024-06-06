@@ -23,13 +23,12 @@ public class VDeficionesJavaBasico extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private static final int ANCHO = 800;
 	private static final int ALTO = 500;
-	private static final Icon ACT_CMN_BTN_VOLVER = null;
 	private JButton btnPrueba;
 	private JScrollPane scrollPane;
 	private JButton btnAtras;
 	
 	public VDeficionesJavaBasico() {
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 		setTitle("Java Basico");
 		
 		configurarFrame();

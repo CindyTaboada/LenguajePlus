@@ -269,14 +269,17 @@ public class VentanaListener implements ActionListener {
 				mGitB.cargarPanel(pGitB);
 			} else if (e.getSource().equals(pGitB.getBtnComprobar())) {
                 comprobarRespuesta(pGitB);
+               
 			} else if (e.getSource().equals(mGitI.getBtnPrueba())) {
 				mGitI.cargarPanel(pGitI);
 			} else if (e.getSource().equals(pGitI.getBtnComprobar())) {
                 comprobarRespuesta(pGitI);
+                
 			} else if (e.getSource().equals(mGitA.getBtnPrueba())) {
 				mGitA.cargarPanel(pGitA);
 			} else if (e.getSource().equals(pGitA.getBtnComprobar())) {
                 comprobarRespuesta(pGitA);
+                
 			} else if (e.getSource().equals(mSqlB.getBtnPrueba())) {
 				mSqlB.cargarPanel(pSqlB);
 			} else if (e.getSource().equals(pSqlB.getBtnComprobar())) {
@@ -312,10 +315,12 @@ public class VentanaListener implements ActionListener {
 				mLinuxB.cargarPanel(pLinuxB);
             } else if (e.getSource().equals(pLinuxB.getBtnComprobar())) {
                 comprobarRespuesta(pLinuxB);
+                
 			} else if (e.getSource().equals(mLinuxI.getBtnPrueba())) {
 				mLinuxI.cargarPanel(pLinuxI);
 			} else if (e.getSource().equals(pLinuxI.getBtnComprobar())) {
                 comprobarRespuesta(pLinuxI);
+                
 			} else if (e.getSource().equals(mLinuxA.getBtnPrueba())) {
 				mLinuxA.cargarPanel(pLinuxA);
 				
@@ -326,15 +331,63 @@ public class VentanaListener implements ActionListener {
 				mJavaScriptB.cargarPanel(pJavaScriptB);
 			} else if (e.getSource().equals(pJavaScriptB.getBtnComprobar())) {
                 comprobarRespuesta(pJavaScriptB);
+                
 			} else if (e.getSource().equals(mJavaScriptI.getBtnPrueba())) {
 				mJavaScriptI.cargarPanel(pJavaScriptI);
 			} else if (e.getSource().equals(pJavaScriptI.getBtnComprobar())) {
                 comprobarRespuesta(pJavaScriptI);
+                
 			} else if (e.getSource().equals(mJavaScriptA.getBtnPrueba())) {
 				mJavaScriptA.cargarPanel(pJavaScriptA);
 			} else if (e.getSource().equals(pJavaScriptA.getBtnComprobar())) {
                 comprobarRespuesta(pJavaScriptA);
-			}
+                
+			} else if (e.getSource().equals(mGitB.getBtnAtras())) {
+                mGitB.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mGitI.getBtnAtras())) {
+                mGitI.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mGitA.getBtnAtras())) {
+                mGitA.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mSqlB.getBtnAtras())) {
+                mSqlB.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mSqlI.getBtnAtras())) {
+                mSqlI.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mSqlA.getBtnAtras())) {
+                mSqlA.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mJavaB.getBtnAtras())) {
+                mJavaB.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mJavaI.getBtnAtras())) {
+                mJavaI.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mJavaA.getBtnAtras())) {
+                mJavaA.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mJavaScriptB.getBtnAtras())) {
+                mJavaScriptB.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mJavaScriptI.getBtnAtras())) {
+                mJavaScriptI.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mJavaScriptA.getBtnAtras())) {
+                mJavaScriptA.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mLinuxB.getBtnAtras())) {
+                mLinuxB.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mLinuxI.getBtnAtras())) {
+                mLinuxI.setVisible(false);
+                vpd.setVisible(true);
+            } else if (e.getSource().equals(mLinuxA.getBtnAtras())) {
+                mLinuxA.setVisible(false);
+                vpd.setVisible(true);
+            }
 		}
 	}
 
@@ -348,7 +401,7 @@ public class VentanaListener implements ActionListener {
 			correctAnswer = ((PnlTestJavaBasico) panel).getRdbtnRespuesta2();
 
 		} else if (panel instanceof PnlTestJavaIntermedio) {
-			// correctAnswer = ((PnlTestJavaIntermedio.getRdbtnRespuesta3();
+			 correctAnswer = ((PnlTestJavaIntermedio) panel).getRdbtnRespuesta3();
 
 		} else if (panel instanceof PnlTesGitBasico) {
 			correctAnswer = ((PnlTesGitBasico) panel).getRdbtnRepuesta1();
@@ -357,28 +410,28 @@ public class VentanaListener implements ActionListener {
 			correctAnswer = ((PnlTestGitIntermedio) panel).getRdbtnRepuesta1();
 
 		} else if (panel instanceof PnlTestGitAvanzado) {
-			correctAnswer = ((PnlTestGitAvanzado) panel).getRdbtnRespuesta4();
+			correctAnswer = ((PnlTestGitAvanzado) panel).getRdbtnRespuesta3();
 
 		} else if (panel instanceof PnlTestSqlBasico) {
-			// correctAnswer = ((PnlTestSqlBasico) panel).getRd();
+			correctAnswer = ((PnlTestSqlBasico) panel).getRbtnC();
 
 		} else if (panel instanceof PnlTestSqlIntermedio) {
 			correctAnswer = ((PnlTestSqlIntermedio) panel).getRdbtnRespuesta4();
 
 		} else if (panel instanceof PnlTestSqlAvanzado) {
-			correctAnswer = ((PnlTestSqlAvanzado) panel).getRdbtnRespuesta4();
+			correctAnswer = ((PnlTestSqlAvanzado) panel).getRdbtnRespuesta3();
 
 		} else if (panel instanceof PnlTestJavaScriptBasico) {
 			correctAnswer = ((PnlTestJavaScriptBasico) panel).getRdbtnRespuesta4();
 
 		} else if (panel instanceof PnlTestJavaScriptIntermedio) {
-			correctAnswer = ((PnlTestJavaIntermedio) panel).getRdbtnRespuesta4();
+			correctAnswer = ((PnlTestJavaIntermedio) panel).getRdbtnRespuesta2();
 
 		} else if (panel instanceof PnlTestJavaScriptAvanzado) {
-			correctAnswer = ((PnlTestJavaAvanzado) panel).getRdbtnRespuesta4();
+			correctAnswer = ((PnlTestJavaAvanzado) panel).getRdbtnRespuesta3();
 
 		} else if (panel instanceof PnlTestLinuxBasico) {
-			correctAnswer = ((PnlTestLinuxBasico) panel).getRdbtnRespuesta4();
+			correctAnswer = ((PnlTestLinuxBasico) panel).getRdbtnRepuesta1();
 
 		} else if (panel instanceof PnlTestLinuxIntermedio) {
 			correctAnswer = ((PnlTestLinuxIntermedio) panel).getRdbtnRespuesta4();

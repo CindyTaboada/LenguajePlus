@@ -29,7 +29,7 @@ public class PnlTestJavaAvanzado extends JPanel {
     }
 
     private void initComponentes() {
-        setBackground(new Color(51, 255, 102));
+    	setBackground(new Color(64, 224, 208));
         setLayout(null);
 
         lblPregunta = new JLabel();
@@ -41,25 +41,25 @@ public class PnlTestJavaAvanzado extends JPanel {
         rdbtnRespuesta1 = new JRadioButton();
         rdbtnRespuesta1.setText("NullPointerException");
         buttonGroupRespuestas.add(rdbtnRespuesta1);
-        rdbtnRespuesta1.setBounds(30, 136, 200, 21);
+        rdbtnRespuesta1.setBounds(10, 136, 220, 21);
         add(rdbtnRespuesta1);
 
         rdbtnRespuesta2 = new JRadioButton();
         rdbtnRespuesta2.setText("UnsupportedOperationException");
         buttonGroupRespuestas.add(rdbtnRespuesta2);
-        rdbtnRespuesta2.setBounds(30, 226, 200, 21);
+        rdbtnRespuesta2.setBounds(10, 226, 220, 21);
         add(rdbtnRespuesta2);
 
         rdbtnRespuesta3 = new JRadioButton();
         rdbtnRespuesta3.setText("ArrayStoreException");
         buttonGroupRespuestas.add(rdbtnRespuesta3);
-        rdbtnRespuesta3.setBounds(343, 136, 200, 21);
+        rdbtnRespuesta3.setBounds(343, 136, 233, 21);
         add(rdbtnRespuesta3);
 
         rdbtnRespuesta4 = new JRadioButton();
         rdbtnRespuesta4.setText("IndexOutOfBoundsException");
         buttonGroupRespuestas.add(rdbtnRespuesta4);
-        rdbtnRespuesta4.setBounds(343, 226, 200, 21);
+        rdbtnRespuesta4.setBounds(343, 226, 233, 21);
         add(rdbtnRespuesta4);
 
         btnComprobar = new JButton("Comprobar");

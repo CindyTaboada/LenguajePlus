@@ -32,7 +32,7 @@ public class VpFelicitaciones extends JFrame {
 		configurarComponentes();
 	}
 	private void configurarComponentes() {	
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 		getContentPane().setLayout(null);
 
 		JLabel lblFelicidades = new JLabel("¡FELICIDADES!");
@@ -41,7 +41,7 @@ public class VpFelicitaciones extends JFrame {
 		lblFelicidades.setBounds(195, 25, 195, 62);
 		getContentPane().add(lblFelicidades);
 		
-		JLabel lblTexto = new JLabel("¡Nivel superado! Ganas una estrella");
+		JLabel lblTexto = new JLabel("¡Nivel superado!");
 		lblTexto.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
 		lblTexto.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTexto.setBounds(172, 112, 286, 42);

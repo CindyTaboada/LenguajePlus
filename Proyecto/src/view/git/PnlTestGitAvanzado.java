@@ -26,7 +26,7 @@ public class PnlTestGitAvanzado extends JPanel {
 
 	public PnlTestGitAvanzado() {
 		
-		setBackground(new Color(51, 255, 102));
+		setBackground(new Color(64, 224, 208));
 		setSize(ANCHO, ALTO);
 
 		initComponentes();
@@ -36,34 +36,34 @@ public class PnlTestGitAvanzado extends JPanel {
 	private void initComponentes() {
 		setBackground(new Color(51, 255, 102));
 		setLayout(null);
-		lblPregutanas = new JLabel("PREGUNTA 1");
+		lblPregutanas = new JLabel("<html>En Git, la rama \"HEAD\" siempre apunta a:</html>");
 		lblPregutanas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
-		lblPregutanas.setBounds(77, 27, 414, 13);
+		lblPregutanas.setBounds(77, 27, 414, 33);
 		add(lblPregutanas);
 
-		rdbtnRepuesta1 = new JRadioButton("New radio button");
+		rdbtnRepuesta1 = new JRadioButton("<html>La rama por defecto del repositorio</html>");
 		buttonGroupRespuestas.add(rdbtnRepuesta1);
-		rdbtnRepuesta1.setBounds(77, 136, 103, 21);
+		rdbtnRepuesta1.setBounds(46, 136, 134, 42);
 		add(rdbtnRepuesta1);
 
-		rdbtnRespuesta3 = new JRadioButton("New radio button");
+		rdbtnRespuesta3 = new JRadioButton("<html>El commit más reciente en tu rama local</html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta3);
-		rdbtnRespuesta3.setBounds(77, 228, 103, 21);
+		rdbtnRespuesta3.setBounds(46, 228, 134, 42);
 		add(rdbtnRespuesta3);
 
-		rdbtnRespuesta2 = new JRadioButton("New radio button");
+		rdbtnRespuesta2 = new JRadioButton("<html>El repositorio remoto asociado</html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta2);
-		rdbtnRespuesta2.setBounds(406, 136, 103, 21);
+		rdbtnRespuesta2.setBounds(406, 136, 134, 42);
 		add(rdbtnRespuesta2);
 
-		rdbtnRespuesta4 = new JRadioButton("New radio button");
+		rdbtnRespuesta4 = new JRadioButton("<html>El archivo de configuración de Git<html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta4);
-		rdbtnRespuesta4.setBounds(406, 239, 103, 21);
+		rdbtnRespuesta4.setBounds(406, 234, 134, 31);
 		add(rdbtnRespuesta4);
 
 		btnComprobar = new JButton("Comprobar");
 		btnComprobar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnComprobar.setBounds(208, 281, 164, 42);
+		btnComprobar.setBounds(224, 281, 164, 42);
 		add(btnComprobar);
 	}
 

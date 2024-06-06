@@ -117,7 +117,7 @@ public class VpInicio extends JFrame {
 		btnIcon.setBounds(36, 36, 165, 154);
 		getContentPane().add(btnIcon);
 		
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 		
 	}
 	

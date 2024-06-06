@@ -35,7 +35,7 @@ public class VDefinicionesSqlIntermedio extends JFrame {
 
 		initComponentes();
 
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 	}
 
 	private void initComponentes() {
@@ -69,7 +69,7 @@ public class VDefinicionesSqlIntermedio extends JFrame {
 		btnAtras.setText("Volver");
 		btnAtras.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAtras.setFont(new Font("Dialog", Font.BOLD, 14));
-		btnAtras.setBounds(621, 404, 90, 39);
+		btnAtras.setBounds(617, 355, 90, 39);
 		getContentPane().add(btnAtras);
 	}
 

@@ -39,7 +39,7 @@ public class VpRanking extends JFrame {
 	private DefaultTableModel tModel;
 
 	public VpRanking() {
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 		
 		crearComponentes();
 		
@@ -60,7 +60,7 @@ public class VpRanking extends JFrame {
 
 		btnSalirRanking = new JButton("Salir del Ranking");
 		btnSalirRanking.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnSalirRanking.setBounds(228, 271, 143, 39);
+		btnSalirRanking.setBounds(197, 264, 181, 39);
 		getContentPane().add(btnSalirRanking);
 		
 		JScrollPane scrpRanking = new JScrollPane();
@@ -101,6 +101,8 @@ public class VpRanking extends JFrame {
     }
 
     public void cargarTabla(ArrayList<Ranking> listaRanking) {
+    	
+        
         tModel.getDataVector().clear();
         Object[] fila = new Object[2];
 

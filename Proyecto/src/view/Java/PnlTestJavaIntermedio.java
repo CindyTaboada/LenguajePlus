@@ -32,7 +32,7 @@ public class PnlTestJavaIntermedio extends JPanel {
 	}
 
 	private void initComponentes() {
-		setBackground(new Color(51, 255, 102));
+		setBackground(new Color(64, 224, 208));
 		setLayout(null);
 		lblPregutanas = new JLabel("<html>¿Cuál de las siguientes afirmaciones es verdadera acerca de los ArrayList en Java?</html>");
 		lblPregutanas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
@@ -41,22 +41,22 @@ public class PnlTestJavaIntermedio extends JPanel {
 
 		rdbtnRepuesta1 = new JRadioButton("<html> Tienen un tamaño fijo y no se pueden redimensionar </html>");
 		buttonGroupRespuestas.add(rdbtnRepuesta1);
-		rdbtnRepuesta1.setBounds(42, 143, 138, 36);
+		rdbtnRepuesta1.setBounds(42, 143, 138, 64);
 		add(rdbtnRepuesta1);
 
 		rdbtnRespuesta3 = new JRadioButton("<html>Almacenan elementos ordenados de un mismo tipo de dato</html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta3);
-		rdbtnRespuesta3.setBounds(42, 244, 138, 36);
+		rdbtnRespuesta3.setBounds(42, 244, 138, 64);
 		add(rdbtnRespuesta3);
 
-		rdbtnRespuesta2 = new JRadioButton("New radio button");
+		rdbtnRespuesta2 = new JRadioButton("<html>No permiten elementos duplicados</html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta2);
-		rdbtnRespuesta2.setBounds(406, 136, 103, 21);
+		rdbtnRespuesta2.setBounds(410, 143, 138, 64);
 		add(rdbtnRespuesta2);
 
-		rdbtnRespuesta4 = new JRadioButton("New radio button");
+		rdbtnRespuesta4 = new JRadioButton("<html>Se utilizan para almacenar pares clave-valor</html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta4);
-		rdbtnRespuesta4.setBounds(406, 239, 103, 21);
+		rdbtnRespuesta4.setBounds(410, 242, 138, 66);
 		add(rdbtnRespuesta4);
 
 		btnComprobar = new JButton("Comprobar");

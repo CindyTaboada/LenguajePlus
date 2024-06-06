@@ -32,32 +32,32 @@ public class PnlTestSqlBasico extends JPanel {
 
 	private void initComponentes() {
 		
-		setBackground(new Color(51, 255, 102));
+		setBackground(new Color(64, 224, 208));
 		setLayout(null);
 		
-		JLabel lblPregunta = new JLabel("Pregunta:");
+		JLabel lblPregunta = new JLabel("<html>¿Cuál es la cláusula utilizada para filtrar los resultados de una consulta SQL? </html>");
 		lblPregunta.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
-		lblPregunta.setBounds(77, 27, 414, 13);
+		lblPregunta.setBounds(54, 27, 480, 42);
 		add(lblPregunta);
 
-		rbtnA = new JRadioButton("A");
+		rbtnA = new JRadioButton("ORDER BY");
 		buttonGroupRespuestas.add(rbtnA);
-		rbtnA.setBounds(77, 136, 103, 21);
+		rbtnA.setBounds(77, 136, 103, 42);
 		add(rbtnA);
 		
-		rbtnB = new JRadioButton("B");
+		rbtnB = new JRadioButton("GROUP BY");
 		buttonGroupRespuestas.add(rbtnB);
-		rbtnB.setBounds(77, 169, 103, 21);
+		rbtnB.setBounds(400, 136, 103, 42);
 		add(rbtnB);
 
-		rbtnC = new JRadioButton("C");
+		rbtnC = new JRadioButton("<html>WHERE</html");
 		buttonGroupRespuestas.add(rbtnC);
-		rbtnC.setBounds(77, 197, 103, 21);
+		rbtnC.setBounds(77, 197, 103, 42);
 		add(rbtnC);
 
-		rbtnD = new JRadioButton("D");
+		rbtnD = new JRadioButton("<html>HAVING</html>");
 		buttonGroupRespuestas.add(rbtnD);
-		rbtnD.setBounds(77, 230, 103, 21);
+		rbtnD.setBounds(400, 197, 103, 42);
 		add(rbtnD);
 
 		btnComprobar = new JButton("Comprobar");

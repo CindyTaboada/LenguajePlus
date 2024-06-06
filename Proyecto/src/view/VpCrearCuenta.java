@@ -45,7 +45,7 @@ public class VpCrearCuenta extends JFrame {
 	private JButton btnAtras;
 	
 	public VpCrearCuenta() {
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 		
 		configurarFrame();
 		

@@ -82,7 +82,7 @@ public class VDeficionesJavaAvanzado extends JFrame {
 
 	
 	private void configurarFrame() {
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 		setSize(ANCHO, ALTO);
 
 		Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();

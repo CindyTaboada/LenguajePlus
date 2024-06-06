@@ -39,7 +39,7 @@ public class VDefinicionesGitAvanzado extends JFrame {
 
 		initComponentes();
 
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 	}
 
 	private void initComponentes() {
@@ -99,4 +99,10 @@ public class VDefinicionesGitAvanzado extends JFrame {
 		btnPrueba.addActionListener(Listener);
 
 	}
+
+	public JButton getBtnAtras() {
+		return btnAtras;
+	}
+
+	
 }

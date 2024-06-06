@@ -34,31 +34,31 @@ public class PnlTestLinuxBasico extends JPanel {
 	}
 
 	private void initComponentes() {
-		setBackground(new Color(51, 255, 102));
+		setBackground(new Color(64, 224, 208));
 		setLayout(null);
-		lblPregutanas = new JLabel("PREGUNTA 1");
+		lblPregutanas = new JLabel("<html>¿Cuál de los siguientes comandos se usa para listar los archivos y directorios en un directorio actual?</html>");
 		lblPregutanas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
-		lblPregutanas.setBounds(77, 27, 414, 13);
+		lblPregutanas.setBounds(36, 27, 501, 47);
 		add(lblPregutanas);
 
-		rdbtnRepuesta1 = new JRadioButton("New radio button");
+		rdbtnRepuesta1 = new JRadioButton("ls");
 		buttonGroupRespuestas.add(rdbtnRepuesta1);
-		rdbtnRepuesta1.setBounds(77, 136, 103, 21);
+		rdbtnRepuesta1.setBounds(77, 136, 103, 36);
 		add(rdbtnRepuesta1);
 
-		rdbtnRespuesta3 = new JRadioButton("New radio button");
+		rdbtnRespuesta3 = new JRadioButton("mkdir");
 		buttonGroupRespuestas.add(rdbtnRespuesta3);
-		rdbtnRespuesta3.setBounds(77, 228, 103, 21);
+		rdbtnRespuesta3.setBounds(77, 213, 103, 36);
 		add(rdbtnRespuesta3);
 
-		rdbtnRespuesta2 = new JRadioButton("New radio button");
+		rdbtnRespuesta2 = new JRadioButton("pwd");
 		buttonGroupRespuestas.add(rdbtnRespuesta2);
-		rdbtnRespuesta2.setBounds(406, 136, 103, 21);
+		rdbtnRespuesta2.setBounds(406, 136, 103, 36);
 		add(rdbtnRespuesta2);
 
-		rdbtnRespuesta4 = new JRadioButton("New radio button");
+		rdbtnRespuesta4 = new JRadioButton("cd");
 		buttonGroupRespuestas.add(rdbtnRespuesta4);
-		rdbtnRespuesta4.setBounds(406, 239, 103, 21);
+		rdbtnRespuesta4.setBounds(406, 213, 103, 47);
 		add(rdbtnRespuesta4);
 
 		btnComprobar = new JButton("Comprobar");

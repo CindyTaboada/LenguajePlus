@@ -29,7 +29,7 @@ public class VDefinicionesLinuxBasico extends JFrame {
 
 	
 	public VDefinicionesLinuxBasico() {
-		getContentPane().setBackground(new Color(51, 255, 102));
+		getContentPane().setBackground(new Color(64, 224, 208));
 		setTitle("Linux Basico");
 		
 		configurarFrame();

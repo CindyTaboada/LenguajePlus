@@ -28,7 +28,7 @@ public class PnlTestSqlAvanzado extends JPanel {
 	private JButton btnComprobar;
 
 	public PnlTestSqlAvanzado() {
-		setBackground(new Color(51, 255, 102));
+		setBackground(new Color(64, 224, 208));
 		setSize(ANCHO, ALTO);
 		setLayout(null);
 		
@@ -38,34 +38,34 @@ public class PnlTestSqlAvanzado extends JPanel {
 	}
 
 	private void initComponentes() {
-		lblPregutanas = new JLabel("PREGUNTA 1");
+		lblPregutanas = new JLabel("<html>¿Cómo declarar variables dentro de una función SQL/PL?</html>");
 		lblPregutanas.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 16));
-		lblPregutanas.setBounds(77, 27, 414, 13);
+		lblPregutanas.setBounds(77, 27, 414, 42);
 		add(lblPregutanas);
 		
-		rdbtnRepuesta1 = new JRadioButton("New radio button");
+		rdbtnRepuesta1 = new JRadioButton("<html> v_nombre := ‘Fulano’</html>");
 		buttonGroupRespuestas.add(rdbtnRepuesta1);
-		rdbtnRepuesta1.setBounds(77, 136, 103, 21);
+		rdbtnRepuesta1.setBounds(35, 136, 173, 42);
 		add(rdbtnRepuesta1);
 		
-		rdbtnRespuesta3 = new JRadioButton("New radio button");
+		rdbtnRespuesta3 = new JRadioButton("<html> v_nombre nomTabla.NOMBRE%TYPE;</html>");
 		buttonGroupRespuestas.add(rdbtnRespuesta3);
-		rdbtnRespuesta3.setBounds(77, 228, 103, 21);
+		rdbtnRespuesta3.setBounds(35, 228, 173, 42);
 		add(rdbtnRespuesta3);
 		
-		rdbtnRespuesta2 = new JRadioButton("New radio button");
+		rdbtnRespuesta2 = new JRadioButton("v_nombre;");
 		buttonGroupRespuestas.add(rdbtnRespuesta2);
-		rdbtnRespuesta2.setBounds(406, 136, 103, 21);
+		rdbtnRespuesta2.setBounds(406, 136, 148, 42);
 		add(rdbtnRespuesta2);
 		
-		rdbtnRespuesta4 = new JRadioButton("New radio button");
+		rdbtnRespuesta4 = new JRadioButton("V_nombre");
 		buttonGroupRespuestas.add(rdbtnRespuesta4);
-		rdbtnRespuesta4.setBounds(406, 239, 103, 21);
+		rdbtnRespuesta4.setBounds(406, 228, 148, 42);
 		add(rdbtnRespuesta4);
 		
 		btnComprobar = new JButton("Comprobar");
 		btnComprobar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnComprobar.setBounds(208, 281, 164, 42);
+		btnComprobar.setBounds(220, 281, 164, 42);
 		add(btnComprobar);
 	}
 
